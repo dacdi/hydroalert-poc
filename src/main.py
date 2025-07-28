@@ -7,6 +7,8 @@ from src.load_riskmap import get_flood_depth
 from src.fetch_wms.download_layers import download_all_wms_layers
 from src.config import TESTORTE_CSV, OUTPUT_CSV
 from src.utils_logger import get_logger
+from src.forecast_area import get_rain_area
+from src.forecast_area import save_rain_grid
 
 logger = get_logger(__name__)
 
@@ -44,6 +46,25 @@ def run_forecast(testregen=None, testrandom=False):
     logger.info(f"✅ Ergebnis gespeichert unter {OUTPUT_CSV}")
 
 
+def handle_forecast_command(testregen=None, testrandom=False, with_area=False):
+    logger.info("📈 Starte Vorhersage-Modus")
+    run_forecast(testregen=testregen, testrandom=testrandom)
+
+    if with_area:
+        logger.info("🌍 Berechne betroffene Regenfläche …")
+        rain_threshold = testregen if testregen is not None else 5.0
+        area_km2, hits, total, grid, rain_values = get_rain_area(min_rain_threshold=rain_threshold)
+
+        logger.info(f"☔ Regenfläche ≥ {rain_threshold} mm/h: {area_km2:.1f} km² ({hits}/{total} Punkte)")
+
+        save_rain_grid(
+            grid,
+            rain_values,
+            threshold=rain_threshold,
+            output_path="output/rain_grid.csv"
+        )
+
+
 def main():
     parser = argparse.ArgumentParser(description="HydroAlert Tool")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -52,6 +73,7 @@ def main():
     forecast_parser = subparsers.add_parser("forecast", help="Starte die Regen-Vorhersage")
     forecast_parser.add_argument("--testregen", type=float, help="Simuliere festen Regenwert (in mm/h)")
     forecast_parser.add_argument("--testrandom", action="store_true", help="Simuliere zufälligen Regenwert")
+    forecast_parser.add_argument("--with-area", action="store_true", help="Berechne zusätzlich die betroffene Regenfläche")
 
     # Subcommand: download-layers
     subparsers.add_parser("download-layers", help="Lade alle WMS-Layer für das PoC herunter")
@@ -60,8 +82,11 @@ def main():
     logger.debug(f"📊 CLI Argumente: {args}")
 
     if args.command == "forecast":
-        logger.info("📈 Starte Vorhersage-Modus")
-        run_forecast(testregen=args.testregen, testrandom=args.testrandom)
+        handle_forecast_command(
+            testregen=args.testregen,
+            testrandom=args.testrandom,
+            with_area=args.with_area
+        )
 
     elif args.command == "download-layers":
         logger.info("🌐 Lade WMS-Layer herunter …")
