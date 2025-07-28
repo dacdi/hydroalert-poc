@@ -1,4 +1,4 @@
-from src.load_riskmap import get_flood_depth
+from src.core.load_riskmap import get_flood_depth
 
 def test_get_flood_depth():
     assert get_flood_depth(5) == 0.0
