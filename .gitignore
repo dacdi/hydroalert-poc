@@ -1,0 +1,10 @@
+# virtuelle Umgebung
+.venv/
+
+# Cache-Dateien
+__pycache__/
+*.pyc
+
+# IDE-Dateien
+.idea/
+.vscode/
