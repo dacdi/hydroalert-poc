@@ -1,77 +1,90 @@
-from typing import Tuple, List
+# src/forecast_area.py
+
+from typing import List, Tuple
 from time import sleep
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 import csv
+import pytz
+import logging
 
 from src.geo_utils import generate_grid
-from src.fetch_weather import get_rain_forecast
+from src.fetch_weather import fetch_forecast_data
+
+logger = logging.getLogger(__name__)
 
 
-def get_rain_area(
-    min_rain_threshold: float = 5.0,
-    delay: float = 0.2,
+def get_hour_labels(start: datetime, hours: int = 24) -> List[str]:
+    """
+    Gibt eine Liste formatierter Zeitstempel für die nächsten `hours` Stunden zurück.
+    """
+    return [
+        (start + timedelta(hours=i)).strftime("%Y-%m-%dT%H:00")
+        for i in range(hours)
+    ]
+
+
+def save_full_rain_forecast_grid(
+    output_path: str,
     center_lat: float = 49.35,
     center_lon: float = 8.15,
     radius_km: int = 10,
-    step_km: int = 5
-) -> Tuple[float, int, int, List[Tuple[float, float]], List[float | None]]:
-    """
-    Berechnet die überflutete Fläche um einen Mittelpunkt basierend auf einem Schwellenwert.
-
-    Returns:
-        Tuple:
-            - betroffene Fläche in km²
-            - Anzahl über Schwelle
-            - Gesamtanzahl Punkte
-            - Liste Koordinaten (Raster)
-            - Liste Regenwerte
-    """
-    grid = generate_grid(center_lat, center_lon, radius_km, step_km)
-    matched_points = 0
-    rain_values = []
-
-    for lat, lon in grid:
-        rain = get_rain_forecast(lat, lon)
-        rain_values.append(rain)
-
-        if rain is not None and rain >= min_rain_threshold:
-            matched_points += 1
-
-        sleep(delay)
-
-    total_points = len(grid)
-    cell_area_km2 = step_km * step_km
-    total_area_km2 = matched_points * cell_area_km2
-
-    return total_area_km2, matched_points, total_points, grid, rain_values
-
-
-def save_rain_grid(
-    grid: List[Tuple[float, float]],
-    rain_values: List[float | None],
-    threshold: float,
-    output_path: str
+    step_km: int = 5,
+    delay: float = 0.2,
 ) -> None:
     """
-    Speichert alle Rasterpunkte mit Regenwerten und Schwellenprüfung in eine CSV-Datei.
+    Holt für jeden Rasterpunkt die nächsten 24 Stunden Regenvorhersage
+    und speichert sie in einer CSV-Datei mit einem Eintrag pro Rasterpunkt.
 
     Args:
-        grid: Liste der (lat, lon) Koordinaten
-        rain_values: Liste der zugehörigen Regenwerte (mm/h)
-        threshold: Schwellenwert für Starkregen
-        output_path: Speicherort für CSV
+        output_path: Pfad zur Ausgabedatei
+        center_lat: Mittelpunkt des Rasters (Breitengrad)
+        center_lon: Mittelpunkt des Rasters (Längengrad)
+        radius_km: Radius um den Mittelpunkt
+        step_km: Abstand zwischen Rasterpunkten in km
+        delay: Pausenzeit zwischen API-Anfragen in Sekunden
     """
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    timestamp = datetime.now().isoformat()
+    logger.info(
+        f"🌍 Starte Flächen-Rastergenerierung: Zentrum=({center_lat}, {center_lon}), "
+        f"Radius={radius_km} km, Schritt={step_km} km"
+    )
+    grid = generate_grid(center_lat, center_lon, radius_km, step_km)
+    total_points = len(grid)
+    logger.info(f"📏 Rastergröße: {total_points} Punkte")
 
+    now = datetime.now(pytz.timezone("Europe/Berlin"))
+    hour_labels = get_hour_labels(now, 24)
+    logger.debug(f"🕒 Stundenziele: {hour_labels}")
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["Breitengrad", "Längengrad", "Regen (mm/h)", "Überschwellig", "Zeitstempel"])
+        header = ["Breitengrad", "Längengrad"] + [f"Regen_{i}h" for i in range(24)]
+        writer.writerow(header)
 
-        for (lat, lon), rain in zip(grid, rain_values):
-            if rain is None:
-                writer.writerow([lat, lon, "", "", timestamp])
+        for idx, (lat, lon) in enumerate(grid, start=1):
+            logger.debug(f"📍 Punkt {idx}/{total_points}: ({lat:.5f}, {lon:.5f})")
+            data = fetch_forecast_data(lat, lon)
+
+            if data is None:
+                logger.warning(f"⚠️ Keine Vorhersagedaten für ({lat}, {lon}) – leere Werte eingetragen")
+                rain_series = [None] * 24
             else:
-                is_over = rain >= threshold
-                writer.writerow([lat, lon, f"{rain:.1f}", is_over, timestamp])
+                rain_series = []
+                for label in hour_labels:
+                    try:
+                        idx_time = data["hourly"]["time"].index(label)
+                        rain = data["hourly"]["precipitation"][idx_time]
+                    except (ValueError, KeyError, TypeError):
+                        logger.debug(f"⏳ Kein Regenwert für Stunde {label} an ({lat}, {lon})")
+                        rain = None
+                    rain_series.append(rain)
+
+            writer.writerow([f"{lat:.5f}", f"{lon:.5f}"] + rain_series)
+
+            if idx % 10 == 0 or idx == total_points:
+                logger.info(f"✅ Fortschritt: {idx}/{total_points} Rasterpunkte verarbeitet")
+
+            sleep(delay)
+
+    logger.info(f"📁 CSV gespeichert unter: {output_path}")
