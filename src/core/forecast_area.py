@@ -1,6 +1,6 @@
 # src/forecast_area.py
 
-from typing import List, Tuple
+from typing import List
 from time import sleep
 from datetime import datetime, timedelta
 import os
@@ -9,7 +9,7 @@ import pytz
 import logging
 
 from src.geo_utils import generate_grid
-from src.fetch_weather import fetch_forecast_data
+from src.io.fetch_weather import fetch_forecast_data
 
 logger = logging.getLogger(__name__)
 

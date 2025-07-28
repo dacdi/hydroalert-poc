@@ -1,5 +1,4 @@
-import pytest
-from src.geo_utils import generate_grid
+from src.utils.geo_utils import generate_grid
 
 
 def test_generate_grid_default():
