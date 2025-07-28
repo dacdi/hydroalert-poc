@@ -5,14 +5,69 @@ from src.utils_logger import get_logger
 
 logger = get_logger(__name__)
 
-def log_precipitation_series(data):
+
+def fetch_forecast_data(lat: float, lon: float) -> dict | None:
+    """
+    Ruft stündliche Niederschlagsvorhersage für 24 Stunden von Open-Meteo ab.
+
+    Args:
+        lat (float): Breitengrad
+        lon (float): Längengrad
+
+    Returns:
+        dict | None: Wetterdaten oder None bei Fehler
+    """
+    url = (
+        "https://api.open-meteo.com/v1/forecast?"
+        f"latitude={lat}&longitude={lon}"
+        "&hourly=precipitation"
+        "&forecast_days=2"
+        "&timezone=Europe/Berlin"
+    )
+    logger.debug(f"[Request] URL: {url}")
+
+    try:
+        response = requests.get(url)
+        logger.debug(f"[Response] Status Code: {response.status_code}")
+
+        if response.status_code != 200:
+            logger.warning(
+                f"⚠️ Anfrage fehlgeschlagen für ({lat}, {lon}): {response.status_code}"
+            )
+            return None
+
+        return response.json()
+
+    except Exception as e:
+        logger.exception(f"❌ Fehler bei API-Anfrage für ({lat}, {lon})")
+        return None
+
+
+def log_precipitation_series(data: dict) -> None:
+    """
+    Gibt alle stündlichen Regenwerte im Log aus.
+
+    Args:
+        data (dict): Wetterdaten
+    """
     times = data.get("hourly", {}).get("time", [])
     values = data.get("hourly", {}).get("precipitation", [])
+
     logger.debug("🔄 Vorhersageverlauf:")
     for t, v in zip(times, values):
         logger.debug(f"  {t} → {v} mm/h")
 
-def get_current_precipitation(data):
+
+def get_current_precipitation(data: dict) -> float | None:
+    """
+    Gibt den Niederschlagswert zur aktuellen Stunde zurück.
+
+    Args:
+        data (dict): Wetterdaten
+
+    Returns:
+        float | None: Regenwert in mm/h oder None, wenn nicht vorhanden
+    """
     times = data.get("hourly", {}).get("time", [])
     values = data.get("hourly", {}).get("precipitation", [])
 
@@ -28,29 +83,21 @@ def get_current_precipitation(data):
         logger.warning(f"⚠️ Kein Eintrag für aktuelle Zeit ({now}) in API-Daten")
         return None
 
-def get_rain_forecast(lat, lon):
-    url = (
-        f"https://api.open-meteo.com/v1/forecast?"
-        f"latitude={lat}&longitude={lon}&hourly=precipitation"
-        f"&forecast_days=1&timezone=Europe/Berlin"
-    )
 
-    logger.debug(f"[Request] URL: {url}")
-    try:
-        response = requests.get(url)
-        logger.debug(f"[Response] Status Code: {response.status_code}")
+def get_rain_forecast(lat: float, lon: float) -> float | None:
+    """
+    Kombinierte Funktion: Holt Vorhersage und gibt aktuellen Regenwert zurück.
 
-        if response.status_code != 200:
-            logger.warning(f"Non-200 response for ({lat}, {lon}): {response.status_code}")
-            return None
+    Args:
+        lat (float): Breitengrad
+        lon (float): Längengrad
 
-        data = response.json()
-        logger.debug(f"[Data] Keys: {list(data.keys())}")
-        logger.debug(f"[Data] Hourly keys: {list(data.get('hourly', {}).keys())}")
-
-        log_precipitation_series(data)
-        return get_current_precipitation(data)
-
-    except Exception as e:
-        logger.exception(f"❌ Exception while fetching rain for ({lat}, {lon})")
+    Returns:
+        float | None: Regenwert zur aktuellen Stunde oder None
+    """
+    data = fetch_forecast_data(lat, lon)
+    if data is None:
         return None
+
+    log_precipitation_series(data)
+    return get_current_precipitation(data)
