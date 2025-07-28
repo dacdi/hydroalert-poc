@@ -1,6 +1,5 @@
-import pytest
 from unittest.mock import patch
-from src.forecast_area import get_rain_area
+from src.core.forecast_area import get_rain_area
 
 
 @patch("src.forecast_area.get_rain_forecast")
