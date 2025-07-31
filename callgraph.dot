@@ -1,0 +1,42 @@
+digraph G {
+    graph [rankdir=TB];
+    subgraph cluster_G {
+	    rankdir=TB;
+
+        graph [style="filled,rounded",fillcolor="#80808018", label=""];
+        src [label="src", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        src__config [label="src.config", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        src__config__config [label="src.config.config", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        src__core [label="src.core", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        src__core__forecast_area [label="src.core.forecast_area", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        src__core__load_riskmap [label="src.core.load_riskmap", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        src__io [label="src.io", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        src__io__download_layers [label="src.io.download_layers", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        src__io__fetch_weather [label="src.io.fetch_weather", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        src__main [label="src.main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        src__utils [label="src.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        src__utils__geo_utils [label="src.utils.geo_utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        src__utils__utils_logger [label="src.utils.utils_logger", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        src__core__forecast_area__get_hour_labels [label="get_hour_labels", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        src__core__forecast_area__save_full_rain_forecast_grid [label="save_full_rain_forecast_grid", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        src__core__load_riskmap__get_flood_depth [label="get_flood_depth", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        src__io__download_layers__download_all_wms_layers [label="download_all_wms_layers", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        src__io__fetch_weather__fetch_forecast_data [label="fetch_forecast_data", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        src__io__fetch_weather__get_current_precipitation [label="get_current_precipitation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        src__io__fetch_weather__get_rain_forecast [label="get_rain_forecast", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        src__io__fetch_weather__log_precipitation_series [label="log_precipitation_series", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        src__main__main [label="main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        src__main__run_forecast [label="run_forecast", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        src__utils__geo_utils__generate_grid [label="generate_grid", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        src__utils__utils_logger__get_logger [label="get_logger", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+    }
+        src__core__forecast_area -> src__io__fetch_weather__fetch_forecast_data [style="solid", color="#000000"];
+        src__core__forecast_area__save_full_rain_forecast_grid -> src__io__fetch_weather__fetch_forecast_data [style="solid", color="#000000"];
+        src__core__forecast_area__save_full_rain_forecast_grid -> src__core__forecast_area__get_hour_labels [style="solid", color="#000000"];
+        src__io__fetch_weather__get_rain_forecast -> src__io__fetch_weather__fetch_forecast_data [style="solid", color="#000000"];
+        src__io__fetch_weather__get_rain_forecast -> src__io__fetch_weather__get_current_precipitation [style="solid", color="#000000"];
+        src__io__fetch_weather__get_rain_forecast -> src__io__fetch_weather__log_precipitation_series [style="solid", color="#000000"];
+        src__io__download_layers -> src__io__download_layers__download_all_wms_layers [style="solid", color="#000000"];
+        src__main -> src__main__main [style="solid", color="#000000"];
+        src__main__main -> src__main__run_forecast [style="solid", color="#000000"];
+    }
