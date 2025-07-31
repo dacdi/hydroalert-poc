@@ -1,13 +1,12 @@
 import argparse
-import logging
 import random
 import pandas as pd
-from src.fetch_weather import get_rain_forecast
-from src.load_riskmap import get_flood_depth
-from src.fetch_wms.download_layers import download_all_wms_layers
-from src.forecast_area import save_full_rain_forecast_grid
-from src.config import TESTORTE_CSV, OUTPUT_CSV
-from src.utils_logger import get_logger
+from src.io.fetch_weather import get_rain_forecast
+from src.core.load_riskmap import get_flood_depth
+from src.io.download_layers import download_all_wms_layers
+from src.core.forecast_area import save_full_rain_forecast_grid
+from src.config.config import TESTORTE_CSV, OUTPUT_CSV
+from src.utils.utils_logger import get_logger
 
 logger = get_logger(__name__)
 
