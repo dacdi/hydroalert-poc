@@ -2,6 +2,7 @@ import argparse
 from src.io.download_layers import download_all_wms_layers
 from src.analysis.forecast_area import save_full_rain_forecast_grid
 from src.utils.utils_logger import get_logger
+from src.io.load_locations import get_default_location
 
 logger = get_logger(__name__)
 
@@ -21,7 +22,8 @@ def main():
 
     if args.command == "forecast":
         logger.info("🌍 Starte 24h-Niederschlags-Rasteranalyse …")
-        save_full_rain_forecast_grid()
+        lat, lon = get_default_location()
+        save_full_rain_forecast_grid(center_lat=lat, center_lon=lon)
         logger.info("✅ Rastervorhersage abgeschlossen")
 
     elif args.command == "download-layers":
