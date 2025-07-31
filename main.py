@@ -1,6 +1,6 @@
 import argparse
 from src.io.download_layers import download_all_wms_layers
-from src.core.forecast_area import save_full_rain_forecast_grid
+from src.analysis.forecast_area import save_full_rain_forecast_grid
 from src.utils.utils_logger import get_logger
 
 logger = get_logger(__name__)
