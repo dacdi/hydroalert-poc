@@ -10,24 +10,19 @@ def main():
     parser = argparse.ArgumentParser(description="HydroAlert Tool")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    # Subcommand: forecast (nur noch für Flächenprognose)
-    forecast_parser = subparsers.add_parser("forecast", help="Starte die 24h-Flächenvorhersage")
-    forecast_parser.add_argument("--area-24h", action="store_true",
-                                 help="Erstelle Rasterausgabe für die nächsten 24h Regen um Neustadt")
-
-    # Subcommand: Karten herunterladen
+    # Subcommand 1: download-layers
     subparsers.add_parser("download-layers", help="Lade alle WMS-Layer für das PoC herunter")
+
+    # Subcommand 2: forecast
+    subparsers.add_parser("forecast", help="Starte die 24h-Flächenvorhersage mit echten Wetterdaten")
 
     args = parser.parse_args()
     logger.debug(f"📊 CLI Argumente: {args}")
 
     if args.command == "forecast":
-        if args.area_24h:
-            logger.info("🌍 Starte 24h-Niederschlags-Rasteranalyse …")
-            save_full_rain_forecast_grid()
-            logger.info(f"✅ Rastervorhersage gespeichert.")
-        else:
-            logger.warning("⚠️ Kein gültiges Sub-Flag wie --area-24h angegeben. Nichts ausgeführt.")
+        logger.info("🌍 Starte 24h-Niederschlags-Rasteranalyse …")
+        save_full_rain_forecast_grid()
+        logger.info("✅ Rastervorhersage abgeschlossen")
 
     elif args.command == "download-layers":
         logger.info("🌐 Lade WMS-Layer herunter …")
