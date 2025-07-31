@@ -1,21 +1,63 @@
+# tests/analysis/test_forecast_area.py
+
+import csv
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict
+
+import pytest
 from unittest.mock import patch
-from src.analysis.forecast_area import get_rain_area
+
+from src.analysis.forecast_area import save_full_rain_forecast_grid
 
 
-@patch("src.forecast_area.get_rain_forecast")
-def test_rain_area_with_mock(mock_get_rain_forecast):
-    # Simuliere: 40 % der Gitterpunkte haben "Starkregen" ≥ 5 mm/h
-    def mock_forecast(lat, lon):
-        # Jede 3. Koordinate hat Regen ≥ 5
-        return 7.0 if int(lat * 1000) % 3 == 0 else 2.0
+@pytest.fixture
+def dummy_data() -> Dict:
+    """Provides dummy forecast data with hourly precipitation and time values."""
+    base_time = datetime.now().replace(minute=0, second=0, microsecond=0)
+    times = [
+        (base_time + timedelta(hours=i)).strftime("%Y-%m-%dT%H:00") for i in range(24)
+    ]
+    precipitation = [float(i) for i in range(24)]
+    return {
+        "hourly": {
+            "time": times,
+            "precipitation": precipitation,
+        }
+    }
 
-    mock_get_rain_forecast.side_effect = mock_forecast
 
-    area_km2, hits, total = get_rain_area(min_rain_threshold=5.0, delay=0.0)
+@patch("src.analysis.forecast_area.fetch_forecast_data")
+def test_save_full_grid_with_mock(mock_fetch, tmp_path: Path, dummy_data: Dict):
+    """
+    Tests whether the forecast grid is saved correctly using dummy weather data.
+    """
+    # Mock fetch_forecast_data to return our dummy_data for every grid point
+    mock_fetch.return_value = dummy_data
 
-    assert total > 0
-    assert hits > 0
-    assert hits < total
-    assert area_km2 == hits * 4  # bei 2×2 km Gitterzellen
+    # Define output path inside pytest's temp directory
+    output_file = tmp_path / "mock_rain_grid.csv"
 
-    print(f"✅ get_rain_area(): {hits}/{total} Treffer, Fläche: {area_km2} km²")
+    # Call the function under test
+    save_full_rain_forecast_grid(
+        output_path=str(output_file),
+        center_lat=49.35,
+        center_lon=8.15,
+        radius_km=1,  # small grid for fast test
+        step_km=1,
+        delay=0  # skip sleep for speed
+    )
+
+    # Assertions
+    assert output_file.exists()
+
+    with open(output_file, newline="") as f:
+        reader = list(csv.reader(f))
+
+        # Check header
+        expected_header = ["latitude", "longitude"] + dummy_data["hourly"]["time"][:24]
+        assert reader[0] == expected_header
+
+        # Check that we have at least one data row
+        assert len(reader) > 1
+        assert len(reader[1]) == 26  # 2 for lat/lon + 24 values
