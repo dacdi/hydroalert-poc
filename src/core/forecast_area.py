@@ -8,7 +8,7 @@ import csv
 import pytz
 import logging
 
-from src.geo_utils import generate_grid
+from src.utils.geo_utils import generate_grid
 from src.io.fetch_weather import fetch_forecast_data
 
 logger = logging.getLogger(__name__)
