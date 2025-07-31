@@ -25,7 +25,7 @@ def get_hour_labels(start: datetime, hours: int = 24) -> List[str]:
 
 
 def save_full_rain_forecast_grid(
-    output_path: str,
+    output_path: str = "output/rain_grid_24h.csv",
     center_lat: float = 49.35,
     center_lon: float = 8.15,
     radius_km: int = 10,
