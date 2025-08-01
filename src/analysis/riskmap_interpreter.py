@@ -14,3 +14,5 @@ def get_flood_depth(rain_mm_per_hour):
         return 0.1
     else:
         return 0.0
+
+#ToDo: Prüfen, ist das noch notwendig? wenn N, dann auch den zugehörigen test löschen

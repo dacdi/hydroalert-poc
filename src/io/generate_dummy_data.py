@@ -31,7 +31,7 @@ def generate_dummy_rain_data(
 
     # Determine dummy value based on variant
     dummy_value = 8.0 if variant == "SRI7" else 16.0  # mm/h
-
+#ToDo: auch die Möglichkeit für keinen Regen und die anderen Regenklassen einbauen
     # Replace rain values (columns after lat/lon)
     updated_rows: List[List[str]] = []
     for row in rows:
