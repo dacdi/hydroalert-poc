@@ -123,8 +123,8 @@ def save_full_rain_forecast_grid(
     center_lat: float = 49.35,
     center_lon: float = 8.15,
     radius_km: int = 10,
-    step_km: int = 5,
-    delay: float = 0.2
+    step_km: int = 2,
+    delay: float = 0
 ) -> None:
     """
     Orchestrate generation of rain forecast grid and CSV export.
