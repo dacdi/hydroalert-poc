@@ -3,9 +3,9 @@ from PIL import Image
 from shapely.ops import substring
 from shapely.geometry import LineString
 from typing import Dict, List, Tuple
-import logging
+from src.utils.utils_logger import get_logger
 
-logger = logging.getLogger(__name__)
+logger = get_logger()
 
 # 1) Definiere dein Farb-→Tiefen-Mapping (RGB ohne Alpha)
 COLOR_TO_DEPTH: Dict[Tuple[int, int, int], str] = {
