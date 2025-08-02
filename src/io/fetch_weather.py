@@ -3,7 +3,8 @@ from datetime import datetime
 import pytz
 from src.utils.utils_logger import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger()
+
 
 
 def fetch_forecast_data(lat: float, lon: float) -> dict | None:

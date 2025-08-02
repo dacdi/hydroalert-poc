@@ -3,7 +3,8 @@ import os
 from typing import List
 from src.utils.utils_logger import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger()
+
 
 
 def generate_dummy_rain_data(
