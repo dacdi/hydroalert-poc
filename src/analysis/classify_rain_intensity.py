@@ -1,14 +1,17 @@
 import csv
 import os
-import logging
+
 from typing import List
 
+from src.utils.utils_logger import get_logger
+#ToDo: hier nochmal besseres Logging einfügen, bisher zu wenig
 # Schwellenwerte in mm/h
 SRI7_THRESHOLD = 15
 SRI10_THRESHOLD = 25
 MIN_AREA_FRACTION = 0.5  # 50 %
 
-logger = logging.getLogger(__name__)
+
+logger = get_logger()
 
 def classify_rain_stage(csv_path: str = "output/rain_grid_24h.csv") -> str:
     """

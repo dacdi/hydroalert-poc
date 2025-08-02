@@ -1,80 +1,32 @@
-Hier ist dein aktualisiertes `README.md`, **erweitert um die neuen Features zur Flächenanalyse und CSV-Ausgabe aller Rasterpunkte**:
-
----
-
-````markdown
 # 🌧️ HydroAlert – Niederschlagsbasierte Wassertiefenvorhersage
 
-**HydroAlert** ist ein Python-Tool zur Vorhersage von Überschwemmungsrisiken anhand von Wetterdaten (Nowcasting) und einfachen Schwellenwerten für Starkregen. Es wurde mit dem Ziel entwickelt, sowohl reale Wetterdaten zu nutzen als auch reproduzierbare Tests mit künstlichem Regen zu ermöglichen.
+**HydroAlert** ist ein modulares Python-Tool zur Flächenvorhersage von Überschwemmungsrisiken auf Basis von Niederschlagsdaten. Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenwertlogik zur Auswahl geeigneter Starkregenkarten (z. B. SRI7/SRI10).
 
 ---
 
-## 🔧 Funktionen
+## 🔧 Aktuelle Features (Stand: August 2025)
 
-- Holt stündliche Niederschlagsvorhersage von der Open-Meteo API
-- Bestimmt Wassertiefe anhand einfacher Schwellenlogik
-- Unterstützt festen oder zufälligen Testregen für reproduzierbare Tests
-- Berechnet betroffene Regenfläche um Neustadt a. d. Weinstraße anhand eines Rasters
-- CSV-Ausgabe:
-  - 🔹 Wassertiefe-Vorhersage pro Ort (`prognose.csv`)
-  - 🔹 Regenwerte für jeden Rasterpunkt der Fläche (`rain_grid.csv`)
-- Logging auf DEBUG/INFO-Ebene
-
----
-
-## 🚀 Schnellstart
-
-### 📦 Voraussetzungen
-
-- Python 3.8+
-- Virtuelle Umgebung empfohlen
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-````
+- 📡 Abruf stündlicher Niederschlagsprognose für 24h aus Open-Meteo API
+- 🗺️ Flächenanalyse auf Raster um gegebene Orte aus `testorte.csv`
+- 📄 CSV-Ausgabe aller Rasterpunkte mit Regenwerten (`rain_grid_24h.csv`)
+- 🧪 Generierung reproduzierbarer Dummy-Regenfelder für Testszenarien
+- 🧠 Automatische Auswahl geeigneter Sturzflutkarten (SRI7 / SRI10)
+- 🧵 Logging aller Schritte für Nachvollziehbarkeit
+- ✅ Unit-Tests für Kernfunktionen (z. B. Schwellenlogik)
 
 ---
 
-### ▶️ Nutzung
+## 🧱 Architekturüberblick
 
-#### 📡 Echtdaten (Live-Wetter)
+HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-Projekte:
 
-```bash
-PYTHONPATH=. python3 src/main.py forecast
-```
-
-#### 🧪 Fester Testregen
-
-```bash
-PYTHONPATH=. python3 src/main.py forecast --testregen 35
-```
-
-#### 🎲 Zufälliger Testregen
-
-```bash
-PYTHONPATH=. python3 src/main.py forecast --testrandom
-```
-
-#### 🌍 Flächenanalyse um Neustadt (mit CSV-Ausgabe)
-
-```bash
-PYTHONPATH=. python3 src/main.py forecast --testregen 10 --with-area
-```
-
-Die Datei `data/output/rain_grid.csv` enthält:
-
-| Breitengrad | Längengrad | Regen (mm/h) | Überschwellig | Zeitstempel                |
-| ----------- | ---------- | ------------ | ------------- | -------------------------- |
-| 49.35       | 8.15       | 12.3         | True          | 2025-07-28T15:34:01.123456 |
-| ...         | ...        | ...          | ...           | ...                        |
-
-#### 🗺️ WMS-Layer (Sturzflutkarten) herunterladen
-
-```bash
-PYTHONPATH=. python3 src/main.py download-layers
-```
+| Prinzip                      | Bedeutung                                                                 |
+|-----------------------------|---------------------------------------------------------------------------|
+| Separation of Concerns      | Datenzugriff, Analyse, Auswertung und Logging sind klar getrennt         |
+| Funktionale Projektstruktur | Gliederung nach Aufgaben, nicht nach Objekten (z. B. `io/`, `analysis/`) |
+| Reproduzierbarkeit          | Datenpfade über `.env` konfiguriert, keine Hardcoded-Logik               |
+| Keine Logik in `main.py`    | `main.py` dient nur zur CLI-Steuerung via `argparse`                     |
+| Testbarkeit                 | Zentrale Funktionen sind modular und über `pytest` testbar               |
 
 ---
 
@@ -82,44 +34,53 @@ PYTHONPATH=. python3 src/main.py download-layers
 
 ```
 HydroAlert/
-├── data/
-│   ├── testorte.csv         # Eingabedaten für Prognosen
+├── data/                      # Eingabe- und Ausgabedaten
+│   ├── testorte.csv           # Orte mit Koordinaten
 │   └── output/
-│       ├── prognose.csv     # Prognoseergebnisse pro Ort
-│       └── rain_grid.csv    # Flächenanalyse-Rasterdaten
+│       └── rain_grid_24h.csv  # Ergebnis der Rasterprognose
+│
 ├── src/
-│   ├── fetch_weather.py
-│   ├── forecast_area.py     # Flächenanalyse
-│   ├── geo_utils.py         # Rastergenerierung
-│   ├── load_riskmap.py
-│   ├── fetch_wms/
-│   │   └── download_layers.py
-│   ├── config.py
-│   ├── main.py
-│   └── utils_logger.py
-├── tests/                   # pytest-Tests inkl. CLI-Test
-├── requirements.txt
-└── .env
+│   ├── analysis/              # Analyse- und Klassifizierungslogik
+│   │   ├── forecast_area.py
+│   │   └── classify_rain_intensity.py
+│   ├── io/                    # Datei- und API-Zugriff
+│   │   ├── fetch_weather.py
+│   │   └── generate_dummy.py
+│   ├── utils/                 # Logging, Grid-Hilfsfunktionen
+│   └── config/                # `.env`-Konfiguration
+│
+├── tests/                     # Unit-Tests
+├── main.py                   # Einstiegspunkt mit `argparse`
+├── .env                      # Pfad-Konfiguration
+└── requirements.txt
 ```
 
 ---
 
-## ⚙️ Beispielausgabe
+## ▶️ CLI-Nutzung
 
-### Prognose (pro Ort)
+```bash
+# 📡 Regen für 24h-Fläche mit realen Wetterdaten abrufen
+PYTHONPATH=. python3 src/main.py forecast
 
-```csv
-Ort,Regen [mm/h],Wassertiefe [m]
-Stuttgart,35.0,0.5
-Freiburg,12.1,0.1
+# 🧪 Dummy-Regenfelder für SRI7 erzeugen (zum Testen)
+PYTHONPATH=. python3 src/main.py generate-dummy SRI7
+
+# 🧠 Analyse: Welche Starkregenkarten sind relevant?
+PYTHONPATH=. python3 src/main.py evaluate
+
+# 🌐 WMS-Karten (Sturzflutlayer) herunterladen
+PYTHONPATH=. python3 src/main.py download-layers
 ```
 
-### Flächenanalyse (Rasterpunkte um Neustadt)
+---
+
+## 📄 Beispielausgabe (`rain_grid_24h.csv`)
 
 ```csv
-Breitengrad,Längengrad,Regen (mm/h),Überschwellig,Zeitstempel
-49.3517,8.1501,10.0,True,2025-07-28T18:13:45.124563
-49.3497,8.1501,7.2,True,2025-07-28T18:13:45.124563
+lat,lon,2025-08-01T12:00,2025-08-01T13:00,...,2025-08-02T11:00
+49.9821,8.2403,0.1,0.2,...,0.0
+49.9819,8.2401,15.3,20.7,...,3.2
 ...
 ```
 
@@ -128,31 +89,20 @@ Breitengrad,Längengrad,Regen (mm/h),Überschwellig,Zeitstempel
 ## 🧪 Testen
 
 ```bash
-PYTHONPATH=. pytest
+pytest
 ```
-
-> ⚠️ CLI-Tests nutzen `subprocess` und testen vollständige Programmläufe.
 
 ---
 
-## 📌 Konfiguration
-
-Die Datei `.env` enthält:
+## 📌 Konfiguration (.env)
 
 ```env
 TESTORTE_CSV=data/testorte.csv
-OUTPUT_CSV=data/output/prognose.csv
+OUTPUT_CSV=data/output/rain_grid_24h.csv
 ```
 
 ---
 
 ## 👨‍💻 Autor
 
-Erstellt im Rahmen eines Lernprojekts zur sauberen Softwareentwicklung in Python (Clean Code, Logging, Testing, Strukturierung).
-
-```
-
----
-
-Wenn du möchtest, kann ich noch eine kurze Sektion zu "📈 Weiterentwicklungsideen" oder "🧠 Technisches Konzept" ergänzen. Sag einfach Bescheid!
-```
+Erstellt im Rahmen eines modularen Lernprojekts für Clean Code, Logging, CLI-Tools und reproduzierbare Data-Science-Pipelines mit Python.
