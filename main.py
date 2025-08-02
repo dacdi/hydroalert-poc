@@ -7,7 +7,6 @@ from src.analysis.classify_rain_intensity import classify_rain_stage
 from src.io.generate_dummy_data import generate_dummy_rain_data
 from src.analysis.forecast_area import RainGridForecaster
 from src.io.telegram_bot import run_bot
-from src.io.osm_streets import download_osm_streets_from_location
 from src.io.flood_cache import generate_csv_cache
 
 
@@ -58,8 +57,7 @@ def main():
 
     if args.command == "download-layers":
         logger.info("🌐 Lade WMS-Layer herunter …")
-#        download_all_wms_layers()
-        download_osm_streets_from_location()
+        download_all_wms_layers()
         logger.info("✅ WMS-Layer wurden erfolgreich heruntergeladen.")
 
     elif args.command == "forecast":
