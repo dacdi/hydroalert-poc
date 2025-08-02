@@ -3,7 +3,8 @@ import requests
 
 from src.utils.utils_logger import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger()
+
 
 def download_all_wms_layers():
     """Downloads predefined WMS layers from the RLP geoserver and saves them as PNG files."""

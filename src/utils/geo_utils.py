@@ -6,7 +6,8 @@ from typing import List, Tuple
 
 from src.utils.utils_logger import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger()
+
 
 
 def generate_grid(center_lat: float, center_lon: float, radius_km: int = 10, step_km: int = 2) -> List[Tuple[float, float]]:
