@@ -20,6 +20,7 @@ COLOR_TO_DEPTH: Dict[Tuple[int, int, int], str] = {
     # … passe Werte exakt an deine PNG-Palette an
 }
 
+#ToDo: Prüfe ob die Farben auch immer in allen Regen klassen gleich sind
 
 def detect_street_depths(
     gdf_edges,
