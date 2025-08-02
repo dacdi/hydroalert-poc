@@ -9,7 +9,8 @@ from src.utils.geo_utils import generate_grid
 from src.io.fetch_weather import fetch_forecast_data
 from src.utils.utils_logger import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger()
+
 
 
 def get_hour_labels(start: datetime, hours: int = 24) -> List[str]:
