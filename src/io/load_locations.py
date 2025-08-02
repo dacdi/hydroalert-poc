@@ -1,8 +1,13 @@
 # src/io/load_locations.py
 
 import pandas as pd
-from src.config.config import TESTORTE_CSV
 from typing import Tuple
+
+from src.config.config import TESTORTE_CSV
+from src.utils.utils_logger import get_logger
+
+logger = get_logger()
+
 
 def get_default_location() -> Tuple[float, float]:
     """
