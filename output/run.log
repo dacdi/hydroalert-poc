@@ -1,28 +1,15 @@
-2025-08-03 00:23:40 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
-2025-08-03 00:23:40 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
-2025-08-03 00:23:40 [DEBUG] __init__.py:1557:<module> - interactive is False
-2025-08-03 00:23:40 [DEBUG] __init__.py:1558:<module> - platform is darwin
-2025-08-03 00:23:40 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
-2025-08-03 00:23:40 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
-2025-08-03 00:23:40 [DEBUG] main.py:56:main - 📊 CLI Argumente: Namespace(command='generate-cache', radius=6500.0, sample_distance=5.0)
-2025-08-03 00:23:40 [INFO] main.py:91:main - 🗄 Generiere Flood-CSV-Cache …
-2025-08-03 00:23:40 [INFO] flood_cache.py:25:generate_csv_cache - 📍 Standardort: lat=49.3501, lon=8.1376
-2025-08-03 00:23:41 [INFO] flood_cache.py:31:generate_csv_cache - 🔄 Berechne Cache für: SRI7
-2025-08-03 00:23:41 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-03 00:23:41 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-03 00:23:41 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-03 00:23:42 [INFO] flood_overlay.py:78:detect_street_depths - 🔹 Detektierte Tiefen für 336 Straßen
-2025-08-03 00:23:42 [INFO] flood_cache.py:45:generate_csv_cache - ✅ CSV-Cache geschrieben: /Users/dacdi_privat/PycharmProjects/HydroAlert/src/io/../../data/cache/flood_SRI7.csv
-2025-08-03 00:23:42 [INFO] flood_cache.py:31:generate_csv_cache - 🔄 Berechne Cache für: SRI10
-2025-08-03 00:23:42 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-03 00:23:42 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-03 00:23:42 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-03 00:23:43 [INFO] flood_overlay.py:78:detect_street_depths - 🔹 Detektierte Tiefen für 477 Straßen
-2025-08-03 00:23:43 [INFO] flood_cache.py:45:generate_csv_cache - ✅ CSV-Cache geschrieben: /Users/dacdi_privat/PycharmProjects/HydroAlert/src/io/../../data/cache/flood_SRI10.csv
-2025-08-03 00:23:43 [INFO] flood_cache.py:31:generate_csv_cache - 🔄 Berechne Cache für: SRI10_4h
-2025-08-03 00:23:43 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-03 00:23:43 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-03 00:23:43 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-03 00:23:44 [INFO] flood_overlay.py:78:detect_street_depths - 🔹 Detektierte Tiefen für 484 Straßen
-2025-08-03 00:23:44 [INFO] flood_cache.py:45:generate_csv_cache - ✅ CSV-Cache geschrieben: /Users/dacdi_privat/PycharmProjects/HydroAlert/src/io/../../data/cache/flood_SRI10_4h.csv
-2025-08-03 00:23:44 [INFO] main.py:96:main - ✅ Cache-Erzeugung abgeschlossen.
+2025-08-03 00:33:35 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-08-03 00:33:35 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
+2025-08-03 00:33:35 [DEBUG] __init__.py:1557:<module> - interactive is False
+2025-08-03 00:33:35 [DEBUG] __init__.py:1558:<module> - platform is darwin
+2025-08-03 00:33:35 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
+2025-08-03 00:33:35 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
+2025-08-03 00:33:35 [DEBUG] main.py:56:main - 📊 CLI Argumente: Namespace(command='download-layers')
+2025-08-03 00:33:35 [INFO] main.py:60:main - 🌐 Lade WMS-Layer herunter …
+2025-08-03 00:33:35 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
+2025-08-03 00:33:43 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI07_1h_WaterDepth&bbox=432000%2C5461000%2C452000%2C5481000&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-03 00:33:44 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
+2025-08-03 00:33:57 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_1h_WaterDepth&bbox=432000%2C5461000%2C452000%2C5481000&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-03 00:33:57 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
+2025-08-03 00:34:10 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_4h_WaterDepth&bbox=432000%2C5461000%2C452000%2C5481000&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-03 00:34:11 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
