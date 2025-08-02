@@ -27,7 +27,7 @@ def main():
 
     # Subcommand 4: generate-dummy
     dummy_parser = subparsers.add_parser("generate-dummy", help="Generate dummy rain data for testing")
-    dummy_parser.add_argument("variant", choices=["SRI7", "SRI10"], help="Choose dummy rain intensity")
+    dummy_parser.add_argument("variant", choices=["SRI7", "SRI10", "SRI10_4h", "none", "flat"], help="Choose dummy rain intensity")
 
     # Subcommand 5: Telegram Bot
     subparsers.add_parser("telegram", help="Starte den Telegram-Bot")
