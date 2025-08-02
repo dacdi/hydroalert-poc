@@ -1,11 +1,12 @@
 import argparse
 
 from src.io.download_layers import download_all_wms_layers
-from src.analysis.forecast_area import save_full_rain_forecast_grid
+
 from src.utils.utils_logger import get_logger
 from src.io.load_locations import get_default_location
 from src.analysis.classify_rain_intensity import classify_rain_stage
 from src.io.generate_dummy_data import generate_dummy_rain_data
+from src.analysis.forecast_area import RainGridForecaster
 
 logger = get_logger()
 
@@ -40,8 +41,12 @@ def main():
         logger.info("🌍 Starte 24h-Niederschlags-Rasteranalyse …")
         lat, lon = get_default_location()
         logger.debug(f"Using location – Latitude: {lat}, Longitude: {lon}")
-        save_full_rain_forecast_grid(center_lat=lat, center_lon=lon)
-        logger.info("✅ Rastervorhersage abgeschlossen")
+        forecaster = RainGridForecaster(
+            center_lat=lat,
+            center_lon=lon
+        )
+        forecaster.save_full_rain_forecast_grid()
+        logger.info("24h-Raster erfolgreich geladen.")
 
     elif args.command == "evaluate":
         logger.info("🌍 Starte mit Analyse vorhandener Regendaten")
