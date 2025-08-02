@@ -1,0 +1,5 @@
+2025-08-02 11:14:38 [DEBUG] main.py:31:main - 📊 CLI Argumente: Namespace(command='generate-dummy', variant='SRI7')
+2025-08-02 11:14:38 [INFO] main.py:52:main - 🧪 Generating dummy rain data …
+2025-08-02 11:14:38 [DEBUG] main.py:53:main - Using variant for rain intesnity: SRI7
+2025-08-02 11:14:38 [INFO] generate_dummy_data.py:27:generate_dummy_rain_data - 🧪 Overwriting CSV with dummy data: variant=SRI7
+2025-08-02 11:14:38 [INFO] generate_dummy_data.py:48:generate_dummy_rain_data - ✅ Dummy data written to: output/rain_grid_24h.csv
