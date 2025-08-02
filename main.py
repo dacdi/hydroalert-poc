@@ -7,6 +7,7 @@ from src.io.load_locations import get_default_location
 from src.analysis.classify_rain_intensity import classify_rain_stage
 from src.io.generate_dummy_data import generate_dummy_rain_data
 from src.analysis.forecast_area import RainGridForecaster
+from src.io.telegram_bot import run_bot
 
 logger = get_logger()
 
@@ -28,6 +29,10 @@ def main():
     dummy_parser = subparsers.add_parser("generate-dummy", help="Generate dummy rain data for testing")
     dummy_parser.add_argument("variant", choices=["SRI7", "SRI10"], help="Choose dummy rain intensity")
 
+    # Subcommand 5: Telegram Bot
+    subparsers.add_parser("telegram", help="Starte den Telegram-Bot")
+
+
     args = parser.parse_args()
     logger.debug(f"📊 CLI Argumente: {args}")
 
@@ -46,7 +51,7 @@ def main():
             center_lon=lon
         )
         forecaster.save_full_rain_forecast_grid()
-        logger.info("24h-Raster erfolgreich geladen.")
+        logger.info("24h-Raster erfolgreich geladen")
 
     elif args.command == "evaluate":
         logger.info("🌍 Starte mit Analyse vorhandener Regendaten")
@@ -58,6 +63,9 @@ def main():
         logger.debug(f"Using variant for rain intesnity: {args.variant}")
         generate_dummy_rain_data(variant=args.variant)
 
+    elif args.command == "telegram":
+        logger.info("📲 Starte Telegram-Bot …")
+        run_bot()
 
 if __name__ == "__main__":
     main()
