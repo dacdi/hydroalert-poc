@@ -35,7 +35,7 @@ def test_save_full_grid_with_mock(mock_fetch, tmp_path: Path, dummy_data: Dict):
     # Mock fetch_forecast_data to return our dummy_data for every grid point
     mock_fetch.return_value = dummy_data
 
-    # Define output path inside pytest's temp directory
+    # Define output path inside pytest's temp.py directory
     output_file = tmp_path / "mock_rain_grid.csv"
 
     # Call the function under test
