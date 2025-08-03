@@ -1,13 +1,3 @@
-#!/usr/bin/env python3
-"""
-Telegram-Bot für HydroAlert
-
-HydroPrompt-Richtlinien:
-- Klare Log-Ausgaben
-- Fehlerhandling
-- Hauptsteuerung über run_bot
-- Sendet neben Text auch die KML-Datei des relevanten Layers
-"""
 import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
