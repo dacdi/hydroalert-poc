@@ -1,4 +1,5 @@
 import argparse
+from logging import Logger
 
 from src.io.download_layers import download_all_wms_layers
 from src.utils.utils_logger import get_logger
@@ -10,10 +11,15 @@ from src.io.telegram_bot import run_bot
 from src.io.flood_cache import generate_csv_cache
 
 
-logger = get_logger()
+logger: Logger = get_logger()
 
 
-def main():
+def main() -> None:
+    """Run the HydroAlert command-line interface.
+
+    Parses command-line arguments and dispatches subcommands to handle
+    data downloads, forecasting, evaluation and other utilities.
+    """
     parser = argparse.ArgumentParser(description="HydroAlert Tool")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
