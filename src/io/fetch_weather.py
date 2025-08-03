@@ -1,13 +1,19 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 from src.utils.utils_logger import get_logger
 
 logger = get_logger()
 
 
+def _dummy_forecast(lat: float, lon: float) -> dict:
+    """Generates a 24h forecast with zero precipitation as fallback."""
+    now = datetime.now(pytz.timezone("Europe/Berlin")).replace(minute=0, second=0, microsecond=0)
+    times = [(now + timedelta(hours=i)).strftime("%Y-%m-%dT%H:00") for i in range(24)]
+    return {"hourly": {"time": times, "precipitation": [0.0] * 24}}
 
-def fetch_forecast_data(lat: float, lon: float) -> dict | None:
+
+def fetch_forecast_data(lat: float, lon: float) -> dict:
     """
     Ruft stündliche Niederschlagsvorhersage für 24 Stunden von Open-Meteo ab.
 
@@ -16,7 +22,7 @@ def fetch_forecast_data(lat: float, lon: float) -> dict | None:
         lon (float): Längengrad
 
     Returns:
-        dict | None: Wetterdaten oder None bei Fehler
+        dict: Wetterdaten oder Dummy-Daten bei Fehler
     """
     url = (
         "https://api.open-meteo.com/v1/forecast?"
@@ -35,13 +41,13 @@ def fetch_forecast_data(lat: float, lon: float) -> dict | None:
             logger.warning(
                 f"⚠️ Anfrage fehlgeschlagen für ({lat}, {lon}): {response.status_code}"
             )
-            return None
+            return _dummy_forecast(lat, lon)
 
         return response.json()
 
-    except Exception as e:
+    except Exception:
         logger.exception(f"❌ Fehler bei API-Anfrage für ({lat}, {lon})")
-        return None
+        return _dummy_forecast(lat, lon)
 
 
 def log_precipitation_series(data: dict) -> None:

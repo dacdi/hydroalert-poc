@@ -2,19 +2,20 @@
 
 import csv
 from datetime import datetime, timedelta
+import pytz
 from pathlib import Path
 from typing import Dict
 
 import pytest
 from unittest.mock import patch
 
-from src.analysis.forecast_area import save_full_rain_forecast_grid
+from src.analysis.forecast_area import RainGridForecaster
 
 
 @pytest.fixture
 def dummy_data() -> Dict:
     """Provides dummy forecast data with hourly precipitation and time values."""
-    base_time = datetime.now().replace(minute=0, second=0, microsecond=0)
+    base_time = datetime.now(pytz.timezone("Europe/Berlin")).replace(minute=0, second=0, microsecond=0)
     times = [
         (base_time + timedelta(hours=i)).strftime("%Y-%m-%dT%H:00") for i in range(24)
     ]
@@ -39,14 +40,14 @@ def test_save_full_grid_with_mock(mock_fetch, tmp_path: Path, dummy_data: Dict):
     output_file = tmp_path / "mock_rain_grid.csv"
 
     # Call the function under test
-    save_full_rain_forecast_grid(
-        output_path=str(output_file),
+    forecaster = RainGridForecaster(
         center_lat=49.35,
         center_lon=8.15,
-        radius_km=1,  # small grid for fast test
+        radius_km=1,
         step_km=1,
-        delay=0  # skip sleep for speed
+        delay=0,
     )
+    forecaster.save_full_rain_forecast_grid(output_path=str(output_file))
 
     # Assertions
     assert output_file.exists()

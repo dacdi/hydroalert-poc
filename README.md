@@ -10,6 +10,7 @@
 - 🗺️ Flächenanalyse auf Raster um gegebene Orte aus `testorte.csv`
 - 📄 CSV-Ausgabe aller Rasterpunkte mit Regenwerten (`rain_grid_24h.csv`)
 - 🧪 Generierung reproduzierbarer Dummy-Regenfelder für Testszenarien
+- 🛟 Dummy-Forecast als Fallback bei API-Ausfällen
 - 🧠 Automatische Auswahl geeigneter Sturzflutkarten (SRI7 / SRI10)
 - 🧵 Logging aller Schritte für Nachvollziehbarkeit
 - ✅ Unit-Tests für Kernfunktionen (z. B. Schwellenlogik)
@@ -34,10 +35,11 @@ HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-P
 
 ```
 HydroAlert/
-├── data/                      # Eingabe- und Ausgabedaten
+├── data/                      # Eingabedaten
 │   ├── testorte.csv           # Orte mit Koordinaten
-│   └── output/
-│       └── rain_grid_24h.csv  # Ergebnis der Rasterprognose
+│   └── wms_layers/            # heruntergeladene WMS-Layer
+├── output/                    # Ausgabedateien
+│   └── rain_grid_24h.csv      # Ergebnis der Rasterprognose
 │
 ├── src/
 │   ├── analysis/              # Analyse- und Klassifizierungslogik
@@ -45,7 +47,8 @@ HydroAlert/
 │   │   └── classify_rain_intensity.py
 │   ├── io/                    # Datei- und API-Zugriff
 │   │   ├── fetch_weather.py
-│   │   └── generate_dummy.py
+│   │   ├── generate_dummy_data.py
+│   │   └── flood_cache.py
 │   ├── utils/                 # Logging, Grid-Hilfsfunktionen
 │   └── config/                # `.env`-Konfiguration
 │
@@ -98,7 +101,9 @@ pytest
 
 ```env
 TESTORTE_CSV=data/testorte.csv
-OUTPUT_CSV=data/output/rain_grid_24h.csv
+RAIN_GRID_PATH=output/rain_grid_24h.csv
+WMS_LAYERS_DIR=data/wms_layers
+CACHE_DIR=data/cache
 ```
 
 ---
