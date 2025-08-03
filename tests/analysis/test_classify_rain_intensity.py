@@ -25,7 +25,7 @@ def test_classifies_sri10_correctly():
 
 def test_classifies_sri7_correctly():
     with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".csv") as tmp:
-        rows = [[49.0, 8.0] + [20] * 24 for _ in range(100)]  # 100 Punkte über SRI7, unter SRI10
+        rows = [[49.0, 8.0] + [20] + [0] * 23 for _ in range(100)]  # 100 Punkte über SRI7, aber unter SRI10_4h
         write_csv(tmp.name, rows)
         result = classify_rain_stage(tmp.name)
         assert result == "Wassertiefe_SRI7_1h"

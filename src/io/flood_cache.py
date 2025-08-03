@@ -20,20 +20,19 @@ from simplekml import Kml
 from src.analysis.flood_overlay import detect_street_depths
 from src.io.load_locations import get_default_location
 from src.utils.utils_logger import get_logger
+from src.config.config import WMS_LAYERS_DIR, CACHE_DIR
 
 logger = get_logger()
-CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data", "cache")
 LAYERS = {
-    "SRI7":    "data/wms_layers/Wassertiefe_SRI7_1h.png",
-    "SRI10":   "data/wms_layers/Wassertiefe_SRI10_1h.png",
-    "SRI10_4h":"data/wms_layers/Wassertiefe_SRI10_4h.png",
+    "SRI7": os.path.join(WMS_LAYERS_DIR, "Wassertiefe_SRI7_1h.png"),
+    "SRI10": os.path.join(WMS_LAYERS_DIR, "Wassertiefe_SRI10_1h.png"),
+    "SRI10_4h": os.path.join(WMS_LAYERS_DIR, "Wassertiefe_SRI10_4h.png"),
 }
 
 def generate_csv_cache(radius_m: float = 200.0, sample_distance_m: float = 5.0) -> None:
-    """
-    Erzeugt für jeden Layer eine CSV und eine KML-Datei mit Tiefendaten.
-    """
-    os.makedirs(CACHE_DIR, exist_ok=True)
+    """Erzeugt für jeden Layer eine CSV und eine KML-Datei mit Tiefendaten."""
+    cache_dir = os.path.abspath(CACHE_DIR)
+    os.makedirs(cache_dir, exist_ok=True)
 
     lat, lon = get_default_location()
     logger.info(f"📍 Standardort: lat={lat}, lon={lon}")
@@ -52,7 +51,7 @@ def generate_csv_cache(radius_m: float = 200.0, sample_distance_m: float = 5.0) 
         )
 
         # CSV-Ausgabe
-        csv_path = os.path.join(CACHE_DIR, f"flood_{key}.csv")
+        csv_path = os.path.join(cache_dir, f"flood_{key}.csv")
         with open(csv_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow(["street", "depth"])
@@ -85,7 +84,7 @@ def generate_csv_cache(radius_m: float = 200.0, sample_distance_m: float = 5.0) 
             p = kml.newpoint(name=street_name, coords=[(lon_mid, lat_mid)])
             p.description = f"Tiefe: {depths[street_name]}"
 
-        kml_path = os.path.join(CACHE_DIR, f"flood_{key}.kml")
+        kml_path = os.path.join(cache_dir, f"flood_{key}.kml")
         kml.save(kml_path)
         logger.info(f"✅ KML-Cache geschrieben: {kml_path}")
 
