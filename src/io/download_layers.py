@@ -6,13 +6,13 @@ from src.utils.utils_logger import get_logger
 logger = get_logger()
 
 
-def download_all_wms_layers():
+def download_all_wms_layers() -> None:
     """Downloads predefined WMS layers from the RLP geoserver and saves them as PNG files."""
     # Zielverzeichnis relativ zum Projekt-Hauptverzeichnis
     output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "data", "wms_layers")
     output_dir = os.path.abspath(output_dir)
     os.makedirs(output_dir, exist_ok=True)
-    print(f"📂 Zielverzeichnis: {output_dir}\n")
+    logger.info("📂 Zielverzeichnis: %s", output_dir)
 
     # Bounding Box für ca. 20x20 km² – Region Neustadt (EPSG:25832)
     bbox = "432000,5461000,452000,5481000"
@@ -34,7 +34,7 @@ def download_all_wms_layers():
     base_url = "https://geodienste-wasser.rlp-umwelt.de/geoserver/Sturzflut/wms"
 
     for layer_name, short_name in layers.items():
-        print(f"⬇️ Lade Layer: {layer_name}")
+        logger.info("⬇️ Lade Layer: %s", layer_name)
 
         params = {
             "service": "WMS",
@@ -50,10 +50,13 @@ def download_all_wms_layers():
 
         try:
             response = requests.get(base_url, params=params)
-            print(f"🌐 Request-URL: {response.url}")
-            print(f"📦 Antwort-Code: {response.status_code}")
-            print(f"📦 Content-Type: {response.headers.get('Content-Type', 'unbekannt')}")
-            print(f"📏 Bildgröße (Bytes): {len(response.content)}")
+            logger.debug("🌐 Request-URL: %s", response.url)
+            logger.debug("📦 Antwort-Code: %s", response.status_code)
+            logger.debug(
+                "📦 Content-Type: %s",
+                response.headers.get("Content-Type", "unbekannt"),
+            )
+            logger.debug("📏 Bildgröße (Bytes): %s", len(response.content))
 
             if response.status_code == 200 and response.headers.get("Content-Type") == "image/png":
                 filename = os.path.join(output_dir, f"{short_name}.png")
@@ -61,14 +64,14 @@ def download_all_wms_layers():
                     file.write(response.content)
 
                 if os.path.isfile(filename):
-                    print(f"✅ Gespeichert: {filename}\n")
+                    logger.info("✅ Gespeichert: %s", filename)
                 else:
-                    print(f"⚠️ Datei wurde nicht geschrieben: {filename}\n")
+                    logger.warning("⚠️ Datei wurde nicht geschrieben: %s", filename)
             else:
-                print(f"❌ Fehlerhafte Antwort oder kein PNG – Layer: {layer_name}\n")
+                logger.error("❌ Fehlerhafte Antwort oder kein PNG – Layer: %s", layer_name)
 
-        except Exception as exc:
-            print(f"❌ Ausnahme beim Laden von {layer_name}: {exc}\n")
+        except Exception:
+            logger.exception("❌ Ausnahme beim Laden von %s", layer_name)
 
 
 if __name__ == "__main__":
