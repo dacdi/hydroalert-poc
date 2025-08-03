@@ -10,6 +10,7 @@ from typing import List, Tuple, Optional
 from src.utils.geo_utils import generate_grid
 from src.io.fetch_weather import fetch_forecast_data
 from src.utils.utils_logger import get_logger
+from src.config.config import RAIN_GRID_PATH
 
 logger = get_logger()
 
@@ -79,7 +80,7 @@ class RainGridForecaster:
                 writer.writerow([f"{lat:.5f}", f"{lon:.5f}"] + rain_series)
         logger.info(f"CSV written to: {path}")
 
-    def save_full_rain_forecast_grid(self, output_path: str = "output/rain_grid_24h.csv") -> None:
+    def save_full_rain_forecast_grid(self, output_path: str = RAIN_GRID_PATH) -> None:
         logger.info(
             f"Starting grid forecast: center=({self.center_lat}, {self.center_lon}), "
             f"radius={self.radius_km} km, step={self.step_km} km"

@@ -13,6 +13,7 @@ import csv
 import os
 from typing import List
 from src.utils.utils_logger import get_logger
+from src.config.config import RAIN_GRID_PATH
 
 logger = get_logger()
 
@@ -29,7 +30,7 @@ SRI10_4H_TOTAL = 44.0       # >40 mm in 4h, löst SRI10_4h aus
 
 
 def generate_dummy_rain_data(
-    output_path: str = "output/rain_grid_24h.csv",
+    output_path: str = RAIN_GRID_PATH,
     variant: str = "SRI7"
 ) -> None:
     """
