@@ -6,12 +6,15 @@
 
 ## 🔧 Aktuelle Features (Stand: August 2025)
 
-- 📡 Abruf stündlicher Niederschlagsprognose für 24h aus Open-Meteo API
+- 📡 Abruf stündlicher Niederschlagsprognose für 24h aus Open‑Meteo API
 - 🗺️ Flächenanalyse auf Raster um gegebene Orte aus `testorte.csv`
 - 📄 CSV-Ausgabe aller Rasterpunkte mit Regenwerten (`rain_grid_24h.csv`)
 - 🧪 Generierung reproduzierbarer Dummy-Regenfelder für Testszenarien
 - 🛟 Dummy-Forecast als Fallback bei API-Ausfällen
 - 🧠 Automatische Auswahl geeigneter Sturzflutkarten (SRI7 / SRI10)
+- 🌐 Download aller benötigten WMS-Layer
+- 🧾 CSV-Cache überfluteter Straßen erzeugen
+- 📲 Telegram-Bot zur Benachrichtigung
 - 🧵 Logging aller Schritte für Nachvollziehbarkeit
 - ✅ Unit-Tests für Kernfunktionen (z. B. Schwellenlogik)
 
@@ -34,28 +37,42 @@ HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-P
 ## 🗂️ Projektstruktur
 
 ```
-HydroAlert/
-├── data/                      # Eingabedaten
-│   ├── testorte.csv           # Orte mit Koordinaten
-│   └── wms_layers/            # heruntergeladene WMS-Layer
-├── output/                    # Ausgabedateien
-│   └── rain_grid_24h.csv      # Ergebnis der Rasterprognose
+
+hydroalert-poc/
+├── data/                      # Eingabedaten und WMS-Layer
+│   ├── WMS_Layer__bersicht.csv
+│   ├── testorte.csv
+│   └── wms_layers/
+│
+├── output/                    # Modell- und Log-Ausgaben
+│   ├── rain_grid_24h.csv
+│   └── run.log
 │
 ├── src/
 │   ├── analysis/              # Analyse- und Klassifizierungslogik
-│   │   ├── forecast_area.py
-│   │   └── classify_rain_intensity.py
+│   │   ├── classify_rain_intensity.py
+│   │   ├── flood_overlay.py
+│   │   └── forecast_area.py
 │   ├── io/                    # Datei- und API-Zugriff
+│   │   ├── download_layers.py
 │   │   ├── fetch_weather.py
+│   │   ├── flood_cache.py
 │   │   ├── generate_dummy_data.py
-│   │   └── flood_cache.py
+│   │   ├── load_locations.py
+│   │   └── telegram_bot.py
 │   ├── utils/                 # Logging, Grid-Hilfsfunktionen
-│   └── config/                # `.env`-Konfiguration
+│   │   ├── geo_utils.py
+│   │   └── utils_logger.py
+│   └── config/
+│       └── config.py
 │
 ├── tests/                     # Unit-Tests
-├── main.py                   # Einstiegspunkt mit `argparse`
-├── .env                      # Pfad-Konfiguration
-└── requirements.txt
+│   ├── analysis/
+│   └── utils/
+│
+├── main.py                    # Einstiegspunkt mit `argparse`
+├── requirements.txt
+└── README.md
 ```
 
 ---
@@ -63,17 +80,23 @@ HydroAlert/
 ## ▶️ CLI-Nutzung
 
 ```bash
-# 📡 Regen für 24h-Fläche mit realen Wetterdaten abrufen
-PYTHONPATH=. python3 src/main.py forecast
+# 🌐 WMS-Karten (Sturzflutlayer) herunterladen
+PYTHONPATH=. python3 main.py download-layers
 
-# 🧪 Dummy-Regenfelder für SRI7 erzeugen (zum Testen)
-PYTHONPATH=. python3 src/main.py generate-dummy SRI7
+# 📡 Regen für 24h-Fläche mit realen Wetterdaten abrufen
+PYTHONPATH=. python3 main.py forecast
 
 # 🧠 Analyse: Welche Starkregenkarten sind relevant?
-PYTHONPATH=. python3 src/main.py evaluate
+PYTHONPATH=. python3 main.py evaluate
 
-# 🌐 WMS-Karten (Sturzflutlayer) herunterladen
-PYTHONPATH=. python3 src/main.py download-layers
+# 🧪 Dummy-Regenfelder erzeugen (z. B. SRI7)
+PYTHONPATH=. python3 main.py generate-dummy SRI7
+
+# 🗄 CSV-Cache der überfluteten Straßen erzeugen
+PYTHONPATH=. python3 main.py generate-cache --radius 200 --sample-distance 5
+
+# 📲 Telegram-Bot starten
+PYTHONPATH=. python3 main.py telegram
 ```
 
 ---
@@ -101,9 +124,10 @@ pytest
 
 ```env
 TESTORTE_CSV=data/testorte.csv
-RAIN_GRID_PATH=output/rain_grid_24h.csv
-WMS_LAYERS_DIR=data/wms_layers
-CACHE_DIR=data/cache
+LOG_FILE_PATH=output/run.log
+TERMINAL_LOG_LEVEL=INFO
+FILE_LOG_LEVEL=DEBUG
+TELEGRAM_BOT_TOKEN=
 ```
 
 ---
