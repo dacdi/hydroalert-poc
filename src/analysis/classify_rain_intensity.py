@@ -3,6 +3,7 @@ import os
 from typing import List
 
 from src.utils.utils_logger import get_logger
+from src.config.config import RAIN_GRID_PATH
 
 # Schwellenwerte
 SRI7_THRESHOLD = 15            # mm/h
@@ -13,7 +14,7 @@ MIN_AREA_FRACTION = 0.5        # 50 %
 logger = get_logger()
 
 
-def classify_rain_stage(csv_path: str = "output/rain_grid_24h.csv") -> str:
+def classify_rain_stage(csv_path: str = RAIN_GRID_PATH) -> str:
     """
     Analysiert ein CSV mit 24h-Regenraster und gibt den passenden Layernamen zurück.
 

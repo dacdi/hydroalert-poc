@@ -10,6 +10,7 @@
 - 🗺️ Flächenanalyse auf Raster um gegebene Orte aus `testorte.csv`
 - 📄 CSV-Ausgabe aller Rasterpunkte mit Regenwerten (`rain_grid_24h.csv`)
 - 🧪 Generierung reproduzierbarer Dummy-Regenfelder für Testszenarien
+- 🛟 Dummy-Forecast als Fallback bei API-Ausfällen
 - 🧠 Automatische Auswahl geeigneter Sturzflutkarten (SRI7 / SRI10)
 - 🌐 Download aller benötigten WMS-Layer
 - 🧾 CSV-Cache überfluteter Straßen erzeugen
@@ -36,6 +37,7 @@ HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-P
 ## 🗂️ Projektstruktur
 
 ```
+
 hydroalert-poc/
 ├── data/                      # Eingabedaten und WMS-Layer
 │   ├── WMS_Layer__bersicht.csv

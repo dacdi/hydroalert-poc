@@ -2,15 +2,15 @@ import os
 import requests
 
 from src.utils.utils_logger import get_logger
+from src.config.config import WMS_LAYERS_DIR
 
 logger = get_logger()
 
 
 def download_all_wms_layers() -> None:
     """Downloads predefined WMS layers from the RLP geoserver and saves them as PNG files."""
-    # Zielverzeichnis relativ zum Projekt-Hauptverzeichnis
-    output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "data", "wms_layers")
-    output_dir = os.path.abspath(output_dir)
+    # Zielverzeichnis aus der Konfiguration laden
+    output_dir = os.path.abspath(WMS_LAYERS_DIR)
     os.makedirs(output_dir, exist_ok=True)
     logger.info("📂 Zielverzeichnis: %s", output_dir)
 
