@@ -27,7 +27,9 @@ def main() -> None:
     subparsers.add_parser("download-layers", help="Lade alle WMS-Layer für das PoC herunter")
 
     # Subcommand 2: forecast
-    subparsers.add_parser("forecast", help="Starte die 24h-Flächenvorhersage mit echten Wetterdaten")
+    forecast_parser = subparsers.add_parser("forecast", help="24h Regenvorhersage")
+    forecast_parser.add_argument("--lat", type=float, help="Geografische Breite (z. B. 49.45)")
+    forecast_parser.add_argument("--lon", type=float, help="Geografische Länge (z. B. 8.18)")
 
     # Subcommand 3: evaluate
     subparsers.add_parser("evaluate", help="Analysiere die bereitgestellten Regendaten auf Hinweise zu SKI Regenereigniss")
@@ -67,15 +69,14 @@ def main() -> None:
         logger.info("✅ WMS-Layer wurden erfolgreich heruntergeladen.")
 
     elif args.command == "forecast":
-        logger.info("🌍 Starte 24h-Niederschlags-Rasteranalyse …")
-        lat, lon = get_default_location()
-        logger.debug(f"Using location – Latitude: {lat}, Longitude: {lon}")
-        forecaster = RainGridForecaster(
-            center_lat=lat,
-            center_lon=lon
-        )
-        forecaster.save_full_rain_forecast_grid()
-        logger.info("24h-Raster erfolgreich geladen")
+        if args.lat is None or args.lon is None:
+            logger.error("❌ Bitte gib sowohl --lat als auch --lon an, z. B. --lat 49.45 --lon 8.18")
+            sys.exit(1)
+
+        lat = round(args.lat, 4)
+        lon = round(args.lon, 4)
+        logger.info(f"📍 Vorhersage für Koordinaten: lat={lat}, lon={lon}")
+
 
     elif args.command == "evaluate":
         logger.info("🌍 Starte mit Analyse vorhandener Regendaten")
