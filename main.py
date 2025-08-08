@@ -1,14 +1,13 @@
 import argparse
 from logging import Logger
 
-from src.io.download_layers import download_all_wms_layers
 from src.utils.utils_logger import get_logger
-from src.io.load_locations import get_default_location
-from src.analysis.classify_rain_intensity import classify_rain_stage
-from src.io.generate_dummy_data import generate_dummy_rain_data
-from src.analysis.forecast_area import RainGridForecaster
-from src.io.telegram_bot import run_bot
-from src.io.flood_cache import generate_csv_cache
+from src.use_cases.download_layers_use_case import run_download_layers_use_case
+from src.use_cases.forecast_use_case import run_forecast_use_case
+from src.use_cases.evaluate_use_case import run_evaluate_use_case
+from src.use_cases.dummy_generation_use_case import run_dummy_generation_use_case
+from src.use_cases.telegram_bot_use_case import run_telegram_bot_use_case
+from src.use_cases.generate_cache_use_case import run_generate_cache_use_case
 
 
 logger: Logger = get_logger()
@@ -64,41 +63,22 @@ def main() -> None:
 
 
     if args.command == "download-layers":
-        logger.info("🌐 Lade WMS-Layer herunter …")
-        download_all_wms_layers()
-        logger.info("✅ WMS-Layer wurden erfolgreich heruntergeladen.")
+        run_download_layers_use_case(args)
 
     elif args.command == "forecast":
-        if args.lat is None or args.lon is None:
-            logger.error("❌ Bitte gib sowohl --lat als auch --lon an, z. B. --lat 49.45 --lon 8.18")
-            sys.exit(1)
-
-        lat = round(args.lat, 4)
-        lon = round(args.lon, 4)
-        logger.info(f"📍 Vorhersage für Koordinaten: lat={lat}, lon={lon}")
-
+        run_forecast_use_case(args)
 
     elif args.command == "evaluate":
-        logger.info("🌍 Starte mit Analyse vorhandener Regendaten")
-        result = classify_rain_stage()
-        logger.info(f"✅ Empfohlener Layer: {result}")
+        run_evaluate_use_case(args)
 
     elif args.command == "generate-dummy":
-        logger.info("🧪 Generating dummy rain data …")
-        logger.debug(f"Using variant for rain intesnity: {args.variant}")
-        generate_dummy_rain_data(variant=args.variant)
+        run_dummy_generation_use_case(args)
 
     elif args.command == "telegram":
-        logger.info("📲 Starte Telegram-Bot …")
-        run_bot()
+        run_telegram_bot_use_case(args)
 
     elif args.command == "generate-cache":
-        logger.info("🗄 Generiere Flood-CSV-Cache …")
-        generate_csv_cache(
-            radius_m=args.radius,
-            sample_distance_m=args.sample_distance
-        )
-        logger.info("✅ Cache-Erzeugung abgeschlossen.")
+        run_generate_cache_use_case(args)
 
 if __name__ == "__main__":
     main()
