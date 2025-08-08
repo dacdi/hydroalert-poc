@@ -1,22 +1,19 @@
-2025-08-08 12:43:14 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 100/100 Raster mit SRI10_1h, 100/100 mit SRI10_4h, 100/100 mit SRI7
-2025-08-08 12:43:14 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 0/100 Raster mit SRI10_1h, 0/100 mit SRI10_4h, 100/100 mit SRI7
-2025-08-08 12:43:14 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 0/100 Raster mit SRI10_1h, 0/100 mit SRI10_4h, 0/100 mit SRI7
-2025-08-08 12:43:14 [ERROR] classify_rain_intensity.py:20:read_rain_rows - ❌ Datei nicht gefunden: non_existent_file.csv
-2025-08-08 12:43:14 [ERROR] classify_rain_intensity.py:87:classify_rain_stage - ❌ Keine gültigen Regenwerte gefunden.
-2025-08-08 12:43:14 [INFO] forecast_area.py:84:save_full_rain_forecast_grid - Starting grid forecast: center=(49.35, 8.15), radius=1 km, step=1 km
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 1/9: (49.34101, 8.13624)
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 2/9: (49.34101, 8.15000)
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 3/9: (49.34101, 8.16376)
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 4/9: (49.35000, 8.13624)
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 5/9: (49.35000, 8.15000)
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 6/9: (49.35000, 8.16376)
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 7/9: (49.35899, 8.13623)
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 8/9: (49.35899, 8.15000)
-2025-08-08 12:43:14 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 9/9: (49.35899, 8.16377)
-2025-08-08 12:43:14 [INFO] forecast_area.py:67:generate_forecast_grid - Progress: 9/9 points processed.
-2025-08-08 12:43:14 [INFO] forecast_area.py:81:write_forecast_csv - CSV written to: /tmp/pytest-of-root/pytest-0/test_save_full_grid_with_mock0/mock_rain_grid.csv
-2025-08-08 12:43:14 [INFO] dummy_generation_use_case.py:12:run_dummy_generation_use_case - 🧪 Generating dummy rain data …
-2025-08-08 12:43:14 [DEBUG] dummy_generation_use_case.py:13:run_dummy_generation_use_case - Using variant for rain intensity: SRI7
-2025-08-08 12:43:14 [INFO] forecast_use_case.py:21:run_forecast_use_case - 📍 Vorhersage für Koordinaten: lat=49.45, lon=8.18
-2025-08-08 12:43:14 [INFO] forecast_use_case.py:25:run_forecast_use_case - ✅ Vorhersage erfolgreich gespeichert.
-2025-08-08 12:43:14 [ERROR] forecast_use_case.py:14:run_forecast_use_case - ❌ Bitte gib sowohl --lat als auch --lon an, z. B. --lat 49.45 --lon 8.18
+2025-08-08 13:34:52 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 100/100 Raster mit SRI10_1h, 100/100 mit SRI10_4h, 100/100 mit SRI7
+2025-08-08 13:34:52 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 0/100 Raster mit SRI10_1h, 0/100 mit SRI10_4h, 100/100 mit SRI7
+2025-08-08 13:34:52 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 0/100 Raster mit SRI10_1h, 0/100 mit SRI10_4h, 0/100 mit SRI7
+2025-08-08 13:34:52 [ERROR] classify_rain_intensity.py:20:read_rain_rows - ❌ Datei nicht gefunden: non_existent_file.csv
+2025-08-08 13:34:52 [ERROR] classify_rain_intensity.py:87:classify_rain_stage - ❌ Keine gültigen Regenwerte gefunden.
+2025-08-08 13:34:52 [INFO] forecast_area.py:84:save_full_rain_forecast_grid - Starting grid forecast: center=(49.35, 8.15), radius=1 km, step=1 km
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 1/9: (49.34101, 8.13624)
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 2/9: (49.34101, 8.15000)
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 3/9: (49.34101, 8.16376)
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 4/9: (49.35000, 8.13624)
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 5/9: (49.35000, 8.15000)
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 6/9: (49.35000, 8.16376)
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 7/9: (49.35899, 8.13623)
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 8/9: (49.35899, 8.15000)
+2025-08-08 13:34:52 [DEBUG] forecast_area.py:58:generate_forecast_grid - Processing point 9/9: (49.35899, 8.16377)
+2025-08-08 13:34:52 [INFO] forecast_area.py:67:generate_forecast_grid - Progress: 9/9 points processed.
+2025-08-08 13:34:52 [INFO] forecast_area.py:81:write_forecast_csv - CSV written to: /tmp/pytest-of-root/pytest-0/test_save_full_grid_with_mock0/mock_rain_grid.csv
+2025-08-08 13:34:52 [INFO] dummy_generation_use_case.py:12:run_dummy_generation_use_case - 🧪 Generating dummy rain data …
+2025-08-08 13:34:52 [DEBUG] dummy_generation_use_case.py:13:run_dummy_generation_use_case - Using variant for rain intensity: SRI7
