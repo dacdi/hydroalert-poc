@@ -23,7 +23,9 @@ def main() -> None:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # Subcommand 1: download-layers
-    subparsers.add_parser("download-layers", help="Lade alle WMS-Layer für das PoC herunter")
+    layers_parser = subparsers.add_parser("download-layers", help="Lade WMS Layer herunter")
+    layers_parser.add_argument("--lat", type=float, help="Geografische Breite (z. B. 49.45)")
+    layers_parser.add_argument("--lon", type=float, help="Geografische Länge (z. B. 8.18)")
 
     # Subcommand 2: forecast
     forecast_parser = subparsers.add_parser("forecast", help="24h Regenvorhersage")

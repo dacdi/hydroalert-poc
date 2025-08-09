@@ -1,4 +1,5 @@
-from typing import Mapping, Iterable
+import os
+from typing import List, Optional
 from src.io.wms_client import build_wms_params, fetch_wms_png, BBox
 from src.io.file_io import ensure_dir, save_png
 from src.config.config import (
@@ -8,34 +9,24 @@ from src.utils.utils_logger import get_logger
 
 logger = get_logger()
 
-def download_all_wms_layers(
-    layers: Mapping[str, str] | None = None,
-    bbox: BBox = DEFAULT_BBOX,
-    size: tuple[int, int] = DEFAULT_SIZE,
-    base_url: str = WMS_BASE_URL,
-    outdir: str = WMS_LAYERS_DIR,
-) -> list[str]:
-    """Lädt alle vordefinierten WMS-Layer und speichert sie als PNG. Gibt die Pfade zurück."""
-    layers = layers or DEFAULT_LAYERS
-    outpath = ensure_dir(outdir)
-    w, h = size
-    saved: list[str] = []
+def download_all_wms_layers(bbox: Optional[BBox] = None, target_dir: Optional[str] = None) -> List[str]:
+    """
+    Lädt alle vordefinierten WMS-Layer.
+    - Standard: speichert nach WMS_LAYERS_DIR
+    - Wenn target_dir gesetzt: speichert dorthin (z. B. data/cache/latXX_lonYY/)
+    """
+    outdir_base = target_dir if target_dir else WMS_LAYERS_DIR
+    outdir = ensure_dir(outdir_base)
 
-    for full_layer, short_name in layers.items():
+    w, h = DEFAULT_SIZE
+    use_bbox = bbox or DEFAULT_BBOX
+    saved: List[str] = []
+
+    for full_layer, short_name in DEFAULT_LAYERS.items():
         logger.info("⬇️ Downloading layer: %s", full_layer)
-        params = build_wms_params(full_layer, bbox, w, h)
-        content = fetch_wms_png(base_url, params)
-        saved.append(save_png(content, outpath, short_name))
+        params = build_wms_params(full_layer, use_bbox, w, h)
+        content = fetch_wms_png(WMS_BASE_URL, params)
+        saved.append(save_png(content, outdir, short_name))
 
-    logger.info("✅ %d Layer gespeichert in %s", len(saved), outpath)
+    logger.info("✅ %d Layer gespeichert in %s", len(saved), outdir)
     return saved
-
-def download_selected_layers(
-    selected: Iterable[str],
-    layers: Mapping[str, str] | None = None,
-    **kwargs,
-) -> list[str]:
-    """Lädt nur ausgewählte Layer (Keys = volle Layernamen)."""
-    layers = layers or DEFAULT_LAYERS
-    submap = {k: layers[k] for k in selected if k in layers}
-    return download_all_wms_layers(layers=submap, **kwargs)
