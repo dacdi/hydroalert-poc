@@ -3,7 +3,7 @@ from logging import Logger
 from typing import Tuple, Optional
 from pyproj import Transformer
 
-from src.analysis.generate_layers import download_all_wms_layers
+from src.services.wms_downloader import download_all_wms_layers
 from src.utils.utils_logger import get_logger
 from src.io.wms_client import BBox
 from src.utils.naming import cache_path_for_latlon

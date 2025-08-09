@@ -7,6 +7,9 @@ from src.config.config import (
 )
 from src.utils.utils_logger import get_logger
 
+from src.services.wms_downloader import download_all_wms_layers  # re-export
+
+
 logger = get_logger()
 
 def download_all_wms_layers(bbox: Optional[BBox] = None, target_dir: Optional[str] = None) -> List[str]:
