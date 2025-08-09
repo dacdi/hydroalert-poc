@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from typing import List, Tuple, Optional
 
 from src.utils.geo_utils import generate_grid
-from src.io.fetch_weather import fetch_forecast_data
+from src.io.forecast_client import fetch_forecast_24h
 from src.utils.utils_logger import get_logger
 from src.config.config import RAIN_GRID_PATH
 
@@ -56,7 +56,7 @@ class RainGridForecaster:
         total = len(grid)
         for idx, (lat, lon) in enumerate(grid, start=1):
             logger.debug(f"Processing point {idx}/{total}: ({lat:.5f}, {lon:.5f})")
-            data = fetch_forecast_data(lat, lon)
+            data = fetch_forecast_24h(lat, lon)
             if data is None:
                 logger.warning(f"No data for ({lat}, {lon}); filling with None.")
                 rain_series = [None] * len(hour_labels)
