@@ -1,3 +1,4 @@
+# src/use_cases/download_layers_use_case.py
 from argparse import Namespace
 from logging import Logger
 from typing import Tuple, Optional
@@ -5,11 +6,12 @@ from pyproj import Transformer
 
 from src.services.wms_downloader import download_all_wms_layers
 from src.utils.utils_logger import get_logger
-from src.io.wms_client import BBox
+from src.domain.models import BBox
 from src.utils.naming import cache_path_for_latlon
 
 logger: Logger = get_logger()
 
+# WGS84 -> EPSG:25832 (ETRS89 / UTM32)
 _TRANSFORMER = Transformer.from_crs("EPSG:4326", "EPSG:25832", always_xy=True)
 
 def _latlon_to_xy25832(lon: float, lat: float) -> Tuple[float, float]:
@@ -22,8 +24,11 @@ def _bbox_from_latlon(lat: float, lon: float, radius_m: int = 2000) -> BBox:
 
 def run_download_layers_use_case(args: Namespace) -> None:
     """
-    Speichert WMS-Layer in data/cache/lat{:.2f}_lon{:.2f}/, wenn --lat/--lon übergeben sind.
-    Ohne lat/lon: Standardziel aus config (WMS_LAYERS_DIR).
+    Wenn --lat/--lon gesetzt:
+      - bilde BBox (2000 m Halbbreite)
+      - speichere alle WMS-Layer unter data/cache/latXX.XX_lonYY.YY/
+    sonst:
+      - nutze reine Defaults aus config (Standard-BBox und -Zielordner)
     """
     logger.info("🌐 Lade WMS-Layer …")
 
@@ -37,7 +42,6 @@ def run_download_layers_use_case(args: Namespace) -> None:
         logger.debug("🧭 lat/lon -> BBox=%s; Zielordner=%s", bbox, target_dir)
         download_all_wms_layers(bbox=bbox, target_dir=target_dir)
     else:
-        # Fallback: alles per Defaults (keine lat/lon → kein spezieller Cache-Ordner)
         download_all_wms_layers()
 
     logger.info("✅ WMS-Layer wurden erfolgreich heruntergeladen.")
