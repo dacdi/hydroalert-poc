@@ -1,20 +1,21 @@
-2025-08-09 10:06:02 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
-2025-08-09 10:06:02 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
-2025-08-09 10:06:02 [DEBUG] __init__.py:1557:<module> - interactive is False
-2025-08-09 10:06:02 [DEBUG] __init__.py:1558:<module> - platform is darwin
-2025-08-09 10:06:02 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
-2025-08-09 10:06:02 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
-2025-08-09 10:06:02 [DEBUG] main.py:62:main - 📊 CLI Argumente: Namespace(command='download-layers')
-2025-08-09 10:06:02 [INFO] download_layers_use_case.py:19:run_download_layers_use_case - 🌐 Lade WMS-Layer …
-2025-08-09 10:06:02 [INFO] generate_layers.py:25:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI07_1h_WaterDepth
-2025-08-09 10:06:02 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
-2025-08-09 10:06:12 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI07_1h_WaterDepth&bbox=432000%2C5461000%2C452000%2C5481000&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-09 10:06:13 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/wms_layers/Wassertiefe_SRI7_1h.png
-2025-08-09 10:06:13 [INFO] generate_layers.py:25:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_1h_WaterDepth
-2025-08-09 10:06:25 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_1h_WaterDepth&bbox=432000%2C5461000%2C452000%2C5481000&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-09 10:06:26 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/wms_layers/Wassertiefe_SRI10_1h.png
-2025-08-09 10:06:26 [INFO] generate_layers.py:25:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_4h_WaterDepth
-2025-08-09 10:06:38 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_4h_WaterDepth&bbox=432000%2C5461000%2C452000%2C5481000&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-09 10:06:39 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/wms_layers/Wassertiefe_SRI10_4h.png
-2025-08-09 10:06:39 [INFO] generate_layers.py:30:download_all_wms_layers - ✅ 3 Layer gespeichert in /Users/dacdi_privat/PycharmProjects/HydroAlert/data/wms_layers
-2025-08-09 10:06:39 [INFO] download_layers_use_case.py:37:run_download_layers_use_case - ✅ WMS-Layer wurden erfolgreich heruntergeladen.
+2025-08-09 23:55:49 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-08-09 23:55:49 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
+2025-08-09 23:55:49 [DEBUG] __init__.py:1557:<module> - interactive is False
+2025-08-09 23:55:49 [DEBUG] __init__.py:1558:<module> - platform is darwin
+2025-08-09 23:55:49 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
+2025-08-09 23:55:49 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
+2025-08-09 23:55:49 [DEBUG] main.py:64:main - 📊 CLI Argumente: Namespace(command='download-layers', lat=50.0, lon=8.1)
+2025-08-09 23:55:49 [INFO] download_layers_use_case.py:28:run_download_layers_use_case - 🌐 Lade WMS-Layer …
+2025-08-09 23:55:49 [DEBUG] download_layers_use_case.py:37:run_download_layers_use_case - 🧭 lat/lon -> BBox=BBox(minx=433500, miny=5537018, maxx=437500, maxy=5541018); Zielordner=data/cache/lat50.00_lon8.10
+2025-08-09 23:55:49 [INFO] generate_layers.py:26:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI07_1h_WaterDepth
+2025-08-09 23:55:49 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
+2025-08-09 23:55:51 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI07_1h_WaterDepth&bbox=433500%2C5537018%2C437500%2C5541018&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-09 23:55:52 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat50.00_lon8.10/Wassertiefe_SRI7_1h.png
+2025-08-09 23:55:52 [INFO] generate_layers.py:26:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_1h_WaterDepth
+2025-08-09 23:55:54 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_1h_WaterDepth&bbox=433500%2C5537018%2C437500%2C5541018&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-09 23:55:55 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat50.00_lon8.10/Wassertiefe_SRI10_1h.png
+2025-08-09 23:55:55 [INFO] generate_layers.py:26:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_4h_WaterDepth
+2025-08-09 23:55:56 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_4h_WaterDepth&bbox=433500%2C5537018%2C437500%2C5541018&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-09 23:55:57 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat50.00_lon8.10/Wassertiefe_SRI10_4h.png
+2025-08-09 23:55:57 [INFO] generate_layers.py:31:download_all_wms_layers - ✅ 3 Layer gespeichert in /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat50.00_lon8.10
+2025-08-09 23:55:57 [INFO] download_layers_use_case.py:43:run_download_layers_use_case - ✅ WMS-Layer wurden erfolgreich heruntergeladen.
