@@ -1,7 +1,7 @@
 import os
 import logging
 from dotenv import load_dotenv
-from src.io.wms_client import BBox
+from src.domain.models import BBox
 
 load_dotenv()
 

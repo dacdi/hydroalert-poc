@@ -1,16 +1,8 @@
-from dataclasses import dataclass
+# src/io/wms_client.py
 from typing import Dict
 import requests
 from requests.adapters import HTTPAdapter, Retry
-
-@dataclass(frozen=True)
-class BBox:
-    minx: int
-    miny: int
-    maxx: int
-    maxy: int
-    def to_wms(self) -> str:
-        return f"{self.minx},{self.miny},{self.maxx},{self.maxy}"
+from src.domain.models import BBox
 
 def build_wms_params(layer: str, bbox: BBox, width: int, height: int) -> Dict[str, str]:
     return {
@@ -38,3 +30,6 @@ def fetch_wms_png(base_url: str, params: Dict[str, str], timeout: float = 15.0) 
     if "image/png" not in ctype:
         raise ValueError(f"Unexpected content type: {ctype}")
     return resp.content
+
+# Temporary compat alias (optional; remove in step 6)
+BBox  # noqa: F401
