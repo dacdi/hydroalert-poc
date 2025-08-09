@@ -1,5 +1,5 @@
 # src/io/forecast_client.py
-from typing import Dict, Any, Tuple, List
+from typing import Dict, Any
 import requests
 
 def fetch_forecast_24h(lat: float, lon: float) -> Dict[str, Any]:
