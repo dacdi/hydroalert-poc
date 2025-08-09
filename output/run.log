@@ -1,21 +1,7 @@
-2025-08-10 00:25:11 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
-2025-08-10 00:25:11 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
-2025-08-10 00:25:11 [DEBUG] __init__.py:1557:<module> - interactive is False
-2025-08-10 00:25:11 [DEBUG] __init__.py:1558:<module> - platform is darwin
-2025-08-10 00:25:11 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
-2025-08-10 00:25:11 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
-2025-08-10 00:25:11 [DEBUG] main.py:64:main - 📊 CLI Argumente: Namespace(command='download-layers', lat=49.45, lon=8.18)
-2025-08-10 00:25:11 [INFO] download_layers_use_case.py:33:run_download_layers_use_case - 🌐 Lade WMS-Layer …
-2025-08-10 00:25:11 [DEBUG] download_layers_use_case.py:42:run_download_layers_use_case - 🧭 lat/lon -> BBox=BBox(438565, 5475805, 442565, 5479805); Zielordner=data/cache/lat49.45_lon8.18
-2025-08-10 00:25:11 [INFO] wms_downloader.py:32:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI07_1h_WaterDepth
-2025-08-10 00:25:11 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
-2025-08-10 00:25:12 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI07_1h_WaterDepth&bbox=438565%2C5475805%2C442565%2C5479805&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-10 00:25:14 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.45_lon8.18/Wassertiefe_SRI7_1h.png
-2025-08-10 00:25:14 [INFO] wms_downloader.py:32:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_1h_WaterDepth
-2025-08-10 00:25:15 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_1h_WaterDepth&bbox=438565%2C5475805%2C442565%2C5479805&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-10 00:25:17 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.45_lon8.18/Wassertiefe_SRI10_1h.png
-2025-08-10 00:25:17 [INFO] wms_downloader.py:32:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_4h_WaterDepth
-2025-08-10 00:25:18 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_4h_WaterDepth&bbox=438565%2C5475805%2C442565%2C5479805&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-10 00:25:20 [INFO] file_io.py:14:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.45_lon8.18/Wassertiefe_SRI10_4h.png
-2025-08-10 00:25:20 [INFO] wms_downloader.py:38:download_all_wms_layers - ✅ 3 Layer gespeichert in /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.45_lon8.18
-2025-08-10 00:25:20 [INFO] download_layers_use_case.py:47:run_download_layers_use_case - ✅ WMS-Layer wurden erfolgreich heruntergeladen.
+2025-08-10 00:50:26 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 100/100 Raster mit SRI10_1h, 100/100 mit SRI10_4h, 100/100 mit SRI7
+2025-08-10 00:50:26 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 0/100 Raster mit SRI10_1h, 0/100 mit SRI10_4h, 100/100 mit SRI7
+2025-08-10 00:50:26 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 0/100 Raster mit SRI10_1h, 0/100 mit SRI10_4h, 0/100 mit SRI7
+2025-08-10 00:50:26 [ERROR] classify_rain_intensity.py:20:read_rain_rows - ❌ Datei nicht gefunden: non_existent_file.csv
+2025-08-10 00:50:26 [ERROR] classify_rain_intensity.py:87:classify_rain_stage - ❌ Keine gültigen Regenwerte gefunden.
+2025-08-10 00:50:26 [INFO] dummy_generation_use_case.py:12:run_dummy_generation_use_case - 🧪 Generating dummy rain data …
+2025-08-10 00:50:26 [DEBUG] dummy_generation_use_case.py:13:run_dummy_generation_use_case - Using variant for rain intensity: SRI7
