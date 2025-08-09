@@ -1,7 +1,7 @@
 # src/use_cases/download_layers_use_case.py
 from argparse import Namespace
 from logging import Logger
-from typing import Tuple, Optional
+from typing import Tuple
 from pyproj import Transformer
 
 from src.services.wms_downloader import download_all_wms_layers
@@ -36,7 +36,8 @@ def run_download_layers_use_case(args: Namespace) -> None:
     lon = getattr(args, "lon", None)
 
     if lat is not None and lon is not None:
-        lat = float(lat); lon = float(lon)
+        lat = float(lat)
+        lon = float(lon)
         bbox = _bbox_from_latlon(lat, lon)
         target_dir = cache_path_for_latlon(lat, lon)
         logger.debug("🧭 lat/lon -> BBox=%s; Zielordner=%s", bbox, target_dir)
