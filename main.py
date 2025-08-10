@@ -2,12 +2,12 @@ import argparse
 from logging import Logger
 
 from src.utils.utils_logger import get_logger
-from src.use_cases.download_layers_use_case import run_download_layers_use_case
-from src.use_cases.forecast_use_case import run_forecast_use_case
-from src.use_cases.evaluate_use_case import run_evaluate_use_case
-from src.use_cases.dummy_generation_use_case import run_dummy_generation_use_case
-from src.use_cases.telegram_bot_use_case import run_telegram_bot_use_case
-from src.use_cases.generate_cache_use_case import run_generate_cache_use_case
+from src.use_cases.download_layers import run_download_layers_use_case
+from src.use_cases.forecast import run_forecast_use_case
+from src.use_cases.evaluate import run_evaluate_use_case
+from src.use_cases.dummy_generation import run_dummy_generation_use_case
+from src.use_cases.telegram_bot import run_telegram_bot_use_case
+from src.use_cases.generate_cache import run_generate_cache_use_case
 
 
 logger: Logger = get_logger()

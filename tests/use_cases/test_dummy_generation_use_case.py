@@ -1,7 +1,7 @@
 from argparse import Namespace
 from unittest.mock import patch
 
-from src.use_cases.dummy_generation_use_case import run_dummy_generation_use_case
+from src.use_cases.dummy_generation import run_dummy_generation_use_case
 
 
 @patch("src.use_cases.dummy_generation_use_case.generate_dummy_rain_data")

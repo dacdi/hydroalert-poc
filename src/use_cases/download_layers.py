@@ -1,10 +1,10 @@
-# src/use_cases/download_layers_use_case.py
+# src/use_cases/download_layers.py
 from argparse import Namespace
 from logging import Logger
 from typing import Tuple
 from pyproj import Transformer
 
-from src.services.wms_downloader import download_all_wms_layers
+from src.services.wms_downloader_service import download_all_wms_layers
 from src.utils.utils_logger import get_logger
 from src.domain.models import BBox
 from src.utils.naming import cache_path_for_latlon

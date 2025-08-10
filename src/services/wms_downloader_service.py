@@ -1,4 +1,4 @@
-# src/services/wms_downloader.py
+# src/services/wms_downloader_service.py
 from typing import Optional, List
 from src.domain.models import BBox
 from src.io.wms_client import build_wms_params, fetch_wms_png

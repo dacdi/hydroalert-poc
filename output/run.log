@@ -1,7 +1,11 @@
-2025-08-10 00:50:26 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 100/100 Raster mit SRI10_1h, 100/100 mit SRI10_4h, 100/100 mit SRI7
-2025-08-10 00:50:26 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 0/100 Raster mit SRI10_1h, 0/100 mit SRI10_4h, 100/100 mit SRI7
-2025-08-10 00:50:26 [INFO] classify_rain_intensity.py:64:log_threshold_stats - 🌧️ Analyse abgeschlossen: 0/100 Raster mit SRI10_1h, 0/100 mit SRI10_4h, 0/100 mit SRI7
-2025-08-10 00:50:26 [ERROR] classify_rain_intensity.py:20:read_rain_rows - ❌ Datei nicht gefunden: non_existent_file.csv
-2025-08-10 00:50:26 [ERROR] classify_rain_intensity.py:87:classify_rain_stage - ❌ Keine gültigen Regenwerte gefunden.
-2025-08-10 00:50:26 [INFO] dummy_generation_use_case.py:12:run_dummy_generation_use_case - 🧪 Generating dummy rain data …
-2025-08-10 00:50:26 [DEBUG] dummy_generation_use_case.py:13:run_dummy_generation_use_case - Using variant for rain intensity: SRI7
+2025-08-10 18:57:39 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-08-10 18:57:39 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
+2025-08-10 18:57:39 [DEBUG] __init__.py:1557:<module> - interactive is False
+2025-08-10 18:57:39 [DEBUG] __init__.py:1558:<module> - platform is darwin
+2025-08-10 18:57:39 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
+2025-08-10 18:57:39 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
+2025-08-10 18:57:39 [DEBUG] main.py:64:main - 📊 CLI Argumente: Namespace(command='forecast', lat=50.0, lon=8.0)
+2025-08-10 18:57:39 [INFO] forecast_area.py:18:save_forecast_grid_to_cache - 📡 Fetch forecast for lat=50.0000 lon=8.0000
+2025-08-10 18:57:39 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
+2025-08-10 18:57:39 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=50.0&longitude=8.0&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-10 18:57:39 [INFO] forecast_area.py:38:save_forecast_grid_to_cache - ✅ Saved forecast grid: /Users/dacdi_privat/PycharmProjects/HydroAlert/output/rain_grid_24h.csv

@@ -1,4 +1,4 @@
-# src/services/forecast_area.py
+# src/services/forecast_area_service.py
 from typing import List, Tuple
 from datetime import datetime, timezone
 from src.io.forecast_client import fetch_forecast_24h
