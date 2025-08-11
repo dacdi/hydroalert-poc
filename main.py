@@ -33,7 +33,9 @@ def main() -> None:
     forecast_parser.add_argument("--lon", type=float, help="Geografische Länge (z. B. 8.18)")
 
     # Subcommand 3: evaluate
-    subparsers.add_parser("evaluate", help="Analysiere die bereitgestellten Regendaten auf Hinweise zu SKI Regenereigniss")
+    evaluate_parser = subparsers.add_parser("evaluate", help="Analysiere die bereitgestellten Regendaten auf Hinweise zu SKI Regenereigniss")
+    evaluate_parser.add_argument("--lat", type=float, help="Geografische Breite (z. B. 49.45)")
+    evaluate_parser.add_argument("--lon", type=float, help="Geografische Länge (z. B. 8.18)")
 
     # Subcommand 4: generate-dummy
     dummy_parser = subparsers.add_parser("generate-dummy", help="Generate dummy rain data for testing")

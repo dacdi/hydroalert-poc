@@ -1,3 +1,5 @@
+#src/config/config.py
+
 import os
 import logging
 from dotenv import load_dotenv
@@ -53,6 +55,13 @@ DEFAULT_LAYERS = {
     "Visdom_SRI07_1h_WaterDepth": "Wassertiefe_SRI7_1h",
     "Visdom_SRI10_1h_WaterDepth": "Wassertiefe_SRI10_1h",
     "Visdom_SRI10_4h_WaterDepth": "Wassertiefe_SRI10_4h",
+}
+
+# Schwellenwerte (Single Source of Truth) – Variante A
+RAIN_THRESHOLDS = {
+    "SRI7_THRESHOLD_mm_h": 13.0,
+    "SRI10_THRESHOLD_mm_h": 23.0,
+    "SRI10_4H_SUM_THRESHOLD_mm": 42.0,
 }
 
 # Forecast-Defaults
