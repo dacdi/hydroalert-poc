@@ -1,92 +1,98 @@
-import csv
-import os
-from typing import List, Tuple
+# src/analysis/classify_rain_intensity.py
+from typing import Dict, List
+import re
+from datetime import datetime
 
+import pandas as pd
 from src.utils.utils_logger import get_logger
-from src.config.config import RAIN_GRID_PATH
-
-# Schwellenwerte
-SRI7_THRESHOLD = 15            # mm/h
-SRI10_THRESHOLD = 25           # mm/h
-SRI10_4H_SUM_THRESHOLD = 40    # mm in 4h (Summe)
-MIN_AREA_FRACTION = 0.5        # 50 %
 
 logger = get_logger()
 
-
-def read_rain_rows(csv_path: str) -> List[List[float]]:
-    """Load all valid rain value rows from a CSV file."""
-    if not os.path.exists(csv_path):
-        logger.error(f"❌ Datei nicht gefunden: {csv_path}")
-        raise FileNotFoundError(f"CSV file not found: {csv_path}")
-
-    with open(csv_path, newline="") as f:
-        reader = csv.reader(f)
-        try:
-            next(reader)
-        except StopIteration:
-            logger.error("❌ CSV-Datei ist leer.")
-            raise ValueError("CSV file is empty.")
-
-        rows: List[List[float]] = []
-        for row in reader:
-            try:
-                values = [float(v) for v in row[2:] if v]
-                if len(values) >= 4:
-                    rows.append(values)
-            except ValueError:
-                continue
-    return rows
+# ISO-ähnliche Zeitspalten erkennen: 2025-08-11T17:00
+_TS_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$")
 
 
-def count_threshold_exceedances(rain_rows: List[List[float]]) -> Tuple[int, int, int, int]:
-    """Count how many raster cells exceed each threshold."""
-    total = len(rain_rows)
-    count_sri10 = 0
-    count_sri10_4h = 0
-    count_sri7 = 0
-    for rain_values in rain_rows:
-        max_1h = max(rain_values)
-        max_4h_sum = max(
-            sum(rain_values[i:i + 4]) for i in range(len(rain_values) - 3)
+def _detect_time_columns(cols: List[str]) -> List[str]:
+    time_cols = [c for c in cols if _TS_RE.match(c)]
+    # chronologisch sortieren (falls CSV-Spaltenreihenfolge mal abweicht)
+    time_cols.sort(key=lambda c: datetime.strptime(c, "%Y-%m-%dT%H:%M"))
+    return time_cols
+
+
+def _read_rain_series(csv_path: str) -> List[float]:
+    """
+    Liest die mm/h-Serie aus deiner Raster-CSV.
+    Erwartetes Format:
+      - Spalten: latitude, longitude, <24x ISO-Timestamps>
+      - 1 Zeile (der Punkt)
+    """
+    logger.debug(f"_read_rain_series(start): csv_path={csv_path}")
+    df = pd.read_csv(csv_path)
+
+    if df.empty:
+        logger.debug("_read_rain_series: CSV ist leer – gebe leere Serie zurück")
+        return []
+
+    cols = list(df.columns)
+    time_cols = _detect_time_columns(cols)
+    if not time_cols:
+        raise KeyError(
+            f"Keine Zeitspalten im ISO-Format gefunden. Spalten: {cols}"
         )
-        if max_1h >= SRI10_THRESHOLD:
-            count_sri10 += 1
-        if max_4h_sum >= SRI10_4H_SUM_THRESHOLD:
-            count_sri10_4h += 1
-        if max_1h >= SRI7_THRESHOLD:
-            count_sri7 += 1
-    return total, count_sri10, count_sri10_4h, count_sri7
+
+    # Nur die erste Zeile (dein Punkt); non-numeric→0.0
+    s = pd.to_numeric(df.iloc[0][time_cols], errors="coerce").fillna(0.0)
+    vals = s.astype(float).tolist()
+
+    logger.debug(
+        "_read_rain_series(done): n=%d, max=%.3f, sum=%.3f",
+        len(vals), max(vals) if vals else 0.0, sum(vals) if vals else 0.0
+    )
+    return vals
 
 
-def log_threshold_stats(total: int, count_sri10: int, count_sri10_4h: int, count_sri7: int) -> None:
-    """Log the ratio of raster cells exceeding each threshold."""
-    logger.info(
-        f"🌧️ Analyse abgeschlossen: "
-        f"{count_sri10}/{total} Raster mit SRI10_1h, "
-        f"{count_sri10_4h}/{total} mit SRI10_4h, "
-        f"{count_sri7}/{total} mit SRI7"
+def _max_rolling_sum(vals: List[float], window: int) -> float:
+    """Maximale gleitende Summe über 'window' Stunden."""
+    if window <= 0 or not vals:
+        return 0.0
+    if len(vals) <= window:
+        return float(sum(vals))
+    best = cur = float(sum(vals[:window]))
+    for i in range(window, len(vals)):
+        cur += vals[i] - vals[i - window]
+        if cur > best:
+            best = cur
+    return float(best)
+
+
+def classify_rain_stage(csv_path: str, thresholds: Dict[str, float]) -> str:
+    """
+    Feste Priorität (Variante A):
+      1) Wassertiefe_SRI10_4h  (4h-Summe >= Schwelle)
+      2) Wassertiefe_SRI10_1h  (max mm/h  >= Schwelle)
+      3) Wassertiefe_SRI7_1h   (max mm/h  >= Schwelle)
+      4) 'none'
+
+    Erwartete thresholds-Keys:
+      - "SRI7_THRESHOLD_mm_h"
+      - "SRI10_THRESHOLD_mm_h"
+      - "SRI10_4H_SUM_THRESHOLD_mm"
+    """
+    logger.debug("classify_rain_stage(start): csv_path=%s, thresholds=%s", csv_path, thresholds)
+
+    vals = _read_rain_series(csv_path)
+    max_mm_h = max(vals) if vals else 0.0
+    sum4_mm = _max_rolling_sum(vals, window=4)
+
+    logger.debug(
+        "classify_rain_stage(metrics): max_mm_h=%.3f, sum4_mm=%.3f",
+        max_mm_h, sum4_mm
     )
 
-
-def decide_layer(total: int, count_sri10: int, count_sri10_4h: int, count_sri7: int) -> str:
-    """Return the layer name based on exceedance ratios."""
-    if count_sri10 / total >= MIN_AREA_FRACTION:
-        return "Wassertiefe_SRI10_1h"
-    if count_sri10_4h / total >= MIN_AREA_FRACTION:
+    if sum4_mm >= thresholds["SRI10_4H_SUM_THRESHOLD_mm"]:
         return "Wassertiefe_SRI10_4h"
-    if count_sri7 / total >= MIN_AREA_FRACTION:
+    if max_mm_h >= thresholds["SRI10_THRESHOLD_mm_h"]:
+        return "Wassertiefe_SRI10_1h"
+    if max_mm_h >= thresholds["SRI7_THRESHOLD_mm_h"]:
         return "Wassertiefe_SRI7_1h"
-    return "Schummerung"
-
-
-def classify_rain_stage(csv_path: str = RAIN_GRID_PATH) -> str:
-    """Analyse rain raster data and return the matching layer name."""
-    rain_rows = read_rain_rows(csv_path)
-    if not rain_rows:
-        logger.error("❌ Keine gültigen Regenwerte gefunden.")
-        raise ValueError("No valid rainfall data found in CSV.")
-
-    total, count_sri10, count_sri10_4h, count_sri7 = count_threshold_exceedances(rain_rows)
-    log_threshold_stats(total, count_sri10, count_sri10_4h, count_sri7)
-    return decide_layer(total, count_sri10, count_sri10_4h, count_sri7)
+    return "none"
