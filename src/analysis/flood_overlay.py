@@ -9,20 +9,16 @@ from src.utils.utils_logger import get_logger
 
 logger = get_logger()
 
-# 1) Definiere dein Farb-→Tiefen-Mapping (RGB ohne Alpha)
 COLOR_TO_DEPTH: Dict[Tuple[int, int, int], str] = {
-    (235, 235, 235): "<5 cm",     # Weiß-Ross, transparent in Maske
-    (204, 229, 255): "5–10 cm",   # Hellblau
-    (102, 153, 204): "10–30 cm",  # Dunkelblau
-    (0, 0, 255):   "30–50 cm",    # Blau
-    (255, 0, 255): "50–100 cm",   # Magenta
-    (255, 102, 178): "100–200 cm",# Rosa
-    (204, 0, 102):  "200–400 cm", # Dunkelrosa
-    (102, 0, 51):   ">=400 cm",   # Dunkellila
-    # … passe Werte exakt an deine PNG-Palette an
+    (255, 255, 255): "<5 cm",        # Weiß (Hintergrund)
+    (189, 215, 238): "5–10 cm",      # Hellblau
+    (47, 117, 181): "10–30 cm",      # Mittelblau
+    (0, 0, 255): "30–50 cm",         # Blau
+    (255, 0, 255): "50–100 cm",      # Magenta
+    (234, 125, 185): "100–200 cm",   # Rosa
+    (204, 0, 153): "200–400 cm",     # Dunkelrosa/Lila
+    (128, 0, 128): ">=400 cm",       # Dunkellila
 }
-
-#ToDo: Prüfe ob die Farben auch immer in allen Regen klassen gleich sind
 
 
 def load_png_as_array(png_path: str) -> np.ndarray:

@@ -102,6 +102,7 @@ def generate_cache_for_location(
 
     # Straßen vorbereiten
     gdf_utm, gdf_wgs = _prepare_street_graph(lat, lon, radius_m)
+    print(len(gdf_utm))
 
     status: Dict[str, str] = {}
     for layer_short in layers:
