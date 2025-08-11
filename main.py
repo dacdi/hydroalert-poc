@@ -5,7 +5,7 @@ from src.utils.utils_logger import get_logger
 from src.use_cases.download_layers import run_download_layers_use_case
 from src.use_cases.forecast import run_forecast_use_case
 from src.use_cases.evaluate import run_evaluate_use_case
-from src.use_cases.dummy_generation import run_dummy_generation_use_case
+from src.use_cases.generate_dummy import run_generate_dummy_use_case
 from src.use_cases.telegram_bot import run_telegram_bot_use_case
 from src.use_cases.generate_cache import run_generate_cache_use_case
 
@@ -39,7 +39,9 @@ def main() -> None:
 
     # Subcommand 4: generate-dummy
     dummy_parser = subparsers.add_parser("generate-dummy", help="Generate dummy rain data for testing")
-    dummy_parser.add_argument("variant", choices=["SRI7", "SRI10", "SRI10_4h", "none", "flat"], help="Choose dummy rain intensity")
+    dummy_parser.add_argument("--lat", type=float, help="Geografische Breite (z. B. 49.45)")
+    dummy_parser.add_argument("--lon", type=float, help="Geografische Länge (z. B. 8.18)")
+    dummy_parser.add_argument("variant", choices=["SRI7", "SRI10", "SRI10_4h", "none"], help="Choose dummy rain intensity")
 
     # Subcommand 5: Telegram Bot
     subparsers.add_parser("telegram", help="Starte den Telegram-Bot")
@@ -77,7 +79,7 @@ def main() -> None:
         run_evaluate_use_case(args)
 
     elif args.command == "generate-dummy":
-        run_dummy_generation_use_case(args)
+        run_generate_dummy_use_case(args)
 
     elif args.command == "telegram":
         run_telegram_bot_use_case(args)
