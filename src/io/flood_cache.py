@@ -122,5 +122,4 @@ def generate_csv_cache(radius_m: float = 200.0, sample_distance_m: float = 5.0) 
     for key, png_path in LAYERS.items():
         process_layer(key, png_path, gdf_utm, gdf_wgs, cache_dir, sample_distance_m)
 
-if __name__ == "__main__":
-    generate_csv_cache()
+
