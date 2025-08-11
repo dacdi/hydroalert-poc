@@ -8,8 +8,8 @@ logger = get_logger()
 def run_generate_cache_use_case(args: argparse.Namespace) -> None:
     lat = getattr(args, "lat", None)
     lon = getattr(args, "lon", None)
-    radius_m = float(getattr(args, "radius_m", 300.0))
-    sample_m = float(getattr(args, "sample_m", 5.0))
+    radius_m = float(getattr(args, "radius_m", 1000.0))
+    sample_m = float(getattr(args, "sample_m", 2.5))
     layers = getattr(args, "layers", None)  # optional, Liste aus main.py
 
     if lat is None or lon is None:

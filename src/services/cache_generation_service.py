@@ -81,8 +81,8 @@ def generate_cache_for_location(
     lat: float,
     lon: float,
     *,
-    radius_m: float = 300.0,
-    sample_distance_m: float = 5.0,
+    radius_m: float = 4000.0,
+    sample_distance_m: float = 2.5,
     layers: Optional[list[str]] = None,  # z. B. ["Wassertiefe_SRI7_1h", ...]
 ) -> Dict[str, str]:
     """
@@ -102,7 +102,7 @@ def generate_cache_for_location(
 
     # Straßen vorbereiten
     gdf_utm, gdf_wgs = _prepare_street_graph(lat, lon, radius_m)
-    print(len(gdf_utm))
+    logger.debug("Anzahl Straßen: %s",len(gdf_utm))
 
     status: Dict[str, str] = {}
     for layer_short in layers:
