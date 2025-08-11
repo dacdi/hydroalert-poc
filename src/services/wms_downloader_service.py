@@ -14,6 +14,7 @@ from src.utils.utils_logger import get_logger
 
 logger = get_logger()
 
+#ToDo: hier noch rein arbieten, dass nur daten aus reinland pfalz auch angegeben werden können
 def download_all_wms_layers(
     bbox: Optional[BBox] = None,
     target_dir: Optional[str] = None,
