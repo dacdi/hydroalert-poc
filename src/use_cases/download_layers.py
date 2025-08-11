@@ -42,7 +42,9 @@ def run_download_layers_use_case(args: Namespace) -> None:
         target_dir = cache_path_for_latlon(lat, lon)
         logger.debug("🧭 lat/lon -> BBox=%s; Zielordner=%s", bbox, target_dir)
         download_all_wms_layers(bbox=bbox, target_dir=target_dir)
+
     else:
         download_all_wms_layers()
 
     logger.info("✅ WMS-Layer wurden erfolgreich heruntergeladen.")
+

@@ -1,4 +1,8 @@
 # src/services/wms_downloader_service.py
+
+import os
+import json
+from PIL import Image
 from typing import Optional, List
 from src.domain.models import BBox
 from src.io.wms_client import build_wms_params, fetch_wms_png
@@ -14,7 +18,21 @@ from src.utils.utils_logger import get_logger
 
 logger = get_logger()
 
-#ToDo: hier noch rein arbieten, dass nur daten aus reinland pfalz auch angegeben werden können
+
+def _save_meta_file(target_dir: str, bbox: BBox, png_path: str) -> None:
+    """Speichert BBox und Rastergröße in meta.json."""
+    width, height = Image.open(png_path).size
+    meta = {
+        "bbox_utm": [bbox.minx, bbox.miny, bbox.maxx, bbox.maxy],
+        "raster_size": [width, height],
+        "crs": "EPSG:25832"
+    }
+    meta_path = os.path.join(target_dir, "meta.json")
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, indent=2)
+    logger.info(f"💾 Meta-Datei gespeichert: {meta_path}")
+
+
 def download_all_wms_layers(
     bbox: Optional[BBox] = None,
     target_dir: Optional[str] = None,
@@ -35,6 +53,12 @@ def download_all_wms_layers(
         content = fetch_wms_png(WMS_BASE_URL, params)
         path = save_png(content, outdir, short_name)
         saved.append(path)
+
+    # Meta-Datei speichern (erste PNG nutzen)
+    if saved:
+        _save_meta_file(outdir, use_bbox, saved[0])
+    else:
+        logger.warning("⚠️ Keine PNG-Dateien heruntergeladen – meta.json nicht erstellt.")
 
     logger.info("✅ %d Layer gespeichert in %s", len(saved), outdir)
     return saved

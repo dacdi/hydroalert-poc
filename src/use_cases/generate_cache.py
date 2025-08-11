@@ -1,17 +1,26 @@
-from argparse import Namespace
-from logging import Logger
-
-from src.io.flood_cache import generate_csv_cache
+# src/use_cases/generate_cache.py
+import argparse
+from src.services.cache_generation_service import generate_cache_for_location
 from src.utils.utils_logger import get_logger
 
-logger: Logger = get_logger()
+logger = get_logger()
 
+def run_generate_cache_use_case(args: argparse.Namespace) -> None:
+    lat = getattr(args, "lat", None)
+    lon = getattr(args, "lon", None)
+    radius_m = float(getattr(args, "radius_m", 300.0))
+    sample_m = float(getattr(args, "sample_m", 5.0))
+    layers = getattr(args, "layers", None)  # optional, Liste aus main.py
 
-def run_generate_cache_use_case(args: Namespace) -> None:
-    """Generate CSV and KML caches for flood data."""
-    logger.info("🗄 Generiere Flood-CSV-Cache …")
-    generate_csv_cache(
-        radius_m=args.radius,
-        sample_distance_m=args.sample_distance,
+    if lat is None or lon is None:
+        logger.error("❌ --lat und --lon sind erforderlich.")
+        raise ValueError("Fehlende Koordinaten.")
+
+    status = generate_cache_for_location(
+        lat=float(lat),
+        lon=float(lon),
+        radius_m=radius_m,
+        sample_distance_m=sample_m,
+        layers=layers,
     )
-    logger.info("✅ Cache-Erzeugung abgeschlossen.")
+    logger.info("Ergebnis: %s", status)
