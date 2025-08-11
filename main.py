@@ -61,7 +61,8 @@ def main() -> None:
     )
 
     args = parser.parse_args()
-    logger.debug(f"📊 CLI Argumente: {args}")
+    logger.info("▶️ Starte HydroAlert – Command: %s", args.command)
+    logger.debug("📊 CLI Argumente: %s", vars(args))
 
 
     if args.command == "download-layers":

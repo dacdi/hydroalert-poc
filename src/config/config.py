@@ -54,3 +54,10 @@ DEFAULT_LAYERS = {
     "Visdom_SRI10_1h_WaterDepth": "Wassertiefe_SRI10_1h",
     "Visdom_SRI10_4h_WaterDepth": "Wassertiefe_SRI10_4h",
 }
+
+# Forecast-Defaults
+GRID_SIZE_M = 400.0       # volle Kantenlänge des Quadrats (Meter)
+FORECAST_STEP_M = 200.0   # Rasterabstand (Meter)
+
+FORECAST_API_URL = os.getenv("FORECAST_API_URL", "https://api.open-meteo.com/v1/forecast")
+FORECAST_HTTP_TIMEOUT_S = float(os.getenv("FORECAST_HTTP_TIMEOUT_S", "15"))
