@@ -62,9 +62,9 @@ def main() -> None:
     )
     cache_parser.add_argument("--lat", type=float, required=True, help="Geografische Breite")
     cache_parser.add_argument("--lon", type=float, required=True, help="Geografische Länge")
-    cache_parser.add_argument("--radius-m", dest="radius_m", type=float, default=300.0,
+    cache_parser.add_argument("--radius-m", dest="radius_m", type=float, default=1000.0,
                               help="Radius um (lat,lon) in m (Standard: 300)")
-    cache_parser.add_argument("--sample-m", dest="sample_m", type=float, default=5.0,
+    cache_parser.add_argument("--sample-m", dest="sample_m", type=float, default=2.0,
                               help="Abstand zwischen Stichprobenpunkten in m (Standard: 5)")
     # Optional: nur bestimmte Layer rechnen (Shortnames aus DEFAULT_LAYERS)
     cache_parser.add_argument(

@@ -1,34 +1,39 @@
-2025-08-11 23:32:14 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
-2025-08-11 23:32:14 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
-2025-08-11 23:32:14 [DEBUG] __init__.py:1557:<module> - interactive is False
-2025-08-11 23:32:14 [DEBUG] __init__.py:1558:<module> - platform is darwin
-2025-08-11 23:32:14 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
-2025-08-11 23:32:14 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
-2025-08-11 23:32:14 [INFO] main.py:78:main - ▶️ Starte HydroAlert – Command: generate-cache
-2025-08-11 23:32:14 [DEBUG] main.py:79:main - 📊 CLI Argumente: {'command': 'generate-cache', 'lat': 50.0, 'lon': 8.1, 'radius_m': 300.0, 'sample_m': 5.0, 'layers': None}
-2025-08-11 23:32:14 [INFO] cache_generation_service.py:99:generate_cache_for_location - 🗂️ Cache-Ordner: data/cache/lat50.00_lon8.10
-2025-08-11 23:32:14 [DEBUG] cache_generation_service.py:76:_load_meta_file - 🧭 meta.json geladen: bbox_utm=(433500, 5537018, 437500, 5541018), raster_size=(2000, 2000)
-2025-08-11 23:32:14 [INFO] cache_generation_service.py:21:_prepare_street_graph - 📍 Ort: lat=50.000000, lon=8.100000, radius=300.0 m
-2025-08-11 23:32:14 [INFO] cache_generation_service.py:115:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI7_1h  |  PNG: data/cache/lat50.00_lon8.10/Wassertiefe_SRI7_1h.png
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-11 23:32:14 [INFO] flood_overlay.py:105:detect_street_depths - 🔹 Detektierte Tiefen für 1 Straßen
-2025-08-11 23:32:14 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat50.00_lon8.10/flood_Wassertiefe_SRI7_1h.csv
-2025-08-11 23:32:14 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat50.00_lon8.10/flood_Wassertiefe_SRI7_1h.kml
-2025-08-11 23:32:14 [INFO] cache_generation_service.py:115:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI10_1h  |  PNG: data/cache/lat50.00_lon8.10/Wassertiefe_SRI10_1h.png
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-11 23:32:14 [INFO] flood_overlay.py:105:detect_street_depths - 🔹 Detektierte Tiefen für 1 Straßen
-2025-08-11 23:32:14 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat50.00_lon8.10/flood_Wassertiefe_SRI10_1h.csv
-2025-08-11 23:32:14 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat50.00_lon8.10/flood_Wassertiefe_SRI10_1h.kml
-2025-08-11 23:32:14 [INFO] cache_generation_service.py:115:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI10_4h  |  PNG: data/cache/lat50.00_lon8.10/Wassertiefe_SRI10_4h.png
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-11 23:32:14 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-11 23:32:14 [INFO] flood_overlay.py:105:detect_street_depths - 🔹 Detektierte Tiefen für 1 Straßen
-2025-08-11 23:32:14 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat50.00_lon8.10/flood_Wassertiefe_SRI10_4h.csv
-2025-08-11 23:32:14 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat50.00_lon8.10/flood_Wassertiefe_SRI10_4h.kml
-2025-08-11 23:32:14 [INFO] cache_generation_service.py:131:generate_cache_for_location - ✅ Generate-Cache fertig: {'Wassertiefe_SRI7_1h': 'ok', 'Wassertiefe_SRI10_1h': 'ok', 'Wassertiefe_SRI10_4h': 'ok'}
-2025-08-11 23:32:14 [INFO] generate_cache.py:26:run_generate_cache_use_case - Ergebnis: {'Wassertiefe_SRI7_1h': 'ok', 'Wassertiefe_SRI10_1h': 'ok', 'Wassertiefe_SRI10_4h': 'ok'}
+2025-08-11 23:42:01 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-08-11 23:42:01 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
+2025-08-11 23:42:01 [DEBUG] __init__.py:1557:<module> - interactive is False
+2025-08-11 23:42:01 [DEBUG] __init__.py:1558:<module> - platform is darwin
+2025-08-11 23:42:01 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
+2025-08-11 23:42:01 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
+2025-08-11 23:42:01 [INFO] main.py:78:main - ▶️ Starte HydroAlert – Command: generate-cache
+2025-08-11 23:42:01 [DEBUG] main.py:79:main - 📊 CLI Argumente: {'command': 'generate-cache', 'lat': 49.35, 'lon': 8.15, 'radius_m': 1000.0, 'sample_m': 2.0, 'layers': None}
+2025-08-11 23:42:01 [INFO] cache_generation_service.py:99:generate_cache_for_location - 🗂️ Cache-Ordner: data/cache/lat49.35_lon8.15
+2025-08-11 23:42:01 [DEBUG] cache_generation_service.py:76:_load_meta_file - 🧭 meta.json geladen: bbox_utm=(436265, 5464712, 440265, 5468712), raster_size=(2000, 2000)
+2025-08-11 23:42:01 [INFO] cache_generation_service.py:21:_prepare_street_graph - 📍 Ort: lat=49.350000, lon=8.150000, radius=1000.0 m
+2025-08-11 23:42:01 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): overpass-api.de:443
+2025-08-11 23:42:02 [DEBUG] connectionpool.py:544:_make_request - https://overpass-api.de:443 "GET /api/status HTTP/1.1" 200 180
+2025-08-11 23:42:02 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): overpass-api.de:443
+2025-08-11 23:42:03 [DEBUG] connectionpool.py:544:_make_request - https://overpass-api.de:443 "POST /api/interpreter HTTP/1.1" 200 None
+2025-08-11 23:42:04 [DEBUG] cache_generation_service.py:105:generate_cache_for_location - Anzahl Straßen: 885
+2025-08-11 23:42:04 [INFO] cache_generation_service.py:115:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI7_1h  |  PNG: data/cache/lat49.35_lon8.15/Wassertiefe_SRI7_1h.png
+2025-08-11 23:42:04 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
+2025-08-11 23:42:04 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
+2025-08-11 23:42:04 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
+2025-08-11 23:42:04 [INFO] flood_overlay.py:105:detect_street_depths - 🔹 Detektierte Tiefen für 116 Straßen
+2025-08-11 23:42:04 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.15/flood_Wassertiefe_SRI7_1h.csv
+2025-08-11 23:42:04 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.15/flood_Wassertiefe_SRI7_1h.kml
+2025-08-11 23:42:04 [INFO] cache_generation_service.py:115:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI10_1h  |  PNG: data/cache/lat49.35_lon8.15/Wassertiefe_SRI10_1h.png
+2025-08-11 23:42:04 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
+2025-08-11 23:42:04 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
+2025-08-11 23:42:04 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
+2025-08-11 23:42:04 [INFO] flood_overlay.py:105:detect_street_depths - 🔹 Detektierte Tiefen für 116 Straßen
+2025-08-11 23:42:04 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.15/flood_Wassertiefe_SRI10_1h.csv
+2025-08-11 23:42:05 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.15/flood_Wassertiefe_SRI10_1h.kml
+2025-08-11 23:42:05 [INFO] cache_generation_service.py:115:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI10_4h  |  PNG: data/cache/lat49.35_lon8.15/Wassertiefe_SRI10_4h.png
+2025-08-11 23:42:05 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
+2025-08-11 23:42:05 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
+2025-08-11 23:42:05 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
+2025-08-11 23:42:05 [INFO] flood_overlay.py:105:detect_street_depths - 🔹 Detektierte Tiefen für 116 Straßen
+2025-08-11 23:42:05 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.15/flood_Wassertiefe_SRI10_4h.csv
+2025-08-11 23:42:05 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.15/flood_Wassertiefe_SRI10_4h.kml
+2025-08-11 23:42:05 [INFO] cache_generation_service.py:131:generate_cache_for_location - ✅ Generate-Cache fertig: {'Wassertiefe_SRI7_1h': 'ok', 'Wassertiefe_SRI10_1h': 'ok', 'Wassertiefe_SRI10_4h': 'ok'}
+2025-08-11 23:42:05 [INFO] generate_cache.py:26:run_generate_cache_use_case - Ergebnis: {'Wassertiefe_SRI7_1h': 'ok', 'Wassertiefe_SRI10_1h': 'ok', 'Wassertiefe_SRI10_4h': 'ok'}
