@@ -24,31 +24,13 @@ def _prepare_street_graph(lat: float, lon: float, radius_m: float):
     # Analyse erwartet UTM32 (EPSG:25832) und für KML WGS84 (EPSG:4326)
     return gdf_edges.to_crs(epsg=25832), gdf_edges.to_crs(epsg=4326)
 
-#ToDo: Prüfen ob dei funktion notwendig
-def _resolve_png_path(layer_short: str, cache_dir: str) -> Optional[str]:
-    """
-    Bevorzugt WMS-PNG im Geo-Cache-Ordner, sonst globales WMS_LAYERS_DIR.
-    Akzeptiert exakte und 'enthält'-Treffer (für flexible Dateinamen).
-    """
-    # 1) Geo-Cache: exakter Name
-    cand = os.path.join(cache_dir, f"{layer_short}.png")
-    if os.path.exists(cand):
-        return cand
-    # 2) Geo-Cache: fuzzy
-    hits = glob(os.path.join(cache_dir, f"*{layer_short}*.png"))
-    if hits:
-        hits.sort(key=lambda p: (os.path.basename(p) != f"{layer_short}.png", len(os.path.basename(p))))
-        return hits[0]
-    # 3) Global: exakter Name
-    cand = os.path.join(WMS_LAYERS_DIR, f"{layer_short}.png")
-    if os.path.exists(cand):
-        return cand
-    # 4) Global: fuzzy
-    hits = glob(os.path.join(WMS_LAYERS_DIR, f"*{layer_short}*.png"))
-    if hits:
-        hits.sort(key=lambda p: (os.path.basename(p) != f"{layer_short}.png", len(os.path.basename(p))))
-        return hits[0]
-    return None
+def _resolve_png_path(layer_short: str, cache_dir: str) -> str:
+    """Erwartet die PNG exakt im Geo-Cache-Ordner: {cache_dir}/{layer_short}.png."""
+    path = os.path.join(cache_dir, f"{layer_short}.png")
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"WMS-PNG fehlt: {path}. Bitte 'download-layers' für diesen Ort ausführen.")
+    return path
+
 
 
 def _load_meta_file(cache_dir: str) -> Tuple[Tuple[int, int, int, int], Tuple[int, int]]:
