@@ -64,7 +64,7 @@ RAIN_THRESHOLDS = {
     "SRI10_4H_SUM_THRESHOLD_mm": 42.0,
 }
 
-OSM_RADIUS_M = 600.0          # Straßennetz-Umkreis für Overpass
+OSM_RADIUS_M = 2000.0          # Straßennetz-Umkreis für Overpass
 SAMPLE_DISTANCE_M = 2.5       # Punktabstand fürs Sampling entlang der Straßen
 
 # Forecast-Defaults
