@@ -24,7 +24,7 @@ def _prepare_street_graph(lat: float, lon: float, radius_m: float):
     # Analyse erwartet UTM32 (EPSG:25832) und für KML WGS84 (EPSG:4326)
     return gdf_edges.to_crs(epsg=25832), gdf_edges.to_crs(epsg=4326)
 
-
+#ToDo: Prüfen ob dei funktion notwendig
 def _resolve_png_path(layer_short: str, cache_dir: str) -> Optional[str]:
     """
     Bevorzugt WMS-PNG im Geo-Cache-Ordner, sonst globales WMS_LAYERS_DIR.
