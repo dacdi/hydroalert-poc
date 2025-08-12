@@ -81,8 +81,8 @@ def generate_cache_for_location(
     lat: float,
     lon: float,
     *,
-    radius_m: float = 4000.0,
-    sample_distance_m: float = 2.5,
+    radius_m: float,
+    sample_distance_m: float,
     layers: Optional[list[str]] = None,  # z. B. ["Wassertiefe_SRI7_1h", ...]
 ) -> Dict[str, str]:
     """

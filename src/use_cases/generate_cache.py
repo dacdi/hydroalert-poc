@@ -2,6 +2,7 @@
 import argparse
 from src.services.cache_generation_service import generate_cache_for_location
 from src.utils.utils_logger import get_logger
+from src.config.config import OSM_RADIUS_M, SAMPLE_DISTANCE_M
 
 logger = get_logger()
 
@@ -19,8 +20,8 @@ def run_generate_cache_use_case(args: argparse.Namespace) -> None:
     status = generate_cache_for_location(
         lat=float(lat),
         lon=float(lon),
-        radius_m=radius_m,
-        sample_distance_m=sample_m,
+        radius_m=OSM_RADIUS_M,
+        sample_distance_m=SAMPLE_DISTANCE_M,
         layers=layers,
     )
     logger.info("Ergebnis: %s", status)

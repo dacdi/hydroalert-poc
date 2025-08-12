@@ -57,12 +57,15 @@ DEFAULT_LAYERS = {
     "Visdom_SRI10_4h_WaterDepth": "Wassertiefe_SRI10_4h",
 }
 
-# Schwellenwerte (Single Source of Truth) – Variante A
+# Schwellenwerte (Single Source of Truth)
 RAIN_THRESHOLDS = {
     "SRI7_THRESHOLD_mm_h": 13.0,
     "SRI10_THRESHOLD_mm_h": 23.0,
     "SRI10_4H_SUM_THRESHOLD_mm": 42.0,
 }
+
+OSM_RADIUS_M = 600.0          # Straßennetz-Umkreis für Overpass
+SAMPLE_DISTANCE_M = 2.5       # Punktabstand fürs Sampling entlang der Straßen
 
 # Forecast-Defaults
 GRID_SIZE_M = 400.0       # volle Kantenlänge des Quadrats (Meter)
