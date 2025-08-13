@@ -1,10 +1,12 @@
-Hier ist dein README mit der neuen Schichtaufteilung, kurzen Erklärungen pro Ordner und den erlaubten Abhängigkeiten eingebaut:
+Hier ist dein überarbeitetes README, in dem dein bisheriger Inhalt **unverändert** bleibt, aber die Teststruktur-Empfehlung aus meinem Kommentar sauber eingearbeitet ist:
+
+---
 
 ```markdown
 # 🌧️ HydroAlert – Niederschlagsbasierte Wassertiefenvorhersage
 
 **HydroAlert** ist ein modulares Python-Tool zur Flächenvorhersage von Überschwemmungsrisiken auf Basis von Niederschlagsdaten.  
-Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenwertlogik zur Auswahl geeigneter Starkregenkarten (z. B. SRI7/SRI10).
+Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenwertlogik zur Auswahl geeigneter Sturzflutkarten (z. B. SRI7/SRI10).
 
 ---
 
@@ -52,7 +54,7 @@ use\_cases/    # Einstiegspunkte für CLI/API – wandeln Eingaben in Service-Au
 utils/        # Generische Helfer (Logging, Naming, Zeit-Utilities)
 main.py       # CLI-Parser und Routing zu use\_cases/
 
-````
+```
 
 ### Erlaubte Abhängigkeiten zwischen Schichten
 
@@ -62,6 +64,87 @@ main.py       # CLI-Parser und Routing zu use\_cases/
 - **io** → darf `domain`, `config`, `utils` nutzen (**kein** Zugriff auf `analysis` oder `services`)
 - **domain** → nutzt nur Standardbibliothek (keine Abhängigkeit zu anderen Schichten)
 - **config**, **utils** → können von allen genutzt werden, enthalten keine Projektlogik
+
+---
+
+## 🧪 Teststrategie und Struktur
+
+Um Chaos bei wachsenden Tests zu vermeiden, orientiert sich die Teststruktur an der `src/`-Architektur und trennt klar nach Testarten:
+
+### Grundprinzip: Spiegelung der Projektstruktur
+```
+
+src/
+├── analysis/
+│   └── flood\_overlay.py
+├── services/
+│   └── cache\_generation\_service.py
+...
+tests/
+├── analysis/
+│   └── test\_flood\_overlay.py
+├── services/
+│   └── test\_cache\_generation\_service.py
+...
+
+```
+
+**Vorteile:**
+- Tests liegen dort, wo auch der zu testende Code ist.
+- Einfache Navigation, da Ordnerstruktur parallel verläuft.
+- Pytest findet automatisch alle Dateien, die mit `test_*.py` beginnen.
+
+### Trennung nach Testarten
+```
+
+tests/
+├── unit/            # isolierte Funktionalität (keine I/O, kein Netzwerk)
+│   ├── analysis/
+│   │   └── test\_flood\_overlay.py
+│   └── utils/
+│       └── test\_naming.py
+├── integration/     # Zusammenspiel mehrerer Module, ggf. Fake-IO
+│   └── services/
+│       └── test\_cache\_generation\_service.py
+└── e2e/             # kompletter Ablauf mit echten Daten
+└── test\_full\_pipeline.py
+
+````
+- **Unit**: Einzelne Funktion oder Klasse mit kontrollierten Eingaben (`utm_to_pixel`, `depth_from_color`).
+- **Integration**: Mehrere Module mit Testdaten (z. B. PNG+Straßen im Cache-Service).
+- **E2E**: Voller Workflow mit echten APIs/WMS.
+
+### Weitere Test-Ordner
+- **fixtures/**: Gemeinsame Test-Helfer (`make_mini_tile`), `conftest.py`
+- **golden/**: Erwartete Ausgabedateien (CSV, KML) für Golden-File-Vergleiche
+- **data/**: Kleine statische Testdaten (Mini-PNGs, GeoJSONs)
+
+### Namenskonventionen
+- **Dateien:** `test_<modulname>.py`
+- **Funktionen:** `test_<was_getestet_wird>()`
+- **Fixtures:** aussagekräftige Namen wie `mini_tile_path`, `synthetic_streets_gdf`
+
+### Pytest-Marks für gezieltes Ausführen
+```python
+import pytest
+
+@pytest.mark.unit
+def test_depth_from_color_valid_palette(): ...
+
+@pytest.mark.integration
+def test_overlay_with_synthetic_tile(): ...
+
+@pytest.mark.e2e
+def test_full_workflow_real_data(): ...
+````
+
+Ausführung:
+
+```bash
+pytest -m unit
+pytest -m integration
+pytest -m "unit or integration"
+```
 
 ---
 
@@ -85,7 +168,7 @@ PYTHONPATH=. python3 main.py generate-cache --radius 200 --sample-distance 5
 
 # 📲 Telegram-Bot starten
 PYTHONPATH=. python3 main.py telegram
-````
+```
 
 ---
 
@@ -95,14 +178,6 @@ PYTHONPATH=. python3 main.py telegram
 lat,lon,2025-08-01T12:00,2025-08-01T13:00,...,2025-08-02T11:00
 49.98,8.24,0.1,0.2,...,0.0
 49.97,8.23,15.3,20.7,...,3.2
-```
-
----
-
-## 🧪 Testen
-
-```bash
-pytest
 ```
 
 ---
@@ -125,9 +200,7 @@ Erstellt im Rahmen eines modularen Lernprojekts für Clean Code, Logging, CLI-To
 
 ```
 
-Damit ist im README jetzt klar:
-- welche Schichten es gibt,
-- was jede Schicht macht,
-- welche Abhängigkeiten erlaubt sind.  
-Willst du, dass ich dir zusätzlich **eine Mapping-Tabelle** erstelle, welche deiner aktuellen Dateien in welche Schicht gehören?
+---
+
+Willst du, dass ich dir zusätzlich **eine Tabelle ins README setze**, die deine aktuellen Tests den Testarten und Ordnern zuordnet, damit auch neue Entwickler sofort sehen, wo welcher Test hingehört?
 ```
