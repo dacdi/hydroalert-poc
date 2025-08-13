@@ -9,6 +9,7 @@ from src.utils.utils_logger import get_logger
 
 logger = get_logger()
 
+#ToDo: PRüfne, sollte das in das config?
 COLOR_TO_DEPTH: Dict[Tuple[int, int, int], str] = {
     (255, 255, 255): "<5 cm",        # Weiß (Hintergrund)
     (189, 215, 238): "5–10 cm",      # Hellblau
@@ -33,12 +34,26 @@ def utm_to_pixel(
     bbox_utm: Tuple[float, float, float, float],
     raster_size: Tuple[int, int],
 ) -> Tuple[int, int]:
-    """Convert UTM coordinates to pixel indices within the raster."""
+    """Convert UTM coordinates to pixel indices within the raster.
+
+    Stellt sicher, dass die zurückgegebenen Pixelindizes immer innerhalb
+    der gültigen Rastergrenzen (0 <= px < width, 0 <= py < height) liegen.
+    Dies verhindert Off-by-One-Fehler, die auftreten, wenn Koordinaten
+    exakt auf der max-Kante der BBOX liegen.
+    """
     x_min, y_min, x_max, y_max = bbox_utm
     width_px, height_px = raster_size
-    px = int((x_utm - x_min) / (x_max - x_min) * width_px)
-    py = int((y_max - y_utm) / (y_max - y_min) * height_px)
+
+    # Berechnung
+    px_float = (x_utm - x_min) / (x_max - x_min) * width_px
+    py_float = (y_max - y_utm) / (y_max - y_min) * height_px
+
+    # Clamp auf gültigen Bereich
+    px = min(width_px - 1, max(0, int(px_float)))
+    py = min(height_px - 1, max(0, int(py_float)))
+
     return px, py
+
 
 
 def depth_from_color(r: int, g: int, b: int, a: int) -> Optional[str]:
