@@ -3,6 +3,8 @@
 import os
 from src.analysis.classify_rain_intensity import classify_rain_stage
 from src.config.config import CACHE_DIR
+from src.services.cache_query_service import has_cached_result
+from src.utils.naming import cache_path_for_latlon
 from src.utils.utils_logger import get_logger
 
 logger = get_logger()
@@ -18,12 +20,23 @@ def normalize_layer_key(result: str) -> str:
     return result
 
 
-def handle_message_logic(user_input: str):
+def handle_message_logic(lat: float, lon: float):
     """
     Führt die Analyse aus und liefert Antworttext + KML-Dateipfad.
     Gibt (ergebnis_text, kml_path) zurück oder (fehlermeldung, None) bei Problem.
     """
-    logger.info(f"📩 Eingehende Nachricht: {user_input}")
+    logger.info(f"📩 Anfrage für Koordinaten: {lat}, {lon}")
+
+    # 1️⃣ Cache-Prüfung
+    if has_cached_result(lat, lon):
+        logger.info("✅ Cache-Hit – keine Analyse notwendig.")
+        cache_dir = cache_path_for_latlon(lat, lon)
+        for fname in os.listdir(cache_dir):
+            if fname.endswith(".kml"):
+                return "📦 Daten aus Cache gefunden.", os.path.join(cache_dir, fname)
+        return "📦 Daten aus Cache gefunden – keine KML-Datei vorhanden.", None
+
+    # 2️⃣ Analyse starten (Cache-Miss)
     try:
         result = classify_rain_stage()
         if not result:

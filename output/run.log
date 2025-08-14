@@ -1,385 +1,259 @@
-2025-08-14 22:57:30 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
-2025-08-14 22:57:30 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
-2025-08-14 22:57:30 [DEBUG] __init__.py:1557:<module> - interactive is False
-2025-08-14 22:57:30 [DEBUG] __init__.py:1558:<module> - platform is darwin
-2025-08-14 22:57:30 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
-2025-08-14 22:57:30 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
-2025-08-14 22:57:30 [INFO] main.py:67:main - ▶️ Starte HydroAlert – Command: telegram
-2025-08-14 22:57:30 [DEBUG] main.py:68:main - 📊 CLI Argumente: {'command': 'telegram'}
-2025-08-14 22:57:30 [INFO] telegram_bot.py:12:run_telegram_bot_use_case - 📲 Starte Telegram-Bot …
-2025-08-14 22:57:31 [DEBUG] _bot.py:333:__init__ - Set Bot API URL: https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
-2025-08-14 22:57:31 [DEBUG] _bot.py:334:__init__ - Set Bot API File URL: https://api.telegram.org/file/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
-2025-08-14 22:57:31 [INFO] telegram_adapter.py:54:start_bot - 🚀 Telegram-Bot gestartet. Warte auf Nachrichten …
-2025-08-14 22:57:31 [DEBUG] selector_events.py:54:__init__ - Using selector: KqueueSelector
-2025-08-14 22:57:31 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap Initialize Application): Starting
-2025-08-14 22:57:31 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getMe` with parameters `{}`
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10c4f2050>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c43ab10> server_hostname='api.telegram.org' timeout=5.0
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10c53d590>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:57:31 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'254'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:57:31 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getMe "HTTP/1.1 200 OK"
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:57:31 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getMe` finished with return value `{'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot', 'can_join_groups': True, 'can_read_all_group_messages': False, 'supports_inline_queries': False, 'can_connect_to_business': False, 'has_main_web_app': False}`
-2025-08-14 22:57:31 [DEBUG] _bot.py:835:initialize - This Bot is already initialized.
-2025-08-14 22:57:31 [DEBUG] _updater.py:324:_start_polling - Updater started (polling)
-2025-08-14 22:57:31 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap delete Webhook): Starting
-2025-08-14 22:57:31 [DEBUG] _updater.py:682:bootstrap_del_webhook - Deleting webhook
-2025-08-14 22:57:31 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `deleteWebhook` with parameters `{}`
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:57:31 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'68'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:57:31 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/deleteWebhook "HTTP/1.1 200 OK"
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:57:31 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `deleteWebhook` finished with return value `True`
-2025-08-14 22:57:31 [DEBUG] _updater.py:336:_start_polling - Bootstrap done
-2025-08-14 22:57:31 [DEBUG] _updater.py:306:start_polling - Waiting for polling to start
-2025-08-14 22:57:31 [DEBUG] _updater.py:308:start_polling - Polling updates from Telegram started
-2025-08-14 22:57:31 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Polling Updates): Starting
-2025-08-14 22:57:31 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 0}`
-2025-08-14 22:57:31 [INFO] _application.py:633:start - Application started
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10c553bd0>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c43aba0> server_hostname='api.telegram.org' timeout=5.0
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10c553c50>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:57:31 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:57:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:57:41 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:57:41 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:57:41 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:57:41 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 0}`
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:57:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:57:49 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'250'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:57:49 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:57:49 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398255, 'message': {'message_id': 84, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755205069, 'text': 'test'}}]`
-2025-08-14 22:57:49 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398255]
-2025-08-14 22:57:49 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 14, 20, 57, 49, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=84, supergroup_chat_created=False, text='test'), update_id=254398255)
-2025-08-14 22:57:49 [DEBUG] telegram_adapter.py:28:handle_message - Eingehende Nachricht von None: test
-2025-08-14 22:57:49 [INFO] telegram_bot_service.py:26:handle_message_logic - 📩 Eingehende Nachricht: test
-2025-08-14 22:57:49 [ERROR] telegram_bot_service.py:49:handle_message_logic - Fehler bei Analyse
+2025-08-14 23:22:36 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-08-14 23:22:36 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
+2025-08-14 23:22:36 [DEBUG] __init__.py:1557:<module> - interactive is False
+2025-08-14 23:22:36 [DEBUG] __init__.py:1558:<module> - platform is darwin
+2025-08-14 23:22:36 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
+2025-08-14 23:22:36 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
+2025-08-14 23:22:36 [INFO] main.py:67:main - ▶️ Starte HydroAlert – Command: telegram
+2025-08-14 23:22:36 [DEBUG] main.py:68:main - 📊 CLI Argumente: {'command': 'telegram'}
+2025-08-14 23:22:36 [INFO] telegram_bot.py:12:run_telegram_bot_use_case - 📲 Starte Telegram-Bot …
+2025-08-14 23:22:36 [DEBUG] _bot.py:333:__init__ - Set Bot API URL: https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
+2025-08-14 23:22:36 [DEBUG] _bot.py:334:__init__ - Set Bot API File URL: https://api.telegram.org/file/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
+2025-08-14 23:22:36 [INFO] telegram_adapter.py:66:start_bot - 🚀 Telegram-Bot gestartet. Warte auf Nachrichten …
+2025-08-14 23:22:36 [DEBUG] selector_events.py:54:__init__ - Using selector: KqueueSelector
+2025-08-14 23:22:36 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap Initialize Application): Starting
+2025-08-14 23:22:36 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getMe` with parameters `{}`
+2025-08-14 23:22:36 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e10d890>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10df12b10> server_hostname='api.telegram.org' timeout=5.0
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e10d690>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:22:37 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'254'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:22:37 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getMe "HTTP/1.1 200 OK"
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:22:37 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getMe` finished with return value `{'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot', 'can_join_groups': True, 'can_read_all_group_messages': False, 'supports_inline_queries': False, 'can_connect_to_business': False, 'has_main_web_app': False}`
+2025-08-14 23:22:37 [DEBUG] _bot.py:835:initialize - This Bot is already initialized.
+2025-08-14 23:22:37 [DEBUG] _updater.py:324:_start_polling - Updater started (polling)
+2025-08-14 23:22:37 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap delete Webhook): Starting
+2025-08-14 23:22:37 [DEBUG] _updater.py:682:bootstrap_del_webhook - Deleting webhook
+2025-08-14 23:22:37 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `deleteWebhook` with parameters `{}`
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:22:37 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'68'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:22:37 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/deleteWebhook "HTTP/1.1 200 OK"
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:22:37 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `deleteWebhook` finished with return value `True`
+2025-08-14 23:22:37 [DEBUG] _updater.py:336:_start_polling - Bootstrap done
+2025-08-14 23:22:37 [DEBUG] _updater.py:306:start_polling - Waiting for polling to start
+2025-08-14 23:22:37 [DEBUG] _updater.py:308:start_polling - Polling updates from Telegram started
+2025-08-14 23:22:37 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Polling Updates): Starting
+2025-08-14 23:22:37 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 0}`
+2025-08-14 23:22:37 [INFO] _application.py:633:start - Application started
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e127c50>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10df12ba0> server_hostname='api.telegram.org' timeout=5.0
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e127690>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:22:37 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:22:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'250'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:22:41 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:22:41 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398257, 'message': {'message_id': 87, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755206561, 'text': 'test'}}]`
+2025-08-14 23:22:41 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398257]
+2025-08-14 23:22:41 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 14, 21, 22, 41, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=87, supergroup_chat_created=False, text='test'), update_id=254398257)
+2025-08-14 23:22:41 [DEBUG] telegram_adapter.py:39:handle_message - Eingehende Nachricht: test
+2025-08-14 23:22:41 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': "⚠️ Bitte Koordinaten im Format 'lat, lon' eingeben."}`
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398258}`
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:22:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'282'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:22:41 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:22:41 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:22:41 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 88, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755206561, 'text': "⚠️ Bitte Koordinaten im Format 'lat, lon' eingeben."}`
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:22:51 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'257'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:22:51 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:22:51 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398258, 'message': {'message_id': 89, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755206571, 'text': '50.00, 8.00'}}]`
+2025-08-14 23:22:51 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398258]
+2025-08-14 23:22:51 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 14, 21, 22, 51, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=89, supergroup_chat_created=False, text='50.00, 8.00'), update_id=254398258)
+2025-08-14 23:22:51 [DEBUG] telegram_adapter.py:39:handle_message - Eingehende Nachricht: 50.00, 8.00
+2025-08-14 23:22:51 [INFO] telegram_bot_service.py:28:handle_message_logic - 📩 Anfrage für Koordinaten: 50.0, 8.0
+2025-08-14 23:22:51 [DEBUG] cache_query_service.py:24:has_cached_result - Prüfe Cache-Pfad: data/cache/lat50.00_lon8.00
+2025-08-14 23:22:51 [DEBUG] cache_query_service.py:27:has_cached_result - Cache-Verzeichnis existiert nicht.
+2025-08-14 23:22:51 [ERROR] telegram_bot_service.py:62:handle_message_logic - Fehler bei Analyse
 Traceback (most recent call last):
-  File "/Users/dacdi_privat/PycharmProjects/HydroAlert/src/services/telegram_bot_service.py", line 28, in handle_message_logic
+  File "/Users/dacdi_privat/PycharmProjects/HydroAlert/src/services/telegram_bot_service.py", line 41, in handle_message_logic
     result = classify_rain_stage()
              ^^^^^^^^^^^^^^^^^^^^^
 TypeError: classify_rain_stage() missing 2 required positional arguments: 'csv_path' and 'thresholds'
-2025-08-14 22:57:49 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': '❌ Fehler bei der Analyse.'}`
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - close.started
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - close.complete
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
-2025-08-14 22:57:49 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10c4e2b90>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c43ab10> server_hostname='api.telegram.org' timeout=5.0
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10c4e3c90>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:57:49 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:57:49 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:57:49 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:57:49 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 85, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755205069, 'text': '❌ Fehler bei der Analyse.'}`
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:57:59 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:58:00 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:58:00 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:58:00 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:58:00 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:58:00 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:58:10 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:58:10 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:58:10 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:58:10 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:58:10 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:58:10 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:58:20 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:58:20 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:58:20 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:58:20 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:58:20 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:58:20 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:58:30 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:58:30 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:58:30 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:58:30 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:58:30 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:58:30 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:58:40 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:58:40 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:58:40 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:58:40 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:58:40 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:58:40 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:58:50 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:58:51 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:58:51 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:58:51 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:58:51 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:58:51 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:59:01 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:59:01 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:59:01 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:59:01 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:59:01 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:59:01 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:59:11 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:59:11 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:59:11 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:59:11 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:59:11 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:59:11 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:59:21 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:59:22 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:59:22 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:59:22 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:59:22 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:59:22 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:59:32 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:59:32 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:59:32 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:59:32 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:59:32 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:59:32 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:59:42 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:59:42 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:59:42 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:59:42 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:59:42 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:59:42 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 20:59:52 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 22:59:52 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 22:59:52 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 22:59:52 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 22:59:52 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 22:59:52 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:00:02 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 23:00:03 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 23:00:03 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 23:00:03 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 23:00:03 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 23:00:03 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:00:13 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 23:00:13 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 23:00:13 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 23:00:13 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 23:00:13 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 23:00:13 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:00:23 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 23:00:23 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 23:00:23 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 23:00:23 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 23:00:23 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 23:00:23 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:00:34 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 23:00:34 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 23:00:34 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 23:00:34 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 23:00:34 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 23:00:34 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:00:44 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 23:00:44 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 23:00:44 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 23:00:44 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 23:00:44 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 23:00:44 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:00:54 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 23:00:54 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 23:00:54 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 23:00:54 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 23:00:54 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 23:00:54 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:01:04 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-14 23:01:05 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-14 23:01:05 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-14 23:01:05 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-14 23:01:05 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398256}`
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-14 23:01:05 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': '❌ Fehler bei der Analyse.'}`
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - close.started
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - close.complete
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-14 23:22:51 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398259}`
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e1479d0>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10df12b10> server_hostname='api.telegram.org' timeout=5.0
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10cbe51d0>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:22:51 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:22:51 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:22:51 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:22:51 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 90, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755206571, 'text': '❌ Fehler bei der Analyse.'}`
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:23:01 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:23:01 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:23:01 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
+2025-08-14 23:23:01 [DEBUG] _bot.py:4625:get_updates - No new updates found.
+2025-08-14 23:23:01 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398259}`
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:23:01 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:23:11 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:23:12 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:23:12 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
+2025-08-14 23:23:12 [DEBUG] _bot.py:4625:get_updates - No new updates found.
+2025-08-14 23:23:12 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398259}`
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:23:12 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:23:21 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'257'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:23:21 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:23:21 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398259, 'message': {'message_id': 91, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755206601, 'text': '49.35, 8.15'}}]`
+2025-08-14 23:23:21 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398259]
+2025-08-14 23:23:21 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 14, 21, 23, 21, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=91, supergroup_chat_created=False, text='49.35, 8.15'), update_id=254398259)
+2025-08-14 23:23:21 [DEBUG] telegram_adapter.py:39:handle_message - Eingehende Nachricht: 49.35, 8.15
+2025-08-14 23:23:21 [INFO] telegram_bot_service.py:28:handle_message_logic - 📩 Anfrage für Koordinaten: 49.35, 8.15
+2025-08-14 23:23:21 [DEBUG] cache_query_service.py:24:has_cached_result - Prüfe Cache-Pfad: data/cache/lat49.35_lon8.15
+2025-08-14 23:23:21 [DEBUG] cache_query_service.py:32:has_cached_result - Gefundene Dateien: ['Wassertiefe_SRI10_1h.png', 'Wassertiefe_SRI7_1h.png', 'flood_Wassertiefe_SRI10_4h.kml', 'flood_Wassertiefe_SRI7_1h.kml', 'flood_Wassertiefe_SRI7_1h.csv', 'flood_Wassertiefe_SRI10_4h.csv', 'Wassertiefe_SRI10_4h.png', 'flood_Wassertiefe_SRI10_1h.csv', 'meta.json', 'flood_Wassertiefe_SRI10_1h.kml']
+2025-08-14 23:23:21 [INFO] telegram_bot_service.py:32:handle_message_logic - ✅ Cache-Hit – keine Analyse notwendig.
+2025-08-14 23:23:21 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': '📦 Daten aus Cache gefunden.'}`
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - close.started
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - close.complete
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-14 23:23:21 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398260}`
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e15bad0>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10df12b10> server_hostname='api.telegram.org' timeout=5.0
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e15b8d0>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:23:21 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'259'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:23:21 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:23:21 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 92, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755206601, 'text': '📦 Daten aus Cache gefunden.'}`
+2025-08-14 23:23:21 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendDocument` with parameters `{'chat_id': 147841005, 'document': <telegram._files.inputfile.InputFile object at 0x10e15a0c0>, 'caption': 'Hier die KML-Datei.'}`
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:23:21 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:23:22 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:23:22 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:23 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:23:23 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'489'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:23:23 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendDocument "HTTP/1.1 200 OK"
+2025-08-14 23:23:23 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:23:23 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:23:23 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:23:23 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:23:23 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendDocument` finished with return value `{'message_id': 93, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755206603, 'document': {'file_name': 'flood_Wassertiefe_SRI10_4h.kml', 'mime_type': 'application/vnd.google-earth.kml+xml', 'file_id': 'BQACAgIAAxkDAANdaJ5Tyw70YPjVUhhYtEj3_sp3zwEAAm5xAAK5HvlIl1HxGsRtiEc2BA', 'file_unique_id': 'AgADbnEAArke-Ug', 'file_size': 521079}, 'caption': 'Hier die KML-Datei.'}`
+2025-08-14 23:23:23 [INFO] telegram_adapter.py:57:handle_message - KML-Datei gesendet: data/cache/lat49.35_lon8.15/flood_Wassertiefe_SRI10_4h.kml
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:23:31 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:23:31 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:23:31 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
+2025-08-14 23:23:31 [DEBUG] _bot.py:4625:get_updates - No new updates found.
+2025-08-14 23:23:31 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398260}`
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:23:31 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:23:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:23:41 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:23:41 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
+2025-08-14 23:23:41 [DEBUG] _bot.py:4625:get_updates - No new updates found.
+2025-08-14 23:23:41 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398260}`
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:23:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Thu, 14 Aug 2025 21:23:51 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-14 23:23:51 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-14 23:23:51 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
+2025-08-14 23:23:51 [DEBUG] _bot.py:4625:get_updates - No new updates found.
+2025-08-14 23:23:51 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398260}`
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-14 23:23:51 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
