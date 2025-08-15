@@ -2,6 +2,7 @@
 
 from argparse import Namespace
 from logging import Logger
+from typing import Optional, Tuple
 from src.utils.utils_logger import get_logger
 from src.io.telegram_adapter import start_bot
 from src.io.cache_store import is_cache_available, find_first_kml_in_cache
@@ -15,8 +16,8 @@ from src.config.config import (
     GRID_SIZE_M,
     FORECAST_STEP_M,
 )
-import os
-from typing import Optional, Tuple
+from src.services.evaluation_service import evaluate_and_store_for_location
+
 
 logger: Logger = get_logger()
 
@@ -52,6 +53,8 @@ def _handle(lat: float, lon: float) -> Tuple[str, Optional[str]]:
         grid_size_m=GRID_SIZE_M,
         step_m=FORECAST_STEP_M,
     )
+
+    evaluate_and_store_for_location(lat=lat, lon=lon)
 
     kml_path = find_first_kml_in_cache(lat, lon)
     status = (
