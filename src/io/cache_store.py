@@ -1,8 +1,11 @@
 # src/io/cache_store.py
 import csv
-from typing import Dict
+import os
+from glob import glob
+from typing import Optional, Dict
 from simplekml import Kml
 from src.utils.utils_logger import get_logger
+from src.utils.naming import cache_path_for_latlon
 
 logger = get_logger()
 
@@ -40,3 +43,18 @@ def write_depths_kml(depths: Dict[str, str], gdf_edges_wgs, path: str) -> str:
     kml.save(path)
     logger.info("✅ KML-Cache geschrieben: %s", path)
     return path
+
+
+def is_cache_available(lat: float, lon: float) -> bool:
+    cache_dir = cache_path_for_latlon(lat, lon)
+    return os.path.isdir(cache_dir) and bool(os.listdir(cache_dir))
+
+
+def find_first_kml_in_cache(lat: float, lon: float) -> Optional[str]:
+    """
+    Sucht die erste flood_*.kml-Datei im Cache für (lat, lon).
+    Gibt den Pfad zurück oder None.
+    """
+    cache_dir = cache_path_for_latlon(lat, lon)
+    matches = sorted(glob(os.path.join(cache_dir, "flood_*.kml")))
+    return matches[0] if matches else None

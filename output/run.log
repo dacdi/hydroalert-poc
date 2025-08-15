@@ -1,531 +1,483 @@
-2025-08-15 16:07:52 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
-2025-08-15 16:07:52 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
-2025-08-15 16:07:52 [DEBUG] __init__.py:1557:<module> - interactive is False
-2025-08-15 16:07:52 [DEBUG] __init__.py:1558:<module> - platform is darwin
-2025-08-15 16:07:52 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
-2025-08-15 16:07:52 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
-2025-08-15 16:07:52 [INFO] main.py:67:main - ▶️ Starte HydroAlert – Command: telegram
-2025-08-15 16:07:52 [DEBUG] main.py:68:main - 📊 CLI Argumente: {'command': 'telegram'}
-2025-08-15 16:07:52 [INFO] telegram_bot.py:23:run_telegram_bot_use_case - 📲 Starte Telegram-Bot …
-2025-08-15 16:07:52 [DEBUG] _bot.py:333:__init__ - Set Bot API URL: https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
-2025-08-15 16:07:52 [DEBUG] _bot.py:334:__init__ - Set Bot API File URL: https://api.telegram.org/file/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
-2025-08-15 16:07:52 [INFO] telegram_adapter.py:71:start_bot - 🚀 Telegram-Bot gestartet. Warte auf Nachrichten …
-2025-08-15 16:07:52 [DEBUG] selector_events.py:54:__init__ - Using selector: KqueueSelector
-2025-08-15 16:07:52 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap Initialize Application): Starting
-2025-08-15 16:07:52 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getMe` with parameters `{}`
-2025-08-15 16:07:52 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x108645c10>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x108562960> server_hostname='api.telegram.org' timeout=5.0
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x107991650>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:07:54 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'254'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:07:54 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getMe "HTTP/1.1 200 OK"
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:07:54 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getMe` finished with return value `{'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot', 'can_join_groups': True, 'can_read_all_group_messages': False, 'supports_inline_queries': False, 'can_connect_to_business': False, 'has_main_web_app': False}`
-2025-08-15 16:07:54 [DEBUG] _bot.py:835:initialize - This Bot is already initialized.
-2025-08-15 16:07:54 [DEBUG] _updater.py:324:_start_polling - Updater started (polling)
-2025-08-15 16:07:54 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap delete Webhook): Starting
-2025-08-15 16:07:54 [DEBUG] _updater.py:682:bootstrap_del_webhook - Deleting webhook
-2025-08-15 16:07:54 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `deleteWebhook` with parameters `{}`
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:07:54 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'68'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:07:54 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/deleteWebhook "HTTP/1.1 200 OK"
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:07:54 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `deleteWebhook` finished with return value `True`
-2025-08-15 16:07:54 [DEBUG] _updater.py:336:_start_polling - Bootstrap done
-2025-08-15 16:07:54 [DEBUG] _updater.py:306:start_polling - Waiting for polling to start
-2025-08-15 16:07:54 [DEBUG] _updater.py:308:start_polling - Polling updates from Telegram started
-2025-08-15 16:07:54 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Polling Updates): Starting
-2025-08-15 16:07:54 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 0}`
-2025-08-15 16:07:54 [INFO] _application.py:633:start - Application started
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1079f9350>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x1085629f0> server_hostname='api.telegram.org' timeout=5.0
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10865ffd0>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:07:54 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:07:58 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:07:58 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'258'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:07:58 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-15 16:07:58 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:07:58 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:07:58 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:07:58 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:07:58 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398265, 'message': {'message_id': 105, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755266878, 'text': '49.35, 8.10'}}]`
-2025-08-15 16:07:58 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398265]
-2025-08-15 16:07:58 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 15, 14, 7, 58, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=105, supergroup_chat_created=False, text='49.35, 8.10'), update_id=254398265)
-2025-08-15 16:07:58 [DEBUG] telegram_adapter.py:42:handle_message - 📩 Eingehende Nachricht: 49.35, 8.10
-2025-08-15 16:07:58 [INFO] geodata_workflow_service.py:35:run_full_pipeline_for_location - 🧭 Workflow start: lat=49.350000, lon=8.100000
-2025-08-15 16:07:58 [INFO] geodata_workflow_service.py:55:run_full_pipeline_for_location - ✅ Cache vorhandenen Inhalt erkannt: data/cache/lat49.35_lon8.10
-2025-08-15 16:07:58 [INFO] geodata_workflow_service.py:58:run_full_pipeline_for_location - 🔮 Aktualisiere Forecast-Raster (24h) …
-2025-08-15 16:07:58 [INFO] forecast_area_service.py:86:save_full_rain_forecast_grid - ▶️ Starte 24h-Forecast-Raster (lat=49.350000, lon=8.100000, grid_size_m=400.0, step_m=200.0)
-2025-08-15 16:07:58 [DEBUG] grid_ops.py:20:generate_hour_labels - generate_hour_labels: 24 Labels ab 2025-08-15T14:00
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:92:save_full_rain_forecast_grid - ⏱️ Hour-Labels (UTC): ['2025-08-15T14:00', '2025-08-15T15:00', '2025-08-15T16:00', '2025-08-15T17:00', '2025-08-15T18:00', '2025-08-15T19:00', '2025-08-15T20:00', '2025-08-15T21:00', '2025-08-15T22:00', '2025-08-15T23:00', '2025-08-16T00:00', '2025-08-16T01:00', '2025-08-16T02:00', '2025-08-16T03:00', '2025-08-16T04:00', '2025-08-16T05:00', '2025-08-16T06:00', '2025-08-16T07:00', '2025-08-16T08:00', '2025-08-16T09:00', '2025-08-16T10:00', '2025-08-16T11:00', '2025-08-16T12:00', '2025-08-16T13:00']
-2025-08-15 16:07:58 [DEBUG] grid_ops.py:57:generate_grid - generate_grid: 25 Punkte für center=(49.350000, 8.100000), r=0.4m, s=200.0m
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:37:_forecast_points - 🧩 Raster mit 25 Punkten erzeugt.
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:38:_forecast_points - Rasterpunkte (lat, lon):
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.094484
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.097242
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.100000
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.102758
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.105516
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.094484
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.097242
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.100000
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.102758
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.105516
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.094484
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.097242
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.100000
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.102758
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.105516
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.094484
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.097242
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.100000
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.102758
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.105516
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.094484
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.097242
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.100000
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.102758
-2025-08-15 16:07:58 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.105516
-2025-08-15 16:07:58 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:07:58 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-15 16:07:59 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:07:59 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:07:59 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:07:59 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:07:59 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:07:59 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:00 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:00 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:00 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:00 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:00 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:00 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:00 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:00 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:00 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:01 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:01 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:01 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:01 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:01 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:01 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:01 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:01 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:01 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:02 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:02 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:02 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:02 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:02 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:02 [INFO] forecast_area_service.py:76:_fetch_forecasts - 📦 25 Forecasts geholt.
-2025-08-15 16:08:02 [INFO] csv_writer.py:36:write_rain_forecasts_csv - 📝 CSV geschrieben (25 Zeilen): data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
-2025-08-15 16:08:02 [INFO] forecast_area_service.py:118:save_full_rain_forecast_grid - ✅ Forecast-CSV gespeichert: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
-2025-08-15 16:08:02 [INFO] geodata_workflow_service.py:73:run_full_pipeline_for_location - ✅ Workflow done: 📦 Cache genutzt. 🌧️ Forecast aktualisiert.
-2025-08-15 16:08:02 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': '📦 Cache genutzt. 🌧️ Forecast aktualisiert.'}`
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - close.started
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - close.complete
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
-2025-08-15 16:08:02 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398266}`
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10865edd0>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x108562960> server_hostname='api.telegram.org' timeout=5.0
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10865e810>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:08:02 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'291'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:08:02 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:08:02 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 106, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755266882, 'text': '📦 Cache genutzt. 🌧️ Forecast aktualisiert.'}`
-2025-08-15 16:08:02 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendDocument` with parameters `{'chat_id': 147841005, 'document': <telegram._files.inputfile.InputFile object at 0x108314c40>, 'caption': 'Ergebnisdatei'}`
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:02 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:03 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:08:03 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'483'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:08:03 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendDocument "HTTP/1.1 200 OK"
-2025-08-15 16:08:03 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:08:03 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:08:03 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:08:03 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:08:03 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendDocument` finished with return value `{'message_id': 107, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755266883, 'document': {'file_name': 'flood_Wassertiefe_SRI10_1h.kml', 'mime_type': 'application/vnd.google-earth.kml+xml', 'file_id': 'BQACAgIAAxkDAANraJ8_Q8UTE7q-Wm6mxFSULNHPQj8AAj14AAK5HgFJchaHO1Ql0Sc2BA', 'file_unique_id': 'AgADPXgAArkeAUk', 'file_size': 43679}, 'caption': 'Ergebnisdatei'}`
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:08:12 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:08:12 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:08:12 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-15 16:08:12 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-15 16:08:12 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398266}`
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:12 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:08:22 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:08:22 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:08:22 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-15 16:08:22 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-15 16:08:22 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398266}`
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:22 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:28 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:08:28 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'258'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:08:28 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-15 16:08:28 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:08:28 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:08:28 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:08:28 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:08:28 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398266, 'message': {'message_id': 108, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755266908, 'text': '49.35, 8.10'}}]`
-2025-08-15 16:08:28 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398266]
-2025-08-15 16:08:28 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 15, 14, 8, 28, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=108, supergroup_chat_created=False, text='49.35, 8.10'), update_id=254398266)
-2025-08-15 16:08:28 [DEBUG] telegram_adapter.py:42:handle_message - 📩 Eingehende Nachricht: 49.35, 8.10
-2025-08-15 16:08:28 [INFO] geodata_workflow_service.py:35:run_full_pipeline_for_location - 🧭 Workflow start: lat=49.350000, lon=8.100000
-2025-08-15 16:08:28 [INFO] geodata_workflow_service.py:43:run_full_pipeline_for_location - ❌ Cache leer → lade WMS-Layer …
-2025-08-15 16:08:28 [DEBUG] geo_transforms.py:16:latlon_to_xy25832 - geo_transforms.latlon_to_xy25832(start): lon=8.100000, lat=49.350000
-2025-08-15 16:08:28 [DEBUG] geo_transforms.py:18:latlon_to_xy25832 - geo_transforms.latlon_to_xy25832(result): x=434634.618, y=5466754.322
-2025-08-15 16:08:28 [DEBUG] geo_transforms.py:29:bbox_from_latlon - geo_transforms.bbox_from_latlon: BBox(432634, 5464754, 436634, 5468754)
-2025-08-15 16:08:28 [DEBUG] wms_downloader_service.py:72:download_layers_for_latlon - download_layers_for_latlon: lat=49.350000 lon=8.100000 -> BBox(432634, 5464754, 436634, 5468754)
-2025-08-15 16:08:28 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI07_1h_WaterDepth
-2025-08-15 16:08:28 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
-2025-08-15 16:08:29 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI07_1h_WaterDepth&bbox=432634%2C5464754%2C436634%2C5468754&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-15 16:08:30 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/Wassertiefe_SRI7_1h.png
-2025-08-15 16:08:30 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_1h_WaterDepth
-2025-08-15 16:08:31 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_1h_WaterDepth&bbox=432634%2C5464754%2C436634%2C5468754&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-15 16:08:31 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/Wassertiefe_SRI10_1h.png
-2025-08-15 16:08:31 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_4h_WaterDepth
-2025-08-15 16:08:32 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_4h_WaterDepth&bbox=432634%2C5464754%2C436634%2C5468754&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-15 16:08:32 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/Wassertiefe_SRI10_4h.png
-2025-08-15 16:08:32 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-15 16:08:32 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-15 16:08:32 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-15 16:08:32 [INFO] wms_downloader_service.py:36:_save_meta_file - 💾 Meta-Datei gespeichert: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/meta.json
-2025-08-15 16:08:32 [INFO] wms_downloader_service.py:60:download_all_wms_layers - ✅ 3 Layer gespeichert in /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10
-2025-08-15 16:08:32 [INFO] geodata_workflow_service.py:46:run_full_pipeline_for_location - 🔧 Generiere Cache (CSV/KML) …
-2025-08-15 16:08:32 [INFO] cache_generation_service.py:81:generate_cache_for_location - 🗂️ Cache-Ordner: data/cache/lat49.35_lon8.10
-2025-08-15 16:08:32 [DEBUG] cache_generation_service.py:58:_load_meta_file - 🧭 meta.json geladen: bbox_utm=(432634, 5464754, 436634, 5468754), raster_size=(2000, 2000)
-2025-08-15 16:08:32 [INFO] cache_generation_service.py:21:_prepare_street_graph - 📍 Ort: lat=49.350000, lon=8.100000, radius=2000.0 m
-2025-08-15 16:08:32 [DEBUG] cache_generation_service.py:87:generate_cache_for_location - Anzahl Straßen: 158
-2025-08-15 16:08:32 [INFO] cache_generation_service.py:97:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI7_1h  |  PNG: data/cache/lat49.35_lon8.10/Wassertiefe_SRI7_1h.png
-2025-08-15 16:08:32 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-15 16:08:32 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-15 16:08:32 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-15 16:08:33 [INFO] flood_overlay.py:120:detect_street_depths - 🔹 Detektierte Tiefen für 30 Straßen
-2025-08-15 16:08:33 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI7_1h.csv
-2025-08-15 16:08:33 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI7_1h.kml
-2025-08-15 16:08:33 [INFO] cache_generation_service.py:97:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI10_1h  |  PNG: data/cache/lat49.35_lon8.10/Wassertiefe_SRI10_1h.png
-2025-08-15 16:08:33 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-15 16:08:33 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-15 16:08:33 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-15 16:08:33 [INFO] flood_overlay.py:120:detect_street_depths - 🔹 Detektierte Tiefen für 30 Straßen
-2025-08-15 16:08:33 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI10_1h.csv
-2025-08-15 16:08:33 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI10_1h.kml
-2025-08-15 16:08:33 [INFO] cache_generation_service.py:97:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI10_4h  |  PNG: data/cache/lat49.35_lon8.10/Wassertiefe_SRI10_4h.png
-2025-08-15 16:08:33 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-15 16:08:33 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-15 16:08:33 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-15 16:08:33 [INFO] flood_overlay.py:120:detect_street_depths - 🔹 Detektierte Tiefen für 30 Straßen
-2025-08-15 16:08:33 [INFO] cache_store.py:15:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI10_4h.csv
-2025-08-15 16:08:33 [INFO] cache_store.py:41:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI10_4h.kml
-2025-08-15 16:08:33 [INFO] cache_generation_service.py:113:generate_cache_for_location - ✅ Generate-Cache fertig: {'Wassertiefe_SRI7_1h': 'ok', 'Wassertiefe_SRI10_1h': 'ok', 'Wassertiefe_SRI10_4h': 'ok'}
-2025-08-15 16:08:33 [INFO] geodata_workflow_service.py:58:run_full_pipeline_for_location - 🔮 Aktualisiere Forecast-Raster (24h) …
-2025-08-15 16:08:33 [INFO] forecast_area_service.py:86:save_full_rain_forecast_grid - ▶️ Starte 24h-Forecast-Raster (lat=49.350000, lon=8.100000, grid_size_m=400.0, step_m=200.0)
-2025-08-15 16:08:33 [DEBUG] grid_ops.py:20:generate_hour_labels - generate_hour_labels: 24 Labels ab 2025-08-15T14:00
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:92:save_full_rain_forecast_grid - ⏱️ Hour-Labels (UTC): ['2025-08-15T14:00', '2025-08-15T15:00', '2025-08-15T16:00', '2025-08-15T17:00', '2025-08-15T18:00', '2025-08-15T19:00', '2025-08-15T20:00', '2025-08-15T21:00', '2025-08-15T22:00', '2025-08-15T23:00', '2025-08-16T00:00', '2025-08-16T01:00', '2025-08-16T02:00', '2025-08-16T03:00', '2025-08-16T04:00', '2025-08-16T05:00', '2025-08-16T06:00', '2025-08-16T07:00', '2025-08-16T08:00', '2025-08-16T09:00', '2025-08-16T10:00', '2025-08-16T11:00', '2025-08-16T12:00', '2025-08-16T13:00']
-2025-08-15 16:08:33 [DEBUG] grid_ops.py:57:generate_grid - generate_grid: 25 Punkte für center=(49.350000, 8.100000), r=0.4m, s=200.0m
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:37:_forecast_points - 🧩 Raster mit 25 Punkten erzeugt.
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:38:_forecast_points - Rasterpunkte (lat, lon):
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.094484
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.097242
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.100000
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.102758
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.105516
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.094484
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.097242
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.100000
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.102758
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.105516
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.094484
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.097242
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.100000
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.102758
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.105516
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.094484
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.097242
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.100000
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.102758
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.105516
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.094484
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.097242
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.100000
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.102758
-2025-08-15 16:08:33 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.105516
-2025-08-15 16:08:33 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:33 [DEBUG] connectionpool.py:289:_get_conn - Resetting dropped connection: api.open-meteo.com
-2025-08-15 16:08:34 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:34 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:34 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:34 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:34 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:34 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:35 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:35 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:35 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:35 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:35 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:35 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:35 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:36 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:36 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:36 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:36 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:36 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:36 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:36 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:36 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:36 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:37 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:37 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:37 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:37 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:37 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
-2025-08-15 16:08:37 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
-2025-08-15 16:08:37 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
-2025-08-15 16:08:37 [INFO] forecast_area_service.py:76:_fetch_forecasts - 📦 25 Forecasts geholt.
-2025-08-15 16:08:37 [INFO] csv_writer.py:36:write_rain_forecasts_csv - 📝 CSV geschrieben (25 Zeilen): data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
-2025-08-15 16:08:37 [INFO] forecast_area_service.py:118:save_full_rain_forecast_grid - ✅ Forecast-CSV gespeichert: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
-2025-08-15 16:08:37 [INFO] geodata_workflow_service.py:73:run_full_pipeline_for_location - ✅ Workflow done: 🆕 WMS + Cache erstellt. 🌧️ Forecast aktualisiert.
-2025-08-15 16:08:37 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': '🆕 WMS + Cache erstellt. 🌧️ Forecast aktualisiert.'}`
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - close.started
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - close.complete
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
-2025-08-15 16:08:37 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398267}`
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - close.started
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - close.complete
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x108314ed0>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x108562960> server_hostname='api.telegram.org' timeout=5.0
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10945f510>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x1085629f0> server_hostname='api.telegram.org' timeout=5.0
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x108289090>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10956bc50>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:37 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:08:38 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'298'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:08:38 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:08:38 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 109, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755266918, 'text': '🆕 WMS + Cache erstellt. 🌧️ Forecast aktualisiert.'}`
-2025-08-15 16:08:38 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendDocument` with parameters `{'chat_id': 147841005, 'document': <telegram._files.inputfile.InputFile object at 0x108669980>, 'caption': 'Ergebnisdatei'}`
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:08:38 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'483'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:08:38 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendDocument "HTTP/1.1 200 OK"
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:08:38 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:08:38 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendDocument` finished with return value `{'message_id': 110, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755266918, 'document': {'file_name': 'flood_Wassertiefe_SRI10_1h.kml', 'mime_type': 'application/vnd.google-earth.kml+xml', 'file_id': 'BQACAgIAAxkDAANuaJ8_ZqjdjVzQ_o7MOrKhjSl62gwAAj94AAK5HgFJze9vD3bjMh42BA', 'file_unique_id': 'AgADP3gAArkeAUk', 'file_size': 43671}, 'caption': 'Ergebnisdatei'}`
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 14:08:48 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
-2025-08-15 16:08:48 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - response_closed.started
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - response_closed.complete
-2025-08-15 16:08:48 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
-2025-08-15 16:08:48 [DEBUG] _bot.py:4625:get_updates - No new updates found.
-2025-08-15 16:08:48 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398267}`
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - send_request_body.complete
-2025-08-15 16:08:48 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:40 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-08-15 22:34:40 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
+2025-08-15 22:34:40 [DEBUG] __init__.py:1557:<module> - interactive is False
+2025-08-15 22:34:40 [DEBUG] __init__.py:1558:<module> - platform is darwin
+2025-08-15 22:34:40 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
+2025-08-15 22:34:40 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
+2025-08-15 22:34:41 [INFO] main.py:67:main - ▶️ Starte HydroAlert – Command: telegram
+2025-08-15 22:34:41 [DEBUG] main.py:68:main - 📊 CLI Argumente: {'command': 'telegram'}
+2025-08-15 22:34:41 [INFO] telegram_bot.py:66:run_telegram_bot_use_case - 📡 Starte Telegram-Bot-UseCase …
+2025-08-15 22:34:41 [DEBUG] _bot.py:333:__init__ - Set Bot API URL: https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
+2025-08-15 22:34:41 [DEBUG] _bot.py:334:__init__ - Set Bot API File URL: https://api.telegram.org/file/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
+2025-08-15 22:34:41 [INFO] telegram_adapter.py:71:start_bot - 🚀 Telegram-Bot gestartet. Warte auf Nachrichten …
+2025-08-15 22:34:41 [DEBUG] selector_events.py:54:__init__ - Using selector: KqueueSelector
+2025-08-15 22:34:41 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap Initialize Application): Starting
+2025-08-15 22:34:41 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getMe` with parameters `{}`
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a3c5950>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10a2da960> server_hostname='api.telegram.org' timeout=5.0
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a1cb390>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 20:34:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'254'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-15 22:34:41 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getMe "HTTP/1.1 200 OK"
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-15 22:34:41 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getMe` finished with return value `{'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot', 'can_join_groups': True, 'can_read_all_group_messages': False, 'supports_inline_queries': False, 'can_connect_to_business': False, 'has_main_web_app': False}`
+2025-08-15 22:34:41 [DEBUG] _bot.py:835:initialize - This Bot is already initialized.
+2025-08-15 22:34:41 [DEBUG] _updater.py:324:_start_polling - Updater started (polling)
+2025-08-15 22:34:41 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap delete Webhook): Starting
+2025-08-15 22:34:41 [DEBUG] _updater.py:682:bootstrap_del_webhook - Deleting webhook
+2025-08-15 22:34:41 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `deleteWebhook` with parameters `{}`
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 20:34:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'68'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-15 22:34:41 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/deleteWebhook "HTTP/1.1 200 OK"
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-15 22:34:41 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `deleteWebhook` finished with return value `True`
+2025-08-15 22:34:41 [DEBUG] _updater.py:336:_start_polling - Bootstrap done
+2025-08-15 22:34:41 [DEBUG] _updater.py:306:start_polling - Waiting for polling to start
+2025-08-15 22:34:41 [DEBUG] _updater.py:308:start_polling - Polling updates from Telegram started
+2025-08-15 22:34:41 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Polling Updates): Starting
+2025-08-15 22:34:41 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 0}`
+2025-08-15 22:34:41 [INFO] _application.py:633:start - Application started
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a3e81d0>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10a2da9f0> server_hostname='api.telegram.org' timeout=5.0
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a3dffd0>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:34:41 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:50 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 20:34:50 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'258'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-15 22:34:50 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-15 22:34:50 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-15 22:34:50 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-15 22:34:50 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-15 22:34:50 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-15 22:34:50 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398271, 'message': {'message_id': 119, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755290090, 'text': '49.35, 8.10'}}]`
+2025-08-15 22:34:50 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398271]
+2025-08-15 22:34:50 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 15, 20, 34, 50, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=119, supergroup_chat_created=False, text='49.35, 8.10'), update_id=254398271)
+2025-08-15 22:34:50 [DEBUG] telegram_adapter.py:42:handle_message - 📩 Eingehende Nachricht: 49.35, 8.10
+2025-08-15 22:34:50 [INFO] telegram_bot.py:32:_handle - 📲 Anfrage für Ort: lat=49.350000, lon=8.100000
+2025-08-15 22:34:50 [INFO] telegram_bot.py:37:_handle - ❌ Kein Cache vorhanden → lade WMS + generiere Cache …
+2025-08-15 22:34:50 [DEBUG] geo_transforms.py:16:latlon_to_xy25832 - geo_transforms.latlon_to_xy25832(start): lon=8.100000, lat=49.350000
+2025-08-15 22:34:50 [DEBUG] geo_transforms.py:18:latlon_to_xy25832 - geo_transforms.latlon_to_xy25832(result): x=434634.618, y=5466754.322
+2025-08-15 22:34:50 [DEBUG] geo_transforms.py:29:bbox_from_latlon - geo_transforms.bbox_from_latlon: BBox(432634, 5464754, 436634, 5468754)
+2025-08-15 22:34:50 [DEBUG] wms_downloader_service.py:72:download_layers_for_latlon - download_layers_for_latlon: lat=49.350000 lon=8.100000 -> BBox(432634, 5464754, 436634, 5468754)
+2025-08-15 22:34:50 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI07_1h_WaterDepth
+2025-08-15 22:34:50 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
+2025-08-15 22:34:51 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI07_1h_WaterDepth&bbox=432634%2C5464754%2C436634%2C5468754&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-15 22:34:52 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/Wassertiefe_SRI7_1h.png
+2025-08-15 22:34:52 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_1h_WaterDepth
+2025-08-15 22:34:53 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_1h_WaterDepth&bbox=432634%2C5464754%2C436634%2C5468754&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-15 22:34:53 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/Wassertiefe_SRI10_1h.png
+2025-08-15 22:34:53 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_4h_WaterDepth
+2025-08-15 22:34:54 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_4h_WaterDepth&bbox=432634%2C5464754%2C436634%2C5468754&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-15 22:34:54 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/Wassertiefe_SRI10_4h.png
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
+2025-08-15 22:34:54 [INFO] wms_downloader_service.py:36:_save_meta_file - 💾 Meta-Datei gespeichert: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/meta.json
+2025-08-15 22:34:54 [INFO] wms_downloader_service.py:60:download_all_wms_layers - ✅ 3 Layer gespeichert in /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10
+2025-08-15 22:34:54 [INFO] cache_generation_service.py:81:generate_cache_for_location - 🗂️ Cache-Ordner: data/cache/lat49.35_lon8.10
+2025-08-15 22:34:54 [DEBUG] cache_generation_service.py:58:_load_meta_file - 🧭 meta.json geladen: bbox_utm=(432634, 5464754, 436634, 5468754), raster_size=(2000, 2000)
+2025-08-15 22:34:54 [INFO] cache_generation_service.py:21:_prepare_street_graph - 📍 Ort: lat=49.350000, lon=8.100000, radius=2000.0 m
+2025-08-15 22:34:54 [DEBUG] cache_generation_service.py:87:generate_cache_for_location - Anzahl Straßen: 158
+2025-08-15 22:34:54 [INFO] cache_generation_service.py:97:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI7_1h  |  PNG: data/cache/lat49.35_lon8.10/Wassertiefe_SRI7_1h.png
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
+2025-08-15 22:34:54 [INFO] flood_overlay.py:120:detect_street_depths - 🔹 Detektierte Tiefen für 30 Straßen
+2025-08-15 22:34:54 [INFO] cache_store.py:18:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI7_1h.csv
+2025-08-15 22:34:54 [INFO] cache_store.py:44:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI7_1h.kml
+2025-08-15 22:34:54 [INFO] cache_generation_service.py:97:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI10_1h  |  PNG: data/cache/lat49.35_lon8.10/Wassertiefe_SRI10_1h.png
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
+2025-08-15 22:34:54 [INFO] flood_overlay.py:120:detect_street_depths - 🔹 Detektierte Tiefen für 30 Straßen
+2025-08-15 22:34:54 [INFO] cache_store.py:18:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI10_1h.csv
+2025-08-15 22:34:54 [INFO] cache_store.py:44:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI10_1h.kml
+2025-08-15 22:34:54 [INFO] cache_generation_service.py:97:generate_cache_for_location - 🔄 Layer: Wassertiefe_SRI10_4h  |  PNG: data/cache/lat49.35_lon8.10/Wassertiefe_SRI10_4h.png
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
+2025-08-15 22:34:54 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
+2025-08-15 22:34:55 [INFO] flood_overlay.py:120:detect_street_depths - 🔹 Detektierte Tiefen für 30 Straßen
+2025-08-15 22:34:55 [INFO] cache_store.py:18:write_depths_csv - ✅ CSV-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI10_4h.csv
+2025-08-15 22:34:55 [INFO] cache_store.py:44:write_depths_kml - ✅ KML-Cache geschrieben: data/cache/lat49.35_lon8.10/flood_Wassertiefe_SRI10_4h.kml
+2025-08-15 22:34:55 [INFO] cache_generation_service.py:113:generate_cache_for_location - ✅ Generate-Cache fertig: {'Wassertiefe_SRI7_1h': 'ok', 'Wassertiefe_SRI10_1h': 'ok', 'Wassertiefe_SRI10_4h': 'ok'}
+2025-08-15 22:34:55 [INFO] forecast_area_service.py:86:save_full_rain_forecast_grid - ▶️ Starte 24h-Forecast-Raster (lat=49.350000, lon=8.100000, grid_size_m=400.0, step_m=200.0)
+2025-08-15 22:34:55 [DEBUG] grid_ops.py:20:generate_hour_labels - generate_hour_labels: 24 Labels ab 2025-08-15T20:00
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:92:save_full_rain_forecast_grid - ⏱️ Hour-Labels (UTC): ['2025-08-15T20:00', '2025-08-15T21:00', '2025-08-15T22:00', '2025-08-15T23:00', '2025-08-16T00:00', '2025-08-16T01:00', '2025-08-16T02:00', '2025-08-16T03:00', '2025-08-16T04:00', '2025-08-16T05:00', '2025-08-16T06:00', '2025-08-16T07:00', '2025-08-16T08:00', '2025-08-16T09:00', '2025-08-16T10:00', '2025-08-16T11:00', '2025-08-16T12:00', '2025-08-16T13:00', '2025-08-16T14:00', '2025-08-16T15:00', '2025-08-16T16:00', '2025-08-16T17:00', '2025-08-16T18:00', '2025-08-16T19:00']
+2025-08-15 22:34:55 [DEBUG] grid_ops.py:57:generate_grid - generate_grid: 25 Punkte für center=(49.350000, 8.100000), r=0.4m, s=200.0m
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:37:_forecast_points - 🧩 Raster mit 25 Punkten erzeugt.
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:38:_forecast_points - Rasterpunkte (lat, lon):
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.094484
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.097242
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.100000
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.102758
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.105516
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.094484
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.097242
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.100000
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.102758
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.105516
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.094484
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.097242
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.100000
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.102758
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.105516
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.094484
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.097242
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.100000
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.102758
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.105516
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.094484
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.097242
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.100000
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.102758
+2025-08-15 22:34:55 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.105516
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:55 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
+2025-08-15 22:34:55 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:55 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:55 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:55 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:55 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:55 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:56 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:56 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:57 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:57 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:57 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:57 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:57 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:57 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:57 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:57 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:57 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:34:58 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:34:58 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:34:58 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:34:58 [INFO] forecast_area_service.py:76:_fetch_forecasts - 📦 25 Forecasts geholt.
+2025-08-15 22:34:58 [INFO] csv_writer.py:36:write_rain_forecasts_csv - 📝 CSV geschrieben (25 Zeilen): data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
+2025-08-15 22:34:58 [INFO] forecast_area_service.py:118:save_full_rain_forecast_grid - ✅ Forecast-CSV gespeichert: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
+2025-08-15 22:34:58 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': '🆕 WMS + Cache erstellt. 🌧️ Forecast aktualisiert.'}`
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - close.started
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - close.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-15 22:34:58 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398272}`
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - close.started
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - close.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a46cc50>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10a2da9f0> server_hostname='api.telegram.org' timeout=5.0
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a08ec10>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10a2da960> server_hostname='api.telegram.org' timeout=5.0
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10abaf410>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0ab8d0>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 20:34:58 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'298'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-15 22:34:58 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-15 22:34:58 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 120, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755290098, 'text': '🆕 WMS + Cache erstellt. 🌧️ Forecast aktualisiert.'}`
+2025-08-15 22:34:58 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendDocument` with parameters `{'chat_id': 147841005, 'document': <telegram._files.inputfile.InputFile object at 0x10a188680>, 'caption': 'Ergebnisdatei'}`
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 20:34:58 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'483'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-15 22:34:58 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendDocument "HTTP/1.1 200 OK"
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-15 22:34:58 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-15 22:34:58 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendDocument` finished with return value `{'message_id': 121, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755290098, 'document': {'file_name': 'flood_Wassertiefe_SRI10_1h.kml', 'mime_type': 'application/vnd.google-earth.kml+xml', 'file_id': 'BQACAgIAAxkDAAN5aJ-Z8mABOJrNkICyJBjxdkPAbogAAih_AAK5HgFJFATwpUknxTU2BA', 'file_unique_id': 'AgADKH8AArkeAUk', 'file_size': 43671}, 'caption': 'Ergebnisdatei'}`
+2025-08-15 22:35:04 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 20:35:04 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'258'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-15 22:35:04 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-15 22:35:04 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-15 22:35:04 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-15 22:35:04 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-15 22:35:04 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-15 22:35:04 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398272, 'message': {'message_id': 122, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755290104, 'text': '49.35, 8.10'}}]`
+2025-08-15 22:35:04 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398272]
+2025-08-15 22:35:04 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 15, 20, 35, 4, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=122, supergroup_chat_created=False, text='49.35, 8.10'), update_id=254398272)
+2025-08-15 22:35:04 [DEBUG] telegram_adapter.py:42:handle_message - 📩 Eingehende Nachricht: 49.35, 8.10
+2025-08-15 22:35:04 [INFO] telegram_bot.py:32:_handle - 📲 Anfrage für Ort: lat=49.350000, lon=8.100000
+2025-08-15 22:35:04 [INFO] telegram_bot.py:47:_handle - ✅ Cache vorhanden – nutze vorhandene Daten.
+2025-08-15 22:35:04 [INFO] forecast_area_service.py:86:save_full_rain_forecast_grid - ▶️ Starte 24h-Forecast-Raster (lat=49.350000, lon=8.100000, grid_size_m=400.0, step_m=200.0)
+2025-08-15 22:35:04 [DEBUG] grid_ops.py:20:generate_hour_labels - generate_hour_labels: 24 Labels ab 2025-08-15T20:00
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:92:save_full_rain_forecast_grid - ⏱️ Hour-Labels (UTC): ['2025-08-15T20:00', '2025-08-15T21:00', '2025-08-15T22:00', '2025-08-15T23:00', '2025-08-16T00:00', '2025-08-16T01:00', '2025-08-16T02:00', '2025-08-16T03:00', '2025-08-16T04:00', '2025-08-16T05:00', '2025-08-16T06:00', '2025-08-16T07:00', '2025-08-16T08:00', '2025-08-16T09:00', '2025-08-16T10:00', '2025-08-16T11:00', '2025-08-16T12:00', '2025-08-16T13:00', '2025-08-16T14:00', '2025-08-16T15:00', '2025-08-16T16:00', '2025-08-16T17:00', '2025-08-16T18:00', '2025-08-16T19:00']
+2025-08-15 22:35:04 [DEBUG] grid_ops.py:57:generate_grid - generate_grid: 25 Punkte für center=(49.350000, 8.100000), r=0.4m, s=200.0m
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:37:_forecast_points - 🧩 Raster mit 25 Punkten erzeugt.
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:38:_forecast_points - Rasterpunkte (lat, lon):
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.094484
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.097242
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.100000
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.102758
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.346407, 8.105516
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.094484
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.097242
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.100000
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.102758
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.348203, 8.105516
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.094484
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.097242
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.100000
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.102758
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.350000, 8.105516
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.094484
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.097242
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.100000
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.102758
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.351797, 8.105516
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.094484
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.097242
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.100000
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.102758
+2025-08-15 22:35:04 [DEBUG] forecast_area_service.py:40:_forecast_points -   49.353593, 8.105516
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:04 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:04 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:04 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:04 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:04 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.34640675530004, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:05 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.34640675530004&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.34640675530004&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:05 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:05 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:05 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:05 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.348203377650016, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:05 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.348203377650016&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.348203377650016&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:05 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:05 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:05 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:06 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:06 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:06 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:06 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:06 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:06 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:06 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:07 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.35179662234999, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:07 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35179662234999&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.35179662234999&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.094484121818855, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:07 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.094484121818855&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.097242060909426, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:07 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.097242060909426&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.1, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:07 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.1&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.102757939090573, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:07 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.102757939090573&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:07 [DEBUG] forecast_client.py:44:fetch_forecast_24h - GET https://api.open-meteo.com/v1/forecast params={'latitude': 49.353593244699965, 'longitude': 8.105515878181144, 'hourly': 'precipitation', 'forecast_days': 1, 'timezone': 'UTC'} timeout=15.0s
+2025-08-15 22:35:08 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.353593244699965&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC HTTP/1.1" 200 None
+2025-08-15 22:35:08 [DEBUG] forecast_client.py:48:fetch_forecast_24h - Response status=200 (reason=OK) url=https://api.open-meteo.com/v1/forecast?latitude=49.353593244699965&longitude=8.105515878181144&hourly=precipitation&forecast_days=1&timezone=UTC
+2025-08-15 22:35:08 [DEBUG] forecast_client.py:64:fetch_forecast_24h - OK hourly.time=24, hourly.precipitation=24 | first=2025-08-15T00:00 / 0.0 | last=2025-08-15T23:00 / 0.0
+2025-08-15 22:35:08 [INFO] forecast_area_service.py:76:_fetch_forecasts - 📦 25 Forecasts geholt.
+2025-08-15 22:35:08 [INFO] csv_writer.py:36:write_rain_forecasts_csv - 📝 CSV geschrieben (25 Zeilen): data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
+2025-08-15 22:35:08 [INFO] forecast_area_service.py:118:save_full_rain_forecast_grid - ✅ Forecast-CSV gespeichert: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
+2025-08-15 22:35:08 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': '📦 Cache genutzt. 🌧️ Forecast aktualisiert.'}`
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - close.started
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - close.complete
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-15 22:35:08 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398273}`
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10ac38810>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x10a2da960> server_hostname='api.telegram.org' timeout=5.0
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10acdd010>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 20:35:08 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'291'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-15 22:35:08 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-15 22:35:08 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 123, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755290108, 'text': '📦 Cache genutzt. 🌧️ Forecast aktualisiert.'}`
+2025-08-15 22:35:08 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendDocument` with parameters `{'chat_id': 147841005, 'document': <telegram._files.inputfile.InputFile object at 0x10b36e600>, 'caption': 'Ergebnisdatei'}`
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-15 22:35:08 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-15 22:35:09 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Fri, 15 Aug 2025 20:35:09 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'483'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-15 22:35:09 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendDocument "HTTP/1.1 200 OK"
+2025-08-15 22:35:09 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-15 22:35:09 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-15 22:35:09 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-15 22:35:09 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-15 22:35:09 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendDocument` finished with return value `{'message_id': 124, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755290109, 'document': {'file_name': 'flood_Wassertiefe_SRI10_1h.kml', 'mime_type': 'application/vnd.google-earth.kml+xml', 'file_id': 'BQACAgIAAxkDAAN8aJ-Z_VBrH_lW7U1rIZq_ouxrv90AAil_AAK5HgFJOrOnnLZ4mxU2BA', 'file_unique_id': 'AgADKX8AArkeAUk', 'file_size': 43671}, 'caption': 'Ergebnisdatei'}`
