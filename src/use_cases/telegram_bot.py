@@ -1,14 +1,18 @@
-# src/use_cases/telegram_bot.py
+# src/use_cases/telegram_bot_use_case.py
 
 from argparse import Namespace
 from logging import Logger
+import os
+import glob
 from typing import Optional, Tuple
+
 from src.utils.utils_logger import get_logger
 from src.io.telegram_adapter import start_bot
 from src.io.cache_store import is_cache_available, find_first_kml_in_cache
 from src.services.wms_downloader_service import download_layers_for_latlon
 from src.services.cache_generation_service import generate_cache_for_location
 from src.services.forecast_area_service import RainGridForecaster
+from src.services.evaluation_service import evaluate_and_store_for_location
 from src.utils.naming import cache_path_for_latlon
 from src.config.config import (
     OSM_RADIUS_M,
@@ -16,8 +20,6 @@ from src.config.config import (
     GRID_SIZE_M,
     FORECAST_STEP_M,
 )
-from src.services.evaluation_service import evaluate_and_store_for_location
-
 
 logger: Logger = get_logger()
 
@@ -28,6 +30,7 @@ def _handle(lat: float, lon: float) -> Tuple[str, Optional[str]]:
     - Prüft Cache
     - Führt ggf. WMS-Download + Cache-Generierung aus
     - Aktualisiert Forecast
+    - Führt Bewertung durch und sendet empfohlenes Layer zurück
     - Gibt Ergebnistext + Datei zurück
     """
     logger.info("📲 Anfrage für Ort: lat=%.6f, lon=%.6f", lat, lon)
@@ -47,6 +50,7 @@ def _handle(lat: float, lon: float) -> Tuple[str, Optional[str]]:
     else:
         logger.info("✅ Cache vorhanden – nutze vorhandene Daten.")
 
+    # 1) Forecast durchführen
     RainGridForecaster().save_full_rain_forecast_grid(
         lat=lat,
         lon=lon,
@@ -54,17 +58,32 @@ def _handle(lat: float, lon: float) -> Tuple[str, Optional[str]]:
         step_m=FORECAST_STEP_M,
     )
 
-    evaluate_and_store_for_location(lat=lat, lon=lon)
+    # 2) Evaluation ausführen und Layer ermitteln
+    record = evaluate_and_store_for_location(lat=lat, lon=lon)
+    layer = record.layer
 
-    kml_path = find_first_kml_in_cache(lat, lon)
+    # 3) Empfohlene Layer-Datei suchen (z. B. flood_Wassertiefe_SRI7_1h.kml)
+    matches = glob.glob(os.path.join(cache_dir, f"flood_{layer}.kml"))
+    layer_file = matches[0] if matches else None
+
+    # 4) Ergebnistext
     status = (
         "🆕 WMS + Cache erstellt. 🌧️ Forecast aktualisiert."
         if prepared_now else
         "📦 Cache genutzt. 🌧️ Forecast aktualisiert."
     )
-    return status, kml_path
+    status += f"\n🧠 Empfohlener Layer: *{layer}*"
+
+    if not layer_file:
+        logger.warning(f"⚠️ Empfohlene Datei nicht gefunden für Layer: {layer}")
+        return f"{status}\n⚠️ Datei nicht gefunden.", None
+
+    return status, layer_file
 
 
 def run_telegram_bot_use_case(args: Namespace) -> None:
+    """
+    Startet den Telegram-Bot und registriert den Ablauf-Handler.
+    """
     logger.info("📡 Starte Telegram-Bot-UseCase …")
     start_bot(_handle)
