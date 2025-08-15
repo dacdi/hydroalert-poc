@@ -16,48 +16,53 @@ def parse_lat_lon_from_text(text: str):
     """
     match = re.search(r"(-?\d+(?:\.\d+)?)\D+(-?\d+(?:\.\d+)?)", text)
     if match:
-        lat = float(match.group(1))
-        lon = float(match.group(2))
-        return lat, lon
+        try:
+            lat = float(match.group(1))
+            lon = float(match.group(2))
+            return lat, lon
+        except ValueError:
+            return None, None
     return None, None
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Sendet die Begrüßungsnachricht an den Nutzer."""
     await update.message.reply_text(
-        "👋 Willkommen bei HydroAlert! Bitte gib Koordinaten im Format 'lat, lon' ein."
+        "👋 Willkommen bei HydroAlert!\n"
+        "Bitte gib Koordinaten im Format `lat, lon` ein (z. B. `49.35, 8.15`)."
     )
 
 
 def start_bot(message_logic_fn):
     """
     Startet den Telegram-Bot.
-    :param message_logic_fn: Funktion, die (lat, lon) → (antwort_text, kml_path) zurückgibt.
+    :param message_logic_fn: Funktion, die (lat, lon) → (text, file_path|None) zurückgibt.
     """
     async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        user_input = update.message.text.strip()
-        logger.debug(f"Eingehende Nachricht: {user_input}")
+        user_input = (update.message.text or "").strip()
+        logger.debug("📩 Eingehende Nachricht: %s", user_input)
 
         lat, lon = parse_lat_lon_from_text(user_input)
         if lat is None or lon is None:
             await update.message.reply_text("⚠️ Bitte Koordinaten im Format 'lat, lon' eingeben.")
             return
 
-        text, kml_path = message_logic_fn(lat, lon)
+        text, file_path = message_logic_fn(lat, lon)
 
+        # Haupttext senden
         await update.message.reply_text(text)
-        if kml_path:
+
+        # (Optional) Datei anhängen – aktuell liefern wir None zurück
+        if file_path:
             try:
-                with open(kml_path, "rb") as file:
+                with open(file_path, "rb") as f:
                     await update.message.reply_document(
-                        document=file,
-                        filename=kml_path.split("/")[-1],
-                        caption="Hier die KML-Datei."
+                        document=f,
+                        filename=file_path.split("/")[-1],
+                        caption="Ergebnisdatei"
                     )
-                logger.info(f"KML-Datei gesendet: {kml_path}")
             except FileNotFoundError:
-                logger.warning(f"KML-Datei nicht gefunden: {kml_path}")
-                await update.message.reply_text("⚠️ KML-Datei nicht gefunden.")
+                logger.warning("Datei nicht gefunden: %s", file_path)
+                await update.message.reply_text("⚠️ Datei nicht gefunden.")
 
     app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
