@@ -1,29 +1,30 @@
-2025-08-15 15:20:03 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
-2025-08-15 15:20:03 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
-2025-08-15 15:20:03 [DEBUG] __init__.py:1557:<module> - interactive is False
-2025-08-15 15:20:03 [DEBUG] __init__.py:1558:<module> - platform is darwin
-2025-08-15 15:20:03 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
-2025-08-15 15:20:03 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
-2025-08-15 15:20:03 [INFO] main.py:67:main - ▶️ Starte HydroAlert – Command: download-layers
-2025-08-15 15:20:03 [DEBUG] main.py:68:main - 📊 CLI Argumente: {'command': 'download-layers', 'lat': 49.35, 'lon': 8.15}
-2025-08-15 15:20:03 [INFO] download_layers.py:22:run_download_layers_use_case - 🌐 Lade WMS-Layer …
-2025-08-15 15:20:03 [DEBUG] geo_transforms.py:16:latlon_to_xy25832 - geo_transforms.latlon_to_xy25832(start): lon=8.150000, lat=49.350000
-2025-08-15 15:20:03 [DEBUG] geo_transforms.py:18:latlon_to_xy25832 - geo_transforms.latlon_to_xy25832(result): x=438265.987, y=5466712.244
-2025-08-15 15:20:03 [DEBUG] geo_transforms.py:29:bbox_from_latlon - geo_transforms.bbox_from_latlon: BBox(436265, 5464712, 440265, 5468712)
-2025-08-15 15:20:03 [DEBUG] download_layers.py:32:run_download_layers_use_case - 🧭 lat/lon -> BBox=BBox(436265, 5464712, 440265, 5468712); Zielordner=data/cache/lat49.35_lon8.15
-2025-08-15 15:20:03 [INFO] wms_downloader_service.py:51:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI07_1h_WaterDepth
-2025-08-15 15:20:03 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
-2025-08-15 15:20:04 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI07_1h_WaterDepth&bbox=436265%2C5464712%2C440265%2C5468712&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-15 15:20:05 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15/Wassertiefe_SRI7_1h.png
-2025-08-15 15:20:05 [INFO] wms_downloader_service.py:51:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_1h_WaterDepth
-2025-08-15 15:20:06 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_1h_WaterDepth&bbox=436265%2C5464712%2C440265%2C5468712&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-15 15:20:06 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15/Wassertiefe_SRI10_1h.png
-2025-08-15 15:20:06 [INFO] wms_downloader_service.py:51:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_4h_WaterDepth
-2025-08-15 15:20:08 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_4h_WaterDepth&bbox=436265%2C5464712%2C440265%2C5468712&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
-2025-08-15 15:20:08 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15/Wassertiefe_SRI10_4h.png
-2025-08-15 15:20:08 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
-2025-08-15 15:20:08 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
-2025-08-15 15:20:08 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
-2025-08-15 15:20:08 [INFO] wms_downloader_service.py:33:_save_meta_file - 💾 Meta-Datei gespeichert: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15/meta.json
-2025-08-15 15:20:08 [INFO] wms_downloader_service.py:63:download_all_wms_layers - ✅ 3 Layer gespeichert in /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15
-2025-08-15 15:20:08 [INFO] download_layers.py:37:run_download_layers_use_case - ✅ WMS-Layer wurden erfolgreich heruntergeladen.
+2025-08-15 15:35:55 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-08-15 15:35:55 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
+2025-08-15 15:35:55 [DEBUG] __init__.py:1557:<module> - interactive is False
+2025-08-15 15:35:55 [DEBUG] __init__.py:1558:<module> - platform is darwin
+2025-08-15 15:35:55 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
+2025-08-15 15:35:55 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
+2025-08-15 15:35:55 [INFO] main.py:67:main - ▶️ Starte HydroAlert – Command: download-layers
+2025-08-15 15:35:55 [DEBUG] main.py:68:main - 📊 CLI Argumente: {'command': 'download-layers', 'lat': 49.35, 'lon': 8.15}
+2025-08-15 15:35:55 [INFO] download_layers.py:22:run_download_layers_use_case - 🌐 Lade WMS-Layer …
+2025-08-15 15:35:55 [DEBUG] download_layers.py:31:run_download_layers_use_case - Zielordner (Geo-Cache): data/cache/lat49.35_lon8.15
+2025-08-15 15:35:55 [DEBUG] geo_transforms.py:16:latlon_to_xy25832 - geo_transforms.latlon_to_xy25832(start): lon=8.150000, lat=49.350000
+2025-08-15 15:35:55 [DEBUG] geo_transforms.py:18:latlon_to_xy25832 - geo_transforms.latlon_to_xy25832(result): x=438265.987, y=5466712.244
+2025-08-15 15:35:55 [DEBUG] geo_transforms.py:29:bbox_from_latlon - geo_transforms.bbox_from_latlon: BBox(436265, 5464712, 440265, 5468712)
+2025-08-15 15:35:55 [DEBUG] wms_downloader_service.py:72:download_layers_for_latlon - download_layers_for_latlon: lat=49.350000 lon=8.150000 -> BBox(436265, 5464712, 440265, 5468712)
+2025-08-15 15:35:55 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI07_1h_WaterDepth
+2025-08-15 15:35:55 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): geodienste-wasser.rlp-umwelt.de:443
+2025-08-15 15:35:56 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI07_1h_WaterDepth&bbox=436265%2C5464712%2C440265%2C5468712&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-15 15:35:57 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15/Wassertiefe_SRI7_1h.png
+2025-08-15 15:35:57 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_1h_WaterDepth
+2025-08-15 15:35:58 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_1h_WaterDepth&bbox=436265%2C5464712%2C440265%2C5468712&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-15 15:35:58 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15/Wassertiefe_SRI10_1h.png
+2025-08-15 15:35:58 [INFO] wms_downloader_service.py:49:download_all_wms_layers - ⬇️ Downloading layer: Visdom_SRI10_4h_WaterDepth
+2025-08-15 15:35:59 [DEBUG] connectionpool.py:544:_make_request - https://geodienste-wasser.rlp-umwelt.de:443 "GET /geoserver/Sturzflut/wms?service=WMS&version=1.3.0&request=GetMap&layers=Visdom_SRI10_4h_WaterDepth&bbox=436265%2C5464712%2C440265%2C5468712&width=2000&height=2000&crs=EPSG%3A25832&format=image%2Fpng HTTP/1.1" 200 None
+2025-08-15 15:36:00 [INFO] file_io.py:20:save_png - ✅ Saved: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15/Wassertiefe_SRI10_4h.png
+2025-08-15 15:36:00 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IHDR' 16 13
+2025-08-15 15:36:00 [DEBUG] PngImagePlugin.py:201:call - STREAM b'PLTE' 41 27
+2025-08-15 15:36:00 [DEBUG] PngImagePlugin.py:201:call - STREAM b'IDAT' 80 65556
+2025-08-15 15:36:00 [INFO] wms_downloader_service.py:36:_save_meta_file - 💾 Meta-Datei gespeichert: /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15/meta.json
+2025-08-15 15:36:00 [INFO] wms_downloader_service.py:60:download_all_wms_layers - ✅ 3 Layer gespeichert in /Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.15
+2025-08-15 15:36:00 [INFO] download_layers.py:36:run_download_layers_use_case - ✅ WMS-Layer wurden erfolgreich heruntergeladen.
