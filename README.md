@@ -59,7 +59,7 @@ main.py       # CLI-Parser und Routing zu use\_cases/
 ### Erlaubte Abhängigkeiten zwischen Schichten
 
 - **use_cases** → darf `services`, `analysis`, `io`, `domain`, `config`, `utils` nutzen
-- **services** → darf `io`, `analysis`, `domain`, `config`, `utils` nutzen
+- **services** → darf servicer, `io`, `analysis`, `domain`, `config`, `utils` nutzen
 - **analysis** → darf `domain`, `utils` nutzen (**kein** direkter Zugriff auf `io`)
 - **io** → darf `domain`, `config`, `utils` nutzen (**kein** Zugriff auf `analysis` oder `services`)
 - **domain** → nutzt nur Standardbibliothek (keine Abhängigkeit zu anderen Schichten)
