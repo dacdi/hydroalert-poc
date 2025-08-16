@@ -23,7 +23,6 @@ from src.config.config import (
 
 logger: Logger = get_logger()
 
-
 def _handle(lat: float, lon: float) -> Tuple[str, Optional[str]]:
     """
     Telegram-Logik:
@@ -31,7 +30,7 @@ def _handle(lat: float, lon: float) -> Tuple[str, Optional[str]]:
     - Führt ggf. WMS-Download + Cache-Generierung aus
     - Aktualisiert Forecast
     - Führt Bewertung durch und sendet empfohlenes Layer zurück
-    - Gibt Ergebnistext + Datei zurück
+    - Gibt Ergebnistext + Datei zurück (wenn vorhanden)
     """
     logger.info("📲 Anfrage für Ort: lat=%.6f, lon=%.6f", lat, lon)
     cache_dir = cache_path_for_latlon(lat, lon)
@@ -62,23 +61,32 @@ def _handle(lat: float, lon: float) -> Tuple[str, Optional[str]]:
     record = evaluate_and_store_for_location(lat=lat, lon=lon)
     layer = record.layer
 
-    # 3) Empfohlene Layer-Datei suchen (z. B. flood_Wassertiefe_SRI7_1h.kml)
-    matches = glob.glob(os.path.join(cache_dir, f"flood_{layer}.kml"))
-    layer_file = matches[0] if matches else None
-
-    # 4) Ergebnistext
+    # 3) Basisstatus aufbauen
     status = (
         "🆕 WMS + Cache erstellt. 🌧️ Forecast aktualisiert."
         if prepared_now else
         "📦 Cache genutzt. 🌧️ Forecast aktualisiert."
     )
+
+    # 4) Kein Regen → kein Layer, keine Datei
+    if layer == "none":
+        logger.info("🌤️ Kein relevanter Niederschlag – Layer: %s", layer)
+        status += "\n🌤️ Kein relevanter Niederschlag vorhergesagt!"
+        return status, None
+
+    # 5) Layer ist gesetzt → versuche passende KML zu finden
     status += f"\n🧠 Empfohlener Layer: *{layer}*"
+    matches = glob.glob(os.path.join(cache_dir, f"flood_{layer}.kml"))
+    layer_file = matches[0] if matches else None
 
     if not layer_file:
-        logger.warning(f"⚠️ Empfohlene Datei nicht gefunden für Layer: {layer}")
-        return f"{status}\n⚠️ Datei nicht gefunden.", None
+        logger.warning("⚠️ KML-Datei nicht gefunden für Layer: %s", layer)
+        status += "\n⚠️ Datei nicht gefunden."
+        return status, None
 
+    # 6) Erfolgreich: Layer + Datei
     return status, layer_file
+
 
 
 def run_telegram_bot_use_case(args: Namespace) -> None:
