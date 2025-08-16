@@ -9,3 +9,6 @@ __pycache__/
 # IDE-Dateien
 .idea/
 .vscode/
+
+# Mac Dateien
+.DS_store

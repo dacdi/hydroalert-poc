@@ -1,35 +1,61 @@
-# src/geo_utils.py
+# src/utils/geo_utils.py
+from __future__ import annotations
 
-from geopy.distance import distance
-from geopy.point import Point
+from math import cos, radians
 from typing import List, Tuple
 
-from src.utils.utils_logger import get_logger
 
-logger = get_logger()
-
-
-
-def generate_grid(center_lat: float, center_lon: float, radius_km: int = 10, step_km: int = 2) -> List[Tuple[float, float]]:
+def generate_grid(
+    center_lat: float,
+    center_lon: float,
+    *,
+    half_extent_km: float,
+    step_km: float,
+) -> List[Tuple[float, float]]:
     """
-    Erzeugt ein 2D-Gitter von Koordinatenpunkten um einen Mittelpunkt.
+    Erzeugt ein **quadratisches** Raster um (center_lat, center_lon) in WGS84.
 
-    Args:
-        center_lat (float): Breitengrad des Mittelpunkts.
-        center_lon (float): Längengrad des Mittelpunkts.
-        radius_km (int): Radius um den Mittelpunkt in Kilometern (in jede Richtung).
-        step_km (int): Schrittweite zwischen den Punkten in Kilometern.
+    Parameter:
+        half_extent_km: Halbe Kantenlänge des Quadrats in Kilometern
+                        (z. B. 0.2 → Quadrat ist 0.4 km × 0.4 km)
+        step_km:        Rasterabstand in Kilometern zwischen benachbarten Punkten
 
-    Returns:
-        List[Tuple[float, float]]: Liste von (lat, lon)-Tupeln.
+    Rückgabe:
+        Liste von (lat, lon)-Tupeln.
+
+    Hinweise:
+    - Umrechnung km→Grad erfolgt lokal am Mittelpunkt:
+        1° Breite  ≈ 111.32 km
+        1° Länge   ≈ 111.32 * cos(lat) km
+    - Für kleine Bereiche (einige km) ist diese Approximation ausreichend genau.
+    - Kein I/O, keine externen Abhängigkeiten.
     """
-    center = Point(center_lat, center_lon)
-    coords = []
+    if half_extent_km <= 0 or step_km <= 0:
+        return [(center_lat, center_lon)]
 
-    for dy in range(-radius_km, radius_km + 1, step_km):
-        for dx in range(-radius_km, radius_km + 1, step_km):
-            north_point = distance(kilometers=dy).destination(center, bearing=0)
-            east_point = distance(kilometers=dx).destination(north_point, bearing=90)
-            coords.append((east_point.latitude, east_point.longitude))
+    KM_PER_DEG_LAT = 111.32
+    km_per_deg_lon = 111.32 * max(1e-12, cos(radians(center_lat)))  # Schutz vor Polnähe
 
-    return coords
+    lat_step_deg = step_km / KM_PER_DEG_LAT
+    lon_step_deg = step_km / km_per_deg_lon
+    lat_half_deg = half_extent_km / KM_PER_DEG_LAT
+    lon_half_deg = half_extent_km / km_per_deg_lon
+
+    def frange(start: float, stop: float, step: float):
+        """Float-Schrittweite inkl. numerischer Toleranz (inklusiv stop)."""
+        if step <= 0:
+            return
+        x = start
+        eps = abs(step) * 1e-9
+        while x <= stop + eps:
+            yield x
+            x += step
+
+    points: List[Tuple[float, float]] = []
+    for dlat in frange(-lat_half_deg, lat_half_deg, lat_step_deg):
+        lat = center_lat + dlat
+        for dlon in frange(-lon_half_deg, lon_half_deg, lon_step_deg):
+            lon = center_lon + dlon
+            points.append((lat, lon))
+
+    return points or [(center_lat, center_lon)]
