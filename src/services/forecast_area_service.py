@@ -24,20 +24,25 @@ class RainGridForecaster:
         return generate_hour_labels(now_utc, hours=24)
 
     def _forecast_points(
-        self, lat: float, lon: float, grid_size_m: float, step_m: float
+            self, lat: float, lon: float, grid_size_m: float, step_m: float
     ) -> List[Tuple[float, float]]:
-        half_extent_km = float(grid_size_m) / 2000.0
-        grid: List[Tuple[float, float]] = generate_grid(
+        half_extent_m = float(grid_size_m) / 2.0  # ✅ halbe Kantenlänge in METERN
+
+        grid = generate_grid(
             center_lat=lat,
             center_lon=lon,
-            half_extent_km=grid_size_m,  # in METERN!
-            step_m=step_m,
+            half_extent_m=half_extent_m,  # ✅ jetzt korrekt benannt & dimensioniert
+            step_m=step_m,  # ✅ Meter bleiben Meter
         )
 
-        logger.debug("🧩 Raster mit %d Punkten erzeugt.", len(grid))
-        logger.debug("Rasterpunkte (lat, lon):")
-        for lat_p, lon_p in grid:
-            logger.debug(f"  {lat_p:.6f}, {lon_p:.6f}")
+        logger.debug(
+            "🧩 Raster mit %d Punkten erzeugt (grid_size=%.1fm, half_extent=%.1fm, step=%.1fm).",
+            len(grid), grid_size_m, half_extent_m, step_m
+        )
+        for lat_p, lon_p in grid[:50]:
+            logger.debug("  %.6f, %.6f", lat_p, lon_p)
+        if len(grid) > 50:
+            logger.debug("… (%d weitere Punkte unterdrückt)", len(grid) - 50)
         return grid
 
     def _fetch_forecasts(
@@ -80,8 +85,8 @@ class RainGridForecaster:
         self,
         lat: float,
         lon: float,
-        grid_size_m: float = 200.0,
-        step_m: float = 10.0,
+        grid_size_m: float,
+        step_m: float,
     ) -> str:
         logger.info(
             "▶️ Starte 24h-Forecast-Raster (lat=%.6f, lon=%.6f, grid_size_m=%.1f, step_m=%.1f)",
