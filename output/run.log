@@ -1,630 +1,137 @@
-2025-08-03 15:19:16 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
-2025-08-03 15:19:16 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
-2025-08-03 15:19:16 [DEBUG] __init__.py:1557:<module> - interactive is False
-2025-08-03 15:19:16 [DEBUG] __init__.py:1558:<module> - platform is darwin
-2025-08-03 15:19:16 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
-2025-08-03 15:19:16 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
-2025-08-03 15:19:16 [DEBUG] main.py:55:main - 📊 CLI Argumente: Namespace(command='forecast')
-2025-08-03 15:19:16 [INFO] main.py:64:main - 🌍 Starte 24h-Niederschlags-Rasteranalyse …
-2025-08-03 15:19:16 [DEBUG] main.py:66:main - Using location – Latitude: 49.3501, Longitude: 8.1376
-2025-08-03 15:19:16 [INFO] forecast_area.py:83:save_full_rain_forecast_grid - Starting grid forecast: center=(49.3501, 8.1376), radius=10 km, step=2 km
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 1/121: (49.26010, 8.00022)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.26010291645124&longitude=8.00021844694725&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.26010291645124&longitude=8.00021844694725&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 2/121: (49.26013, 8.02769)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.2601323201491&longitude=8.027694714028296&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.2601323201491&longitude=8.027694714028296&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 3/121: (49.26016, 8.05517)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.26015518970685&longitude=8.055171010128973&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.26015518970685&longitude=8.055171010128973&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 4/121: (49.26017, 8.08265)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.26017152511326&longitude=8.08264732799442&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.26017152511326&longitude=8.08264732799442&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 5/121: (49.26018, 8.11012)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.26018132636031&longitude=8.110123660369739&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.26018132636031&longitude=8.110123660369739&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 6/121: (49.26018, 8.13760)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.2601845934432&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.2601845934432&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 7/121: (49.26018, 8.16508)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.26018132636031&longitude=8.165076339630263&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.26018132636031&longitude=8.165076339630263&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 8/121: (49.26017, 8.19255)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.26017152511326&longitude=8.192552672005581&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.26017152511326&longitude=8.192552672005581&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 9/121: (49.26016, 8.22003)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.26015518970685&longitude=8.220028989871029&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.26015518970685&longitude=8.220028989871029&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 10/121: (49.26013, 8.24751)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.2601323201491&longitude=8.247505285971705&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.2601323201491&longitude=8.247505285971705&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 10/121 points processed.
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 11/121: (49.26010, 8.27498)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.26010291645124&longitude=8.274981553052752&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.26010291645124&longitude=8.274981553052752&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:16 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 12/121: (49.27809, 8.00017)
-2025-08-03 15:19:16 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.27808605875636&longitude=8.000168504943877&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:16 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.27808605875636&longitude=8.000168504943877&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 13/121: (49.27812, 8.02765)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.278115481001855&longitude=8.02765476035455&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.278115481001855&longitude=8.02765476035455&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 14/121: (49.27814, 8.05514)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.278138364985566&longitude=8.055141044832217&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.278138364985566&longitude=8.055141044832217&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 15/121: (49.27815, 8.08263)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.27815471069625&longitude=8.08262735111018&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.27815471069625&longitude=8.08262735111018&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 16/121: (49.27816, 8.11011)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.27816451812588&longitude=8.110113671921697&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.27816451812588&longitude=8.110113671921697&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 17/121: (49.27817, 8.13760)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.278167787269616&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.278167787269616&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 18/121: (49.27816, 8.16509)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.27816451812588&longitude=8.165086328078305&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.27816451812588&longitude=8.165086328078305&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 19/121: (49.27815, 8.19257)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.27815471069625&longitude=8.192572648889822&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.27815471069625&longitude=8.192572648889822&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 20/121: (49.27814, 8.22006)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.278138364985566&longitude=8.220058955167785&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.278138364985566&longitude=8.220058955167785&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 20/121 points processed.
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 21/121: (49.27812, 8.24755)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.278115481001855&longitude=8.247545239645452&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.278115481001855&longitude=8.247545239645452&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 22/121: (49.27809, 8.27503)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.27808605875636&longitude=8.275031495056124&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.27808605875636&longitude=8.275031495056124&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 23/121: (49.29607, 8.00012)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29606914476109&longitude=8.000118513107134&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29606914476109&longitude=8.000118513107134&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 24/121: (49.29610, 8.02761)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29609858556765&longitude=8.027614766813972&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29609858556765&longitude=8.027614766813972&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 25/121: (49.29612, 8.05511)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29612148398776&longitude=8.055111049635261&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29612148398776&longitude=8.055111049635261&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:17 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 26/121: (49.29614, 8.08261)
-2025-08-03 15:19:17 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.296137840010175&longitude=8.082607354292437&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:17 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.296137840010175&longitude=8.082607354292437&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 27/121: (49.29615, 8.11010)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29614765362684&longitude=8.110103673506895&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29614765362684&longitude=8.110103673506895&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 28/121: (49.29615, 8.13760)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29615092483293&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29615092483293&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 29/121: (49.29615, 8.16510)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29614765362684&longitude=8.165096326493106&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29614765362684&longitude=8.165096326493106&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 30/121: (49.29614, 8.19259)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.296137840010175&longitude=8.192592645707565&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.296137840010175&longitude=8.192592645707565&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 30/121 points processed.
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 31/121: (49.29612, 8.22009)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29612148398776&longitude=8.22008895036474&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29612148398776&longitude=8.22008895036474&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 32/121: (49.29610, 8.24759)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29609858556765&longitude=8.24758523318603&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29609858556765&longitude=8.24758523318603&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 33/121: (49.29607, 8.27508)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.29606914476109&longitude=8.275081486892867&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.29606914476109&longitude=8.275081486892867&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 34/121: (49.31405, 8.00007)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.314052174470994&longitude=8.000068471372844&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.314052174470994&longitude=8.000068471372844&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 35/121: (49.31408, 8.02757)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.314081633852034&longitude=8.027574733355227&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.314081633852034&longitude=8.027574733355227&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 36/121: (49.31410, 8.05508)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.314104546718994&longitude=8.055081024499602&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.314104546718994&longitude=8.055081024499602&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 37/121: (49.31412, 8.08259)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.314120913060606&longitude=8.082587337515521&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.314120913060606&longitude=8.082587337515521&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 38/121: (49.31413, 8.11009)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.31413073286878&longitude=8.110093665112494&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.31413073286878&longitude=8.110093665112494&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 39/121: (49.31413, 8.13760)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.31413400613872&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.31413400613872&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:18 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 40/121: (49.31413, 8.16511)
-2025-08-03 15:19:18 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.31413073286878&longitude=8.165106334887508&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:18 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.31413073286878&longitude=8.165106334887508&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 40/121 points processed.
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 41/121: (49.31412, 8.19261)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.314120913060606&longitude=8.19261266248448&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.314120913060606&longitude=8.19261266248448&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 42/121: (49.31410, 8.22012)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.314104546718994&longitude=8.2201189755004&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.314104546718994&longitude=8.2201189755004&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 43/121: (49.31408, 8.24763)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.314081633852034&longitude=8.247625266644775&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.314081633852034&longitude=8.247625266644775&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 44/121: (49.31405, 8.27513)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.314052174470994&longitude=8.275131528627158&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.314052174470994&longitude=8.275131528627158&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 45/121: (49.33204, 8.00002)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33203514789153&longitude=8.000018379676723&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33203514789153&longitude=8.000018379676723&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 46/121: (49.33206, 8.02753)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33206462586052&longitude=8.027534659926886&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33206462586052&longitude=8.027534659926886&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 47/121: (49.33209, 8.05505)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33208755318479&longitude=8.05505096938667&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33208755318479&longitude=8.05505096938667&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 48/121: (49.33210, 8.08257)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33210392985307&longitude=8.082567300753722&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33210392985307&longitude=8.082567300753722&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 49/121: (49.33211, 8.11008)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33211375585726&longitude=8.11008364672564&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33211375585726&longitude=8.11008364672564&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 50/121: (49.33212, 8.13760)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33211703119253&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33211703119253&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 50/121 points processed.
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 51/121: (49.33211, 8.16512)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33211375585726&longitude=8.165116353274362&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33211375585726&longitude=8.165116353274362&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 52/121: (49.33210, 8.19263)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33210392985307&longitude=8.19263269924628&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33210392985307&longitude=8.19263269924628&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 53/121: (49.33209, 8.22015)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33208755318479&longitude=8.220149030613332&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33208755318479&longitude=8.220149030613332&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:19 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 54/121: (49.33206, 8.24767)
-2025-08-03 15:19:19 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33206462586052&longitude=8.247665340073116&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:19 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33206462586052&longitude=8.247665340073116&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 55/121: (49.33204, 8.27518)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.33203514789153&longitude=8.275181620323279&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.33203514789153&longitude=8.275181620323279&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 56/121: (49.35002, 7.99997)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.3500180650283&longitude=7.999968237954369&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.3500180650283&longitude=7.999968237954369&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 57/121: (49.35005, 8.02749)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.350047561598714&longitude=8.027494546477426&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.350047561598714&longitude=8.027494546477426&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 58/121: (49.35007, 8.05502)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.35007050339078&longitude=8.055020884257823&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35007050339078&longitude=8.055020884257823&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 59/121: (49.35009, 8.08255)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.35008689039321&longitude=8.082547243981272&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35008689039321&longitude=8.082547243981272&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 60/121: (49.35010, 8.11007)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.3500967225979&longitude=8.110073618333452&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.3500967225979&longitude=8.110073618333452&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 60/121 points processed.
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 61/121: (49.35010, 8.13760)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.3501&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.3501&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 62/121: (49.35010, 8.16513)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.3500967225979&longitude=8.16512638166655&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.3500967225979&longitude=8.16512638166655&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 63/121: (49.35009, 8.19265)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.35008689039321&longitude=8.19265275601873&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35008689039321&longitude=8.19265275601873&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 64/121: (49.35007, 8.22018)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.35007050339078&longitude=8.220179115742178&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.35007050339078&longitude=8.220179115742178&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 65/121: (49.35005, 8.24771)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.350047561598714&longitude=8.247705453522576&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.350047561598714&longitude=8.247705453522576&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 66/121: (49.35002, 8.27523)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.3500180650283&longitude=8.275231762045632&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.3500180650283&longitude=8.275231762045632&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 67/121: (49.36800, 7.99992)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.368000925886875&longitude=7.999918046141268&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.368000925886875&longitude=7.999918046141268&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:20 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 68/121: (49.36803, 8.02745)
-2025-08-03 15:19:20 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.368030441072186&longitude=8.027454392955237&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:20 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.368030441072186&longitude=8.027454392955237&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 69/121: (49.36805, 8.05499)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.36805339734256&longitude=8.05499076907435&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.36805339734256&longitude=8.05499076907435&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 70/121: (49.36807, 8.08253)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.368069794686626&longitude=8.082527167172373&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.368069794686626&longitude=8.082527167172373&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 70/121 points processed.
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 71/121: (49.36808, 8.11006)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.368079633096315&longitude=8.110063579923025&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.368079633096315&longitude=8.110063579923025&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 72/121: (49.36808, 8.13760)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.36808291256675&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.36808291256675&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 73/121: (49.36808, 8.16514)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.368079633096315&longitude=8.165136420076976&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.368079633096315&longitude=8.165136420076976&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 74/121: (49.36807, 8.19267)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.368069794686626&longitude=8.192672832827629&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.368069794686626&longitude=8.192672832827629&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 75/121: (49.36805, 8.22021)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.36805339734256&longitude=8.220209230925652&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.36805339734256&longitude=8.220209230925652&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 76/121: (49.36803, 8.24775)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.368030441072186&longitude=8.247745607044765&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.368030441072186&longitude=8.247745607044765&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 77/121: (49.36800, 8.27528)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.368000925886875&longitude=8.275281953858734&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.368000925886875&longitude=8.275281953858734&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 78/121: (49.38598, 7.99987)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38598373047283&longitude=7.999867804172788&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38598373047283&longitude=7.999867804172788&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 79/121: (49.38601, 8.02741)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38601326428657&longitude=8.02741419930861&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38601326428657&longitude=8.02741419930861&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 80/121: (49.38604, 8.05496)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38603623504573&longitude=8.054960623797472&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38603623504573&longitude=8.054960623797472&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 80/121 points processed.
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 81/121: (49.38605, 8.08251)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38605264273895&longitude=8.082507070301165&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38605264273895&longitude=8.082507070301165&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:21 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 82/121: (49.38606, 8.11005)
-2025-08-03 15:19:21 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38606248735813&longitude=8.110053531481435&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:21 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38606248735813&longitude=8.110053531481435&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 83/121: (49.38607, 8.13760)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.386065768898405&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.386065768898405&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 84/121: (49.38606, 8.16515)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38606248735813&longitude=8.165146468518566&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38606248735813&longitude=8.165146468518566&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 85/121: (49.38605, 8.19269)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38605264273895&longitude=8.192692929698836&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38605264273895&longitude=8.192692929698836&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 86/121: (49.38604, 8.22024)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38603623504573&longitude=8.22023937620253&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38603623504573&longitude=8.22023937620253&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 87/121: (49.38601, 8.24779)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38601326428657&longitude=8.247785800691391&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38601326428657&longitude=8.247785800691391&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 88/121: (49.38598, 8.27533)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.38598373047283&longitude=8.275332195827215&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.38598373047283&longitude=8.275332195827215&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 89/121: (49.40397, 7.99982)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.403966478791794&longitude=7.999817511984183&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.403966478791794&longitude=7.999817511984183&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 90/121: (49.40400, 8.02737)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.40399603124747&longitude=8.027373965485753&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.40399603124747&longitude=8.027373965485753&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 90/121 points processed.
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 91/121: (49.40402, 8.05493)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.404019016505956&longitude=8.054930448388344&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.404019016505956&longitude=8.054930448388344&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 92/121: (49.40404, 8.08249)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.404035434555844&longitude=8.082486953341752&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.404035434555844&longitude=8.082486953341752&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 93/121: (49.40405, 8.11004)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.40404528538904&longitude=8.11004347299573&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.40404528538904&longitude=8.11004347299573&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 94/121: (49.40405, 8.13760)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.40404856900064&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.40404856900064&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:22 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 95/121: (49.40405, 8.16516)
-2025-08-03 15:19:22 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.40404528538904&longitude=8.165156527004271&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:22 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.40404528538904&longitude=8.165156527004271&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 96/121: (49.40404, 8.19271)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.404035434555844&longitude=8.19271304665825&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.404035434555844&longitude=8.19271304665825&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 97/121: (49.40402, 8.22027)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.404019016505956&longitude=8.220269551611658&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.404019016505956&longitude=8.220269551611658&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 98/121: (49.40400, 8.24783)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.40399603124747&longitude=8.24782603451425&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.40399603124747&longitude=8.24782603451425&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 99/121: (49.40397, 8.27538)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.403966478791794&longitude=8.275382488015818&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.403966478791794&longitude=8.275382488015818&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 100/121: (49.42195, 7.99977)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42194917084941&longitude=7.999767169510592&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42194917084941&longitude=7.999767169510592&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 100/121 points processed.
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 101/121: (49.42198, 8.02733)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42197874196059&longitude=8.027333691434771&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42197874196059&longitude=8.027333691434771&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 102/121: (49.42200, 8.05490)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42200174172892&longitude=8.054900242808046&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42200174172892&longitude=8.054900242808046&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 103/121: (49.42202, 8.08247)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.422018170143005&longitude=8.082466816268191&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.422018170143005&longitude=8.082466816268191&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 104/121: (49.42203, 8.11003)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42202802719472&longitude=8.11003340445294&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42202802719472&longitude=8.11003340445294&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 105/121: (49.42203, 8.13760)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42203131287917&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42203131287917&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 106/121: (49.42203, 8.16517)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42202802719472&longitude=8.165166595547062&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42202802719472&longitude=8.165166595547062&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 107/121: (49.42202, 8.19273)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.422018170143005&longitude=8.19273318373181&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.422018170143005&longitude=8.19273318373181&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 108/121: (49.42200, 8.22030)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42200174172892&longitude=8.220299757191956&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42200174172892&longitude=8.220299757191956&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:23 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 109/121: (49.42198, 8.24787)
-2025-08-03 15:19:23 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42197874196059&longitude=8.24786630856523&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:23 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42197874196059&longitude=8.24786630856523&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 110/121: (49.42195, 8.27543)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.42194917084941&longitude=8.27543283048941&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.42194917084941&longitude=8.27543283048941&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 110/121 points processed.
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 111/121: (49.43993, 7.99972)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.43993180665134&longitude=7.999716776687037&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.43993180665134&longitude=7.999716776687037&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 112/121: (49.43996, 8.02729)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.43996139643158&longitude=8.027293377103687&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.43996139643158&longitude=8.027293377103687&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 113/121: (49.43998, 8.05487)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.439984410720314&longitude=8.054870007017591&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.439984410720314&longitude=8.054870007017591&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 114/121: (49.44000, 8.08245)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.44000084950614&longitude=8.082446659054487&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.44000084950614&longitude=8.082446659054487&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 115/121: (49.44001, 8.11002)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.4400107127809&longitude=8.110023325840068&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.4400107127809&longitude=8.110023325840068&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 116/121: (49.44001, 8.13760)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.44001400053968&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.44001400053968&longitude=8.1376&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 117/121: (49.44001, 8.16518)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.4400107127809&longitude=8.165176674159934&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.4400107127809&longitude=8.165176674159934&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 118/121: (49.44000, 8.19275)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.44000084950614&longitude=8.192753340945515&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.44000084950614&longitude=8.192753340945515&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 119/121: (49.43998, 8.22033)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.439984410720314&longitude=8.22032999298241&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.439984410720314&longitude=8.22032999298241&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 120/121: (49.43996, 8.24791)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.43996139643158&longitude=8.247906622896314&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.43996139643158&longitude=8.247906622896314&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 120/121 points processed.
-2025-08-03 15:19:24 [DEBUG] forecast_area.py:57:generate_forecast_grid - Processing point 121/121: (49.43993, 8.27548)
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:28:fetch_forecast_data - [Request] URL: https://api.open-meteo.com/v1/forecast?latitude=49.43993180665134&longitude=8.275483223312966&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:1049:_new_conn - Starting new HTTPS connection (1): api.open-meteo.com:443
-2025-08-03 15:19:24 [DEBUG] connectionpool.py:544:_make_request - https://api.open-meteo.com:443 "GET /v1/forecast?latitude=49.43993180665134&longitude=8.275483223312966&hourly=precipitation&forecast_days=2&timezone=Europe/Berlin HTTP/1.1" 200 None
-2025-08-03 15:19:24 [DEBUG] fetch_weather.py:32:fetch_forecast_data - [Response] Status Code: 200
-2025-08-03 15:19:24 [INFO] forecast_area.py:66:generate_forecast_grid - Progress: 121/121 points processed.
-2025-08-03 15:19:24 [INFO] forecast_area.py:80:write_forecast_csv - CSV written to: output/rain_grid_24h.csv
-2025-08-03 15:19:24 [INFO] main.py:72:main - 24h-Raster erfolgreich geladen
+2025-08-16 10:52:05 [DEBUG] __init__.py:342:wrapper - matplotlib data path: /Users/dacdi_privat/PycharmProjects/HydroAlert/.venv/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-08-16 10:52:05 [DEBUG] __init__.py:342:wrapper - CONFIGDIR=/Users/dacdi_privat/.matplotlib
+2025-08-16 10:52:05 [DEBUG] __init__.py:1557:<module> - interactive is False
+2025-08-16 10:52:05 [DEBUG] __init__.py:1558:<module> - platform is darwin
+2025-08-16 10:52:05 [DEBUG] __init__.py:342:wrapper - CACHEDIR=/Users/dacdi_privat/.matplotlib
+2025-08-16 10:52:05 [DEBUG] font_manager.py:1635:_load_fontmanager - Using fontManager instance from /Users/dacdi_privat/.matplotlib/fontlist-v390.json
+2025-08-16 10:52:05 [INFO] main.py:67:main - ▶️ Starte HydroAlert – Command: telegram
+2025-08-16 10:52:05 [DEBUG] main.py:68:main - 📊 CLI Argumente: {'command': 'telegram'}
+2025-08-16 10:52:05 [INFO] telegram_bot.py:96:run_telegram_bot_use_case - 📡 Starte Telegram-Bot-UseCase …
+2025-08-16 10:52:05 [DEBUG] _bot.py:333:__init__ - Set Bot API URL: https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
+2025-08-16 10:52:05 [DEBUG] _bot.py:334:__init__ - Set Bot API File URL: https://api.telegram.org/file/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM
+2025-08-16 10:52:05 [INFO] telegram_adapter.py:71:start_bot - 🚀 Telegram-Bot gestartet. Warte auf Nachrichten …
+2025-08-16 10:52:05 [DEBUG] selector_events.py:54:__init__ - Using selector: KqueueSelector
+2025-08-16 10:52:05 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap Initialize Application): Starting
+2025-08-16 10:52:05 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getMe` with parameters `{}`
+2025-08-16 10:52:05 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-16 10:52:05 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1088a9a10>
+2025-08-16 10:52:05 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x1087c68d0> server_hostname='api.telegram.org' timeout=5.0
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1088a97d0>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 16 Aug 2025 08:52:06 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'254'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-16 10:52:06 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getMe "HTTP/1.1 200 OK"
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-16 10:52:06 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getMe` finished with return value `{'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot', 'can_join_groups': True, 'can_read_all_group_messages': False, 'supports_inline_queries': False, 'can_connect_to_business': False, 'has_main_web_app': False}`
+2025-08-16 10:52:06 [DEBUG] _bot.py:835:initialize - This Bot is already initialized.
+2025-08-16 10:52:06 [DEBUG] _updater.py:324:_start_polling - Updater started (polling)
+2025-08-16 10:52:06 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Bootstrap delete Webhook): Starting
+2025-08-16 10:52:06 [DEBUG] _updater.py:682:bootstrap_del_webhook - Deleting webhook
+2025-08-16 10:52:06 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `deleteWebhook` with parameters `{}`
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 16 Aug 2025 08:52:06 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'68'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-16 10:52:06 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/deleteWebhook "HTTP/1.1 200 OK"
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-16 10:52:06 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `deleteWebhook` finished with return value `True`
+2025-08-16 10:52:06 [DEBUG] _updater.py:336:_start_polling - Bootstrap done
+2025-08-16 10:52:06 [DEBUG] _updater.py:306:start_polling - Waiting for polling to start
+2025-08-16 10:52:06 [DEBUG] _updater.py:308:start_polling - Polling updates from Telegram started
+2025-08-16 10:52:06 [DEBUG] networkloop.py:110:network_retry_loop - Network Retry Loop (Polling Updates): Starting
+2025-08-16 10:52:06 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 0}`
+2025-08-16 10:52:06 [INFO] _application.py:633:start - Application started
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1088cc310>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x1087c6960> server_hostname='api.telegram.org' timeout=5.0
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x108593910>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-16 10:52:06 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 16 Aug 2025 08:52:15 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'258'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-16 10:52:14 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-16 10:52:14 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 254398289, 'message': {'message_id': 161, 'from': {'id': 147841005, 'is_bot': False, 'first_name': 'David', 'language_code': 'de'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755334335, 'text': '49.35, 8.10'}}]`
+2025-08-16 10:52:14 [DEBUG] _bot.py:4623:get_updates - Getting updates: [254398289]
+2025-08-16 10:52:14 [DEBUG] _application.py:1214:__update_fetcher - Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='David', id=147841005, type=<ChatType.PRIVATE>), date=datetime.datetime(2025, 8, 16, 8, 52, 15, tzinfo=datetime.timezone.utc), delete_chat_photo=False, from_user=User(first_name='David', id=147841005, is_bot=False, language_code='de'), group_chat_created=False, message_id=161, supergroup_chat_created=False, text='49.35, 8.10'), update_id=254398289)
+2025-08-16 10:52:14 [DEBUG] telegram_adapter.py:42:handle_message - 📩 Eingehende Nachricht: 49.35, 8.10
+2025-08-16 10:52:14 [INFO] telegram_bot.py:35:_handle - 📲 Anfrage für Ort: lat=49.350000, lon=8.100000
+2025-08-16 10:52:14 [INFO] telegram_bot.py:50:_handle - ✅ Cache vorhanden – nutze vorhandene Daten.
+2025-08-16 10:52:14 [DEBUG] evaluation_service.py:36:evaluate_and_store_for_location - evaluate_and_store_for_location(start): lat=49.35, lon=8.1, csv_override=None
+2025-08-16 10:52:14 [DEBUG] evaluation_service.py:47:evaluate_and_store_for_location - evaluate_and_store_for_location(paths): cache_dir=data/cache/lat49.35_lon8.10, csv=/Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
+2025-08-16 10:52:14 [DEBUG] classify_rain_intensity.py:81:classify_rain_stage - classify_rain_stage(start): csv_path=/Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv, thresholds={'SRI7_THRESHOLD_mm_h': 13.0, 'SRI10_THRESHOLD_mm_h': 23.0, 'SRI10_4H_SUM_THRESHOLD_mm': 42.0}
+2025-08-16 10:52:14 [DEBUG] classify_rain_intensity.py:29:_read_rain_series - _read_rain_series(start): csv_path=/Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv
+2025-08-16 10:52:14 [DEBUG] classify_rain_intensity.py:47:_read_rain_series - _read_rain_series(done): n=24, max=14.000, sum=14.000
+2025-08-16 10:52:14 [DEBUG] classify_rain_intensity.py:87:classify_rain_stage - classify_rain_stage(metrics): max_mm_h=14.000, sum4_mm=14.000
+2025-08-16 10:52:14 [DEBUG] evaluation_service.py:50:evaluate_and_store_for_location - evaluate_and_store_for_location(result): layer=Wassertiefe_SRI7_1h
+2025-08-16 10:52:14 [DEBUG] evaluation_store.py:20:save_evaluation - save_evaluation(start): cache_dir=data/cache/lat49.35_lon8.10, record=EvaluationRecord(timestamp='2025-08-16T08:52:14Z', layer='Wassertiefe_SRI7_1h', lat=49.35, lon=8.1, source_csv='/Users/dacdi_privat/PycharmProjects/HydroAlert/data/cache/lat49.35_lon8.10/rain_grid_lat49.35_lon8.10.csv', thresholds={'SRI7_THRESHOLD_mm_h': 13.0, 'SRI10_THRESHOLD_mm_h': 23.0, 'SRI10_4H_SUM_THRESHOLD_mm': 42.0})
+2025-08-16 10:52:14 [INFO] evaluation_store.py:25:save_evaluation - 💾 Evaluation gespeichert: data/cache/lat49.35_lon8.10/evaluation.json
+2025-08-16 10:52:14 [INFO] evaluation_service.py:62:evaluate_and_store_for_location - ✅ Empfohlener Layer: Wassertiefe_SRI7_1h
+2025-08-16 10:52:14 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendMessage` with parameters `{'chat_id': 147841005, 'text': '📦 Cache genutzt. 🌧️ Forecast aktualisiert.\n🧠 Empfohlener Layer: *Wassertiefe_SRI7_1h*'}`
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - close.started
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - close.complete
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-16 10:52:14 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398290}`
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-16 10:52:14 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10865cc50>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - start_tls.started ssl_context=<ssl.SSLContext object at 0x1087c68d0> server_hostname='api.telegram.org' timeout=5.0
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1086d5550>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 16 Aug 2025 08:52:15 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'346'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-16 10:52:15 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendMessage "HTTP/1.1 200 OK"
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-16 10:52:15 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 162, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755334335, 'text': '📦 Cache genutzt. 🌧️ Forecast aktualisiert.\n🧠 Empfohlener Layer: *Wassertiefe_SRI7_1h*'}`
+2025-08-16 10:52:15 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `sendDocument` with parameters `{'chat_id': 147841005, 'document': <telegram._files.inputfile.InputFile object at 0x10864df00>, 'caption': 'Ergebnisdatei'}`
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 16 Aug 2025 08:52:15 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'483'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-16 10:52:15 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/sendDocument "HTTP/1.1 200 OK"
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-16 10:52:15 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-16 10:52:15 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `sendDocument` finished with return value `{'message_id': 163, 'from': {'id': 8251956107, 'is_bot': True, 'first_name': 'HydroAlert', 'username': 'HydroAlertbbot'}, 'chat': {'id': 147841005, 'first_name': 'David', 'type': 'private'}, 'date': 1755334335, 'document': {'file_name': 'flood_Wassertiefe_SRI7_1h.kml', 'mime_type': 'application/vnd.google-earth.kml+xml', 'file_id': 'BQACAgIAAxkDAAOjaKBGv2kSNZr-W--sNhrNowAB7L3ZAAJycAACvGYBSc9_24BOu-TaNgQ', 'file_unique_id': 'AgADcnAAArxmAUk', 'file_size': 43516}, 'caption': 'Ergebnisdatei'}`
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 16 Aug 2025 08:52:25 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2025-08-16 10:52:25 [INFO] _client.py:1740:_send_single_request - HTTP Request: POST https://api.telegram.org/bot8251956107:AAH6gCt0m01nZWd1pRVlonpZ-1LdWV7tZHM/getUpdates "HTTP/1.1 200 OK"
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - receive_response_body.started request=<Request [b'POST']>
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - receive_response_body.complete
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - response_closed.started
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - response_closed.complete
+2025-08-16 10:52:25 [DEBUG] _bot.py:735:_do_post - Call to Bot API endpoint `getUpdates` finished with return value `[]`
+2025-08-16 10:52:25 [DEBUG] _bot.py:4625:get_updates - No new updates found.
+2025-08-16 10:52:25 [DEBUG] _bot.py:726:_do_post - Calling Bot API endpoint `getUpdates` with parameters `{'timeout': datetime.timedelta(seconds=10), 'offset': 254398290}`
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - send_request_headers.started request=<Request [b'POST']>
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - send_request_headers.complete
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - send_request_body.started request=<Request [b'POST']>
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - send_request_body.complete
+2025-08-16 10:52:25 [DEBUG] _trace.py:87:atrace - receive_response_headers.started request=<Request [b'POST']>

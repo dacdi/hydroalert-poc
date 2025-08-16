@@ -1,9 +1,0 @@
-Layer Name,Description
-Visdom_SRI07_1h_FlowVelocity,"Fließgeschwindigkeit (SRI7, 1 Std.)"
-Visdom_SRI07_1h_WaterDepth,"Wassertiefen (SRI7, 1 Std.)"
-Visdom_SRI10_1h_FlowVelocity,"Fließgeschwindigkeit (SRI10, 1 Std.)"
-Visdom_SRI10_1h_WaterDepth,"Wassertiefen (SRI10, 1 Std.)"
-Visdom_SRI10_4h_WaterDepth,"Wassertiefen (SRI10, 4 Std.)"
-Visdom_SRI10_4h_FlowVelocity,"Fließgeschwindigkeit (SRI10, 4 Std.)"
-Visdom_Schummerung,Schummerung Gelände 1 m
-Visdom_Sinkpolygons,Berechnungsbereich Flusshochwasser
