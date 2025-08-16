@@ -68,7 +68,7 @@ OSM_RADIUS_M = 2000.0          # Straßennetz-Umkreis für Overpass
 SAMPLE_DISTANCE_M = 2.5       # Punktabstand fürs Sampling entlang der Straßen
 
 # Forecast-Defaults
-GRID_SIZE_M = 400.0       # volle Kantenlänge des Quadrats (Meter)
+GRID_SIZE_M = 2000.0       # volle Kantenlänge des Quadrats (Meter)
 FORECAST_STEP_M = 200.0   # Rasterabstand (Meter)
 
 FORECAST_API_URL = os.getenv("FORECAST_API_URL", "https://api.open-meteo.com/v1/forecast")
