@@ -8,6 +8,7 @@ from src.utils.utils_logger import get_logger
 
 logger = get_logger()
 
+# ToDo: Noch notwenidg?
 
 def get_default_location() -> Tuple[float, float]:
     """

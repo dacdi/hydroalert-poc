@@ -27,6 +27,35 @@ Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenw
 
 ---
 
+## 🐞 Bekannte Bugs
+
+### BUG-001 – Ungültige GPS-Punkte erzeugen keine Fehlermeldung
+Es können beliebige GPS-Koordinaten eingegeben werden, auch außerhalb des Abdeckungsgebiets.  
+Für nicht abgedeckte Bereiche (derzeit nur **Rheinland-Pfalz** verfügbar) wird keine Fehlermeldung angezeigt.  
+Dies führt zu leeren oder irreführenden Ergebnissen.
+
+---
+
+### BUG-002 – Straßen mit variabler Überflutungstiefe werden pauschalisiert
+Bei Straßenabschnitten mit unterschiedlichen Überflutungstiefen wird nur der **erste** erfasste Wert auf die **gesamte Straße** übertragen.  
+Dadurch gehen lokale Unterschiede verloren und Karten werden ungenau.
+
+---
+
+### BUG-003 – Rasterauflösung der Vorhersage passt nicht zu den Eingangsdaten
+Das System bildet aktuell ein **2 × 2 km** Vorhersageraster und prüft darin Niederschlags-Schwellenwerte.  
+Die zugrundeliegenden meteorologischen Daten haben jedoch nur eine Auflösung von **10 × 10 km**.  
+Dies erzeugt eine Scheingenauigkeit und inkonsistente Ergebnisse.
+
+---
+
+### BUG-004 – Zeitreihe wird nur für den ersten GPS-Punkt berechnet
+Bei mehreren ausgewählten GPS-Punkten wird die vollständige **Zeitreihe** zwar korrekt ausgewertet, jedoch nur für den **ersten GPS-Punkt**.  
+Alle weiteren Punkte bleiben unberücksichtigt, was zu unvollständigen Analysen führt.
+
+---
+
+
 ## 🧱 Architekturüberblick
 
 HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-Projekte:
@@ -208,7 +237,4 @@ TELEGRAM_BOT_TOKEN=
 
 dacdi
 
-```
-
-Wenn du möchtest, speichere ich dir das direkt als Datei oder pushe es in dein Projekt. Sag einfach Bescheid.
 ```
