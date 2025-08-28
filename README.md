@@ -1,8 +1,3 @@
-Hier ist das **aktualisierte vollständige README** mit deinen gewünschten Erweiterungen:
-
----
-
-````markdown
 # 🌧️ HydroAlert – Niederschlagsbasierte Wassertiefenvorhersage
 
 **HydroAlert** ist ein modulares Python-Tool zur Flächenvorhersage von Überschwemmungsrisiken auf Basis von Niederschlagsdaten.  
@@ -82,7 +77,6 @@ analysis/     # Reine Datenverarbeitung/Algorithmen ohne Seiteneffekte
 use_cases/    # Einstiegspunkte für CLI/API – wandeln Eingaben in Service-Aufrufe um
 utils/        # Generische Helfer (Logging, Naming, Zeit-Utilities)
 main.py       # CLI-Parser und Routing zu use_cases/
-````
 
 ### Erlaubte Abhängigkeiten zwischen Schichten
 
