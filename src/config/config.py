@@ -34,7 +34,7 @@ FILE_LOG_LEVEL     = _log_level(os.getenv("FILE_LOG_LEVEL", "DEBUG"), logging.DE
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 
 # ------------------------
-# WMS-Defaults (fix aus Config; nicht im Code verstreut)
+# WMS-Defaults
 # ------------------------
 WMS_BASE_URL = os.getenv(
     "WMS_BASE_URL",
