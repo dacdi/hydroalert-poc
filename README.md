@@ -227,6 +227,14 @@ TELEGRAM_BOT_TOKEN=
 
 ---
 
+## Externe Kartendaten (Sturzflutgefahrenkarten)
+
+- Visualisierung erfolgt über WMS-Dienst der Wasserwirtschaft Rheinland-Pfalz (Sturzflutgefahrenkarten).
+- Lizenz: **Creative Commons Namensnennung 4.0 (CC BY 4.0)** – siehe Kartendienste der Wasserwirtschaftsverwaltung Rheinland-Pfalz :contentReference[oaicite:12]{index=12}.
+- Attribution: Kartenmaterial © Wasserportal Rheinland-Pfalz, Lizenz CC BY 4.0.
+
+---
+
 ## 👨‍💻 Autor
 
 dacdi
