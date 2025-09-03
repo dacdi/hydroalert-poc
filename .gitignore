@@ -12,3 +12,6 @@ __pycache__/
 
 # Mac Dateien
 .DS_store
+
+# Datenordner (lokale WMS-Downloads, Raster, CSVs etc.)
+data/
