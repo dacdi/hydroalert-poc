@@ -59,6 +59,10 @@ async def handle_text(chat_id: int, text: str) -> List[BotAction]:
         record = evaluate_and_store_for_location(lat=lat, lon=lon, csv_path_override=csv_path)
         layer_short = record.layer  # z. B. "Wassertiefe_SRI10_1h"
 
+        if layer_short == "none":
+            return [SendText(
+                "Kein relevanter Niederschlag in den nächsten 24h erkannt. Sende neue Koordinaten, wenn du magst.")]
+
         # 1c) KML aus dem Cache bestimmen (und falls nötig on-demand generieren)
         cache_dir = cache_path_for_latlon(lat, lon)
         kml_path = os.path.join(cache_dir, f"flood_{layer_short}.kml")
