@@ -1,8 +1,11 @@
+# src/io/forecast_client.py
+
 from __future__ import annotations
 from typing import Dict, Any
 import time
 import requests
-from requests.adapters import HTTPAdapter, Retry
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 from src.config.config import FORECAST_API_URL, FORECAST_HTTP_TIMEOUT_S
 from src.utils.utils_logger import get_logger
