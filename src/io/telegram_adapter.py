@@ -1,126 +1,57 @@
 # src/io/telegram_adapter.py
-
 from __future__ import annotations
-
-import re
-from typing import Dict, Tuple, Optional
-
+from typing import Iterable, Awaitable, Callable
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-from src.config.config import TELEGRAM_BOT_TOKEN
+from src.domain.actions import BotAction, SendText, SendPhoto, SendDocument
 from src.utils.utils_logger import get_logger
-from src.io.llm_client import llm_hint_for
 
 logger = get_logger()
 
-# Einfache, flüchtige Sitzungszustände pro Chat
-# {chat_id: {"awaiting_confirm": bool, "lat": float, "lon": float}}
-_STATE: Dict[int, Dict[str, object]] = {}
+async def _render_actions(update: Update, actions: Iterable[BotAction]) -> None:
+    if update.message is None:
+        logger.debug("No message on update; skip rendering.")
+        return
+    for act in actions:
+        if isinstance(act, SendText):
+            await update.message.reply_text(act.text)
+        elif isinstance(act, SendPhoto):
+            with open(act.path, "rb") as f:
+                await update.message.reply_photo(photo=f, caption=act.caption or "")
+        elif isinstance(act, SendDocument):
+            with open(act.path, "rb") as f:
+                await update.message.reply_document(
+                    document=f,
+                    filename=act.filename or None,
+                    caption=act.caption or "",
+                )
+        else:
+            logger.warning("Unknown action type: %r", type(act))
 
-
-_COORD_RE = re.compile(r"^\s*([+-]?\d{1,2}\.\d+)\s*[,; ]\s*([+-]?\d{1,3}\.\d+)\s*$")
-
-
-def parse_lat_lon_strict(text: str) -> Optional[Tuple[float, float]]:
-    """Parst *strikt* Dezimalgrad mit Dezimalpunkt und prüft Wertebereiche.
-    
-    Akzeptiert: "48.1351, 11.5820" oder "48.1351 11.5820" etc.
-    Liefert None, wenn Format/Wertebereich nicht passen.
+def run(app_token: str, on_text: Callable[[int, str], Awaitable[Iterable[BotAction]]]) -> None:
     """
-    m = _COORD_RE.match(text or "")
-    if not m:
-        return None
-    try:
-        lat = float(m.group(1))
-        lon = float(m.group(2))
-    except ValueError:
-        return None
-    if not (-90.0 <= lat <= 90.0 and -180.0 <= lon <= 180.0):
-        return None
-    return round(lat, 5), round(lon, 5)
-
-
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text(
-        "👋 Willkommen bei HydroAlert!\n"
-        "Bitte gib Koordinaten im Format `lat, lon` ein (z. B. `48.1351, 11.5820`).\n"
-        "Regeln: DezimalPUNKT (.), erst lat, dann lon."
-    )
-
-
-def _clear(chat_id: int) -> None:
-    _STATE.pop(chat_id, None)
-
-
-def _set_pending(chat_id: int, lat: float, lon: float) -> None:
-    _STATE[chat_id] = {"awaiting_confirm": True, "lat": lat, "lon": lon}
-
-
-def _get_pending(chat_id: int) -> Optional[Tuple[float, float]]:
-    s = _STATE.get(chat_id)
-    if s and s.get("awaiting_confirm") and "lat" in s and "lon" in s:
-        return float(s["lat"]), float(s["lon"])  # type: ignore[arg-type]
-    return None
-
-
-def start_bot(message_logic_fn):
-    """Startet den Telegram-Bot.
-    
-    :param message_logic_fn: Funktion, die (lat, lon) → (text, file_path|None) zurückgibt.
+    Dünner Adapter: synchroner Start. PTB verwaltet den asyncio-Loop selbst.
     """
-    async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    app = ApplicationBuilder().token(app_token).build()
+
+    async def _on_start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         chat_id = update.effective_chat.id if update.effective_chat else 0
-        user_input = (update.message.text or "").strip()
-        logger.debug("📩 Eingehende Nachricht [chat=%s]: %s", chat_id, user_input)
+        logger.info("Start command from chat_id=%s", chat_id)
+        # Lokal importieren, um Zyklen zu vermeiden
+        from src.use_cases.telegram_bot import handle_start
+        actions = await handle_start(chat_id)
+        await _render_actions(update, actions)
 
-        # Prüfe, ob wir auf eine Bestätigung warten
-        pending = _get_pending(chat_id)
-        if pending:
-            if user_input.lower() == "ja":
-                lat, lon = pending
-                _clear(chat_id)
-                logger.info("✅ Bestätigt: lat=%.5f, lon=%.5f [chat=%s]", lat, lon, chat_id)
-                text, file_path = message_logic_fn(lat, lon)
+    async def _on_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        chat_id = update.effective_chat.id if update.effective_chat else 0
+        text = (update.message.text or "").strip() if update.message else ""
+        logger.debug("Message from chat_id=%s: %r", chat_id, text)
+        actions = await on_text(chat_id, text)
+        await _render_actions(update, actions)
 
-                # Haupttext senden
-                await update.message.reply_text(text)
+    app.add_handler(CommandHandler("start", _on_start))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, _on_message))
 
-                # (Optional) Datei anhängen
-                if file_path:
-                    try:
-                        with open(file_path, "rb") as f:
-                            await update.message.reply_document(
-                                document=f,
-                                filename=file_path.split("/")[-1],
-                                caption="Ergebnisdatei",
-                            )
-                    except FileNotFoundError:
-                        logger.warning("Datei nicht gefunden: %s", file_path)
-                        await update.message.reply_text("⚠️ Datei nicht gefunden.")
-                return
-            else:
-                # Nutzer will korrigieren → fallen through zu neuer Parsing-Runde
-                logger.debug("↩️ Nutzer korrigiert Eingabe, verwerfe Pending [chat=%s]", chat_id)
-                _clear(chat_id)
-
-        # Neue Eingabe → Parse versuch
-        parsed = parse_lat_lon_strict(user_input)
-        if not parsed:
-            # Ungültig → LLM um knappen Tipp bitten
-            hint = llm_hint_for(user_input)
-            await update.message.reply_text(hint)
-            return
-
-        lat, lon = parsed
-        _set_pending(chat_id, lat, lon)
-        await update.message.reply_text(
-            f"Habe: {lat:.5f}, {lon:.5f}. Richtig? Antworte 'ja' oder sende neue Werte."
-        )
-
-    app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-
-    logger.info("🚀 Telegram-Bot gestartet. Warte auf Nachrichten …")
-    app.run_polling()
+    logger.info("🚀 Telegram adapter running (polling).")
+    app.run_polling()  # <-- blockierend, verwaltet eigenen Event-Loop
