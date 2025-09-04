@@ -1,4 +1,4 @@
-#src/config/config.py
+# src/config/config.py
 
 import os
 import logging
