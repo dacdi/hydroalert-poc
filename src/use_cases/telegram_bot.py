@@ -1,4 +1,4 @@
-# src/use_cases/telegram_bot_use_case.py
+# src/use_cases/telegram_bot.py
 
 from argparse import Namespace
 from logging import Logger
