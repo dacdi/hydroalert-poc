@@ -6,7 +6,6 @@ import os
 from typing import List
 
 from src.domain.actions import BotAction, SendText, SendDocument
-from src.domain.coords import Coords
 from src.analysis.text_parsing import parse_lat_lon
 from src.services.state_store import get_pending, set_pending, clear_pending
 from src.services.forecast_area_service import RainGridForecaster
