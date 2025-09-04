@@ -1,94 +1,81 @@
 # src/io/llm_client.py
 from __future__ import annotations
 
-import json
 import os
-import logging
 from typing import Optional
 
 import requests
+from requests.adapters import HTTPAdapter, Retry
+
 from src.utils.utils_logger import get_logger
 
 logger = get_logger()
 
-# Environment configuration
-API_KEY = os.getenv("OPENAI_API_KEY")
-MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
-BASE_URL = os.getenv("LLM_BASE_URL", "https://api.openai.com/v1")
-TIMEOUT_S = float(os.getenv("LLM_HTTP_TIMEOUT_S", "20"))
 
-FALLBACK_HINT = (
-    "Bitte Koordinaten im Format 'lat, lon' mit DezimalPUNKT senden. "
-    "Beispiel: 48.1351, 11.5820"
-)
-
-
-def llm_hint_for(user_text: str) -> str:
-    """Gibt einen *kurzen* Hilfetext + EIN Beispiel zurück.
-    
-    Nutzt das LLM, wenn API-Key gesetzt ist. Fällt andernfalls auf einen
-    statischen Hinweis zurück. Antwort ist **ein** kurzer Satz + *ein* Beispiel.
-    """
-    if not API_KEY:
-        logger.debug("[LLM] Kein OPENAI_API_KEY gesetzt → Fallback-Hinweis")
-        return FALLBACK_HINT
-
-    prompt = (
-        "Du hilfst einem Nutzer, Koordinaten im Dezimalgrad-Format korrekt einzugeben.\n"
-        "Regeln:\n"
-        "- Nur ZWEI Zahlen: erst lat (−90..90), dann lon (−180..180)\n"
-        "- DezimalPUNKT (.), kein Dezimalkomma\n"
-        "- Trennung mit Komma oder Leerzeichen\n"
-        "Gib eine sehr kurze, freundliche Hilfenachricht auf Deutsch und genau EIN gültiges Beispiel.\n"
-        "Antworte NUR als JSON-Objekt mit Feldern:\n"
-        '{"hint": string, "example": string}\n'
-        f"Fehlerhafte Eingabe war: {user_text}"
+def _get_session(timeout_s: float = 12.0) -> requests.Session:
+    session = requests.Session()
+    retries = Retry(
+        total=3,
+        connect=3,
+        read=3,
+        backoff_factor=0.5,
+        status_forcelist=(429, 500, 502, 503, 504),
+        allowed_methods=frozenset(["GET", "POST"]),
     )
+    adapter = HTTPAdapter(max_retries=retries)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    session.request = _with_timeout(session.request, timeout_s)  # type: ignore
+    return session
 
-    body = {
-        "model": MODEL,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.0,
-        "response_format": {"type": "json_object"},
-        "max_tokens": 80,
-    }
-    headers = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
 
-    try:
-        logger.debug("[LLM] POST %s/chat/completions", BASE_URL)
-        resp = requests.post(
-            f"{BASE_URL}/chat/completions",
-            headers=headers,
-            json=body,
-            timeout=TIMEOUT_S,
+def _with_timeout(fn, timeout_s: float):
+    def _wrapped(method, url, **kwargs):
+        kwargs.setdefault("timeout", timeout_s)
+        return fn(method, url, **kwargs)
+    return _wrapped
+
+
+def suggest_user_hint(user_text: str) -> str:
+    """
+    Ruft das LLM (synchron) auf, um eine kurze, konkrete Hilfenachricht zu generieren.
+    Diese Funktion wird vom Use-Case via asyncio.to_thread(...) aufgerufen.
+    """
+    logger.debug("llm_client.suggest_user_hint user_text=%r", user_text)
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        logger.warning("OPENAI_API_KEY fehlt – nutze Fallback-Hinweis.")
+        return (
+            "Ich konnte keine Koordinaten erkennen. Bitte sende sie als Dezimalgrad, "
+            "z. B. 49.123, 8.456"
         )
-        if resp.status_code == 429:
-            logger.warning("[LLM] 429 Too Many Requests → Fallback-Hinweis")
-            return FALLBACK_HINT
 
+    # Beispiel für ein generisches Backend (pseudocode); passe bei dir konkret an:
+    try:
+        session = _get_session()
+        resp = session.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={"Authorization": f"Bearer {api_key}"},
+            json={
+                "model": "gpt-4o-mini",
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": (
+                            "Formuliere kurz und hilfreich auf Deutsch, wie man Koordinaten im Format "
+                            "'lat, lon' sendet. Gib ein einziges Beispiel."
+                        ),
+                    },
+                    {"role": "user", "content": user_text},
+                ],
+                "temperature": 0.2,
+                "max_tokens": 120,
+            },
+        )
         resp.raise_for_status()
         data = resp.json()
-        content: Optional[str] = (
-            data.get("choices", [{}])[0]
-            .get("message", {})
-            .get("content")
-        )
-        if not content:
-            logger.debug("[LLM] Leere Antwort → Fallback-Hinweis")
-            return FALLBACK_HINT
-
-        j = json.loads(content)
-        hint = (j.get("hint") or "").strip()
-        example = (j.get("example") or "").strip()
-
-        if hint and example:
-            out = f"{hint} Beispiel: {example}"
-            logger.debug("[LLM] Parsed hint: %s", out)
-            return out
-
-        logger.debug("[LLM] Ungültiges JSON-Feldformat → Fallback-Hinweis")
-        return FALLBACK_HINT
-
-    except Exception as exc:
-        logger.warning("[LLM] Fehler: %s → Fallback-Hinweis", exc)
-        return FALLBACK_HINT
+        content = data["choices"][0]["message"]["content"].strip()
+        return content or "Bitte sende Koordinaten als Dezimalgrad, z. B. 49.123, 8.456"
+    except Exception as e:
+        logger.exception("LLM request failed: %s", e)
+        return "Ich konnte das nicht verstehen. Bitte sende Koordinaten wie 49.123, 8.456."
