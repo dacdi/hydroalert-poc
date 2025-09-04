@@ -122,3 +122,4 @@ class RainGridForecaster:
         abs_path = write_rain_forecasts_csv(out_path, hour_labels, valid_forecasts)
         logger.info("✅ Forecast-CSV gespeichert: %s", abs_path)
         return abs_path
+

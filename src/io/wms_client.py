@@ -1,7 +1,8 @@
 # src/io/wms_client.py
 from typing import Dict
 import requests
-from requests.adapters import HTTPAdapter, Retry
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from src.domain.models import BBox
 
 def build_wms_params(layer: str, bbox: BBox, width: int, height: int) -> Dict[str, str]:

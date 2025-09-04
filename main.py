@@ -6,7 +6,8 @@ from src.use_cases.download_layers import run_download_layers_use_case
 from src.use_cases.forecast import run_forecast_use_case
 from src.use_cases.evaluate import run_evaluate_use_case
 from src.use_cases.generate_dummy import run_generate_dummy_use_case
-from src.use_cases.telegram_bot import run_telegram_bot_use_case
+from src.use_cases.telegram_bot import run_bot
+from src.config.config import TELEGRAM_BOT_TOKEN
 from src.use_cases.generate_cache import run_generate_cache_use_case
 from src.config.config import DEFAULT_LAYERS  # {full_name: short_name}
 
@@ -76,7 +77,7 @@ def main() -> None:
     elif args.command == "generate-dummy":
         run_generate_dummy_use_case(args)
     elif args.command == "telegram":
-        run_telegram_bot_use_case(args)
+        run_bot(TELEGRAM_BOT_TOKEN)
     elif args.command == "generate-cache":
         run_generate_cache_use_case(args)
 

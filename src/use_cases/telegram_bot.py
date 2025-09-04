@@ -1,97 +1,101 @@
-# src/use_cases/telegram_bot_use_case.py
+# src/use_cases/telegram_bot.py
+from __future__ import annotations
 
-from argparse import Namespace
-from logging import Logger
+import asyncio
 import os
-import glob
-from typing import Optional, Tuple
+from typing import List
 
-from src.utils.utils_logger import get_logger
-from src.io.telegram_adapter import start_bot
-from src.io.cache_store import is_cache_available, find_first_kml_in_cache
-from src.services.wms_downloader_service import download_layers_for_latlon
-from src.services.cache_generation_service import generate_cache_for_location
+from src.domain.actions import BotAction, SendText, SendDocument
+from src.analysis.text_parsing import parse_lat_lon
+from src.services.state_store import get_pending, set_pending, clear_pending
 from src.services.forecast_area_service import RainGridForecaster
 from src.services.evaluation_service import evaluate_and_store_for_location
+from src.services.cache_generation_service import generate_cache_for_location
 from src.utils.naming import cache_path_for_latlon
 from src.config.config import (
-    OSM_RADIUS_M,
-    SAMPLE_DISTANCE_M,
     GRID_SIZE_M,
     FORECAST_STEP_M,
+    OSM_RADIUS_M,
+    SAMPLE_DISTANCE_M,
 )
+from src.io.llm_client import suggest_user_hint
+from src.utils.utils_logger import get_logger
 
-logger: Logger = get_logger()
+logger = get_logger()
 
-def _handle(lat: float, lon: float) -> Tuple[str, Optional[str]]:
-    """
-    Telegram-Logik:
-    - Prüft Cache
-    - Führt ggf. WMS-Download + Cache-Generierung aus
-    - Aktualisiert Forecast
-    - Führt Bewertung durch und sendet empfohlenes Layer zurück
-    - Gibt Ergebnistext + Datei zurück (wenn vorhanden)
-    """
-    logger.info("📲 Anfrage für Ort: lat=%.6f, lon=%.6f", lat, lon)
-    cache_dir = cache_path_for_latlon(lat, lon)
-    prepared_now = False
 
-    if not is_cache_available(lat, lon):
-        logger.info("❌ Kein Cache vorhanden → lade WMS + generiere Cache …")
-        download_layers_for_latlon(lat=lat, lon=lon, target_dir=cache_dir)
-        generate_cache_for_location(
+async def handle_start(chat_id: int) -> List[BotAction]:
+    logger.debug("handle_start chat_id=%s", chat_id)
+    return [
+        SendText(
+            "Hi! Bitte sende Koordinaten als 'lat, lon' (z. B. 49.123, 8.456). "
+            "Danach mit 'ja' bestätigen."
+        )
+    ]
+
+
+async def handle_text(chat_id: int, text: str) -> List[BotAction]:
+    logger.debug("handle_text chat_id=%s text=%r", chat_id, text)
+
+    # 1) Bestätigungspfad
+    if text.lower() in {"ja", "yes", "y"}:
+        pending = get_pending(chat_id)
+        if not pending:
+            return [SendText("Ich habe aktuell nichts zum Bestätigen. Sende bitte Koordinaten.")]
+        lat, lon = pending
+        clear_pending(chat_id)
+
+        # 1a) 24h-Raster-CSV erzeugen (bestehender Service)
+        forecaster = RainGridForecaster()
+        csv_path = forecaster.save_full_rain_forecast_grid(
             lat=lat,
             lon=lon,
-            radius_m=OSM_RADIUS_M,
-            sample_distance_m=SAMPLE_DISTANCE_M,
+            grid_size_m=GRID_SIZE_M,
+            step_m=FORECAST_STEP_M,
         )
-        prepared_now = True
-    else:
-        logger.info("✅ Cache vorhanden – nutze vorhandene Daten.")
 
-    # 1) Forecast durchführen
-    RainGridForecaster().save_full_rain_forecast_grid(
-        lat=lat,
-        lon=lon,
-        grid_size_m=GRID_SIZE_M,
-        step_m=FORECAST_STEP_M,
-    )
+        # 1b) Regen-Stufe klassifizieren & Evaluation speichern (bestehender Service)
+        record = evaluate_and_store_for_location(lat=lat, lon=lon, csv_path_override=csv_path)
+        layer_short = record.layer  # z. B. "Wassertiefe_SRI10_1h"
 
-    # 2) Evaluation ausführen und Layer ermitteln
-    record = evaluate_and_store_for_location(lat=lat, lon=lon)
-    layer = record.layer
+        if layer_short == "none":
+            return [SendText(
+                "Kein relevanter Niederschlag in den nächsten 24h erkannt. Sende neue Koordinaten, wenn du magst.")]
 
-    # 3) Basisstatus aufbauen
-    status = (
-        "🆕 WMS + Cache erstellt. 🌧️ Forecast aktualisiert."
-        if prepared_now else
-        "📦 Cache genutzt. 🌧️ Forecast aktualisiert."
-    )
+        # 1c) KML aus dem Cache bestimmen (und falls nötig on-demand generieren)
+        cache_dir = cache_path_for_latlon(lat, lon)
+        kml_path = os.path.join(cache_dir, f"flood_{layer_short}.kml")
+        if not os.path.exists(kml_path):
+            status = generate_cache_for_location(
+                lat=lat,
+                lon=lon,
+                radius_m=OSM_RADIUS_M,
+                sample_distance_m=SAMPLE_DISTANCE_M,
+                layers=[layer_short],
+            )
+            if not os.path.exists(kml_path):
+                logger.warning("KML nach Generierung nicht gefunden: %s | status=%s", kml_path, status)
+                return [
+                    SendText(f"Regenstufe erkannt: {layer_short}. KML konnte nicht erzeugt werden.")
+                ]
 
-    # 4) Kein Regen → kein Layer, keine Datei
-    if layer == "none":
-        logger.info("🌤️ Kein relevanter Niederschlag – Layer: %s", layer)
-        status += "\n🌤️ Kein relevanter Niederschlag vorhergesagt!"
-        return status, None
+        return [
+            SendText(f"Regenstufe erkannt: {layer_short}. Sende KML …"),
+            SendDocument(path=kml_path, filename=f"{layer_short}.kml"),
+        ]
 
-    # 5) Layer ist gesetzt → versuche passende KML zu finden
-    status += f"\n🧠 Empfohlener Layer: *{layer}*"
-    matches = glob.glob(os.path.join(cache_dir, f"flood_{layer}.kml"))
-    layer_file = matches[0] if matches else None
+    # 2) Parsing-Pfad
+    if coords := parse_lat_lon(text):
+        lat, lon = coords
+        set_pending(chat_id, lat, lon)
+        return [SendText(f"Habe: {lat:.5f}, {lon:.5f}. Richtig? Antworte 'ja', sonst sende neue Werte.")]
 
-    if not layer_file:
-        logger.warning("⚠️ KML-Datei nicht gefunden für Layer: %s", layer)
-        status += "\n⚠️ Datei nicht gefunden."
-        return status, None
-
-    # 6) Erfolgreich: Layer + Datei
-    return status, layer_file
-
+    # 3) LLM-Hilfetext (non-blocking vom Event-Loop)
+    hint = await asyncio.to_thread(suggest_user_hint, text)
+    return [SendText(hint)]
 
 
-def run_telegram_bot_use_case(args: Namespace) -> None:
-    """
-    Startet den Telegram-Bot und registriert den Ablauf-Handler.
-    """
-    logger.info("📡 Starte Telegram-Bot-UseCase …")
-    start_bot(_handle)
+def run_bot(app_token: str) -> None:
+    """Entry für main.py: synchron starten, PTB managt den Loop."""
+    from src.io.telegram_adapter import run
+    run(app_token, on_text=handle_text)
