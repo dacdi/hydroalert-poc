@@ -16,3 +16,7 @@ __pycache__/
 # Logs
 *.log
 output/
+
+# Datenordner (lokale WMS-Downloads, Raster, CSVs etc.)
+data/
+
