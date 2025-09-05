@@ -11,7 +11,12 @@ __pycache__/
 .vscode/
 
 # Mac Dateien
-.DS_Store
+.DS_store
+
+# Logs
+*.log
+output/
 
 # Datenordner (lokale WMS-Downloads, Raster, CSVs etc.)
 data/
+
