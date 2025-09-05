@@ -46,5 +46,6 @@ def get_logger() -> logging.Logger:
     logging.getLogger("telegram").setLevel(logging.WARNING)
     logging.getLogger("aiogram").setLevel(logging.WARNING)
     logging.getLogger("telethon").setLevel(logging.WARNING)
+    logging.getLogger("openai").setLevel(logging.WARNING)
 
     return _logger
