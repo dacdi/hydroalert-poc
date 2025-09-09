@@ -1,11 +1,11 @@
 # 🌧️ HydroAlert – Niederschlagsbasierte Wassertiefenvorhersage
 
 **HydroAlert** ist ein modulares Python-Tool zur Flächenvorhersage von Überschwemmungsrisiken auf Basis von Niederschlagsdaten.  
-Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenwertlogik zur Auswahl geeigneter Sturzflutkarten (z. B. SRI7/SRI10).
+Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenwertlogik zur Auswahl geeigneter Sturzflutkarten (z. B. SRI7/SRI10).
 
 ---
 
-## 🔧 Aktuelle Features (Stand: August 2025)
+## 🔧 Aktuelle Features (Stand: September 2025)
 
 - 📍 Steuerung **aller Use Cases über Koordinaten** (`--lat`, `--lon`) – darunter:
   - 📡 Abruf stündlicher Niederschlagsprognosen (24h) aus Open-Meteo API
@@ -14,7 +14,9 @@ Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenw
   - 🧾 Erstellung von Sturzflutkarten (CSV + KML)
   - 🧠 Klassifikation nach Schwellenwerten (SRI7/SRI10)
   - 🧪 Erzeugung synthetischer Dummy-Forecasts für Tests
-- 🤖 Telegram-Bot: Nutzer können einfach Koordinaten senden – Bot führt obige Schritte automatisiert aus
+- 🤖 Telegram-Bot:
+  - Nutzer können einfach Koordinaten senden – Bot führt obige Schritte automatisiert aus
+  - 🆕 **LLM-gestützter Eingabedialog:** Falls Koordinaten fehlerhaft eingegeben werden, gibt das LLM automatisch kurze Hilfetexte und Beispiel-Eingaben zurück, bis eine gültige Eingabe erkannt wird
 - 💾 Caching: CSV-Cache überfluteter Straßen (inkl. Tiefe)
 - 🛟 Dummy-Forecast als Fallback bei API-Ausfällen
 - 🧵 Logging aller Schritte für Nachvollziehbarkeit
@@ -50,7 +52,6 @@ Alle weiteren Punkte bleiben unberücksichtigt, was zu unvollständigen Analysen
 
 ---
 
-
 ## 🧱 Architekturüberblick
 
 HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-Projekte:
@@ -58,7 +59,7 @@ HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-P
 | Prinzip                      | Bedeutung                                                                 |
 |------------------------------|---------------------------------------------------------------------------|
 | Separation of Concerns       | Datenmodelle, Analyse, Orchestrierung, I/O und CLI klar getrennt          |
-| Funktionale Projektstruktur  | Gliederung nach Aufgaben, nicht nach Objekten (z. B. `io/`, `analysis/`)  |
+| Funktionale Projektstruktur  | Gliederung nach Aufgaben, nicht nach Objekten (z. B. `io/`, `analysis/`)  |
 | Reproduzierbarkeit           | Datenpfade über `.env` konfiguriert, keine Hardcoded-Logik                |
 | Keine Logik in `main.py`     | `main.py` dient nur zur CLI-Steuerung via `argparse`                      |
 | Testbarkeit                  | Zentrale Funktionen modular und über `pytest` testbar                     |
@@ -77,6 +78,7 @@ analysis/     # Reine Datenverarbeitung/Algorithmen ohne Seiteneffekte
 use_cases/    # Einstiegspunkte für CLI/API – wandeln Eingaben in Service-Aufrufe um
 utils/        # Generische Helfer (Logging, Naming, Zeit-Utilities)
 main.py       # CLI-Parser und Routing zu use_cases/
+````
 
 ### Erlaubte Abhängigkeiten zwischen Schichten
 
@@ -126,7 +128,7 @@ tests/
 ```
 
 * **Unit**: Einzelne Funktion mit kontrollierten Eingaben (`utm_to_pixel`, `depth_from_color`)
-* **Integration**: Module + Testdaten (z. B. PNG+Straßen im Cache-Service)
+* **Integration**: Module + Testdaten (z. B. PNG+Straßen im Cache-Service)
 * **E2E**: Kompletter Ablauf (API, WMS, Klassifikation)
 
 ### Weitere Testordner
@@ -139,7 +141,7 @@ tests/
 
 * Dateien: `test_<modulname>.py`
 * Funktionen: `test_<was_getestet_wird>()`
-* Fixtures: sprechend benennen, z. B. `mini_tile_path`
+* Fixtures: sprechend benennen, z. B. `mini_tile_path`
 
 ### Pytest-Marks für gezielte Ausführung
 
@@ -170,7 +172,7 @@ pytest -m "unit or integration"
 
 ```bash
 --lat <Breitengrad> --lon <Längengrad>
-# z. B.
+# z. B.
 --lat 49.35 --lon 8.10
 ```
 
@@ -186,7 +188,7 @@ PYTHONPATH=. python3 main.py forecast --lat 49.35 --lon 8.10
 # 🧠 Analyse: Welche Starkregenkarten sind relevant?
 PYTHONPATH=. python3 main.py evaluate --lat 49.35 --lon 8.10
 
-# 🧪 Dummy-Regenfelder erzeugen (z. B. SRI7)
+# 🧪 Dummy-Regenfelder erzeugen (z. B. SRI7)
 PYTHONPATH=. python3 main.py generate-dummy SRI7 --lat 49.35 --lon 8.10
 
 # 🗄 CSV-Cache der überfluteten Straßen erzeugen
@@ -201,7 +203,11 @@ PYTHONPATH=. python3 main.py telegram
 ```
 
 Der Bot erkennt Koordinaten in Nutzeranfragen automatisch
-(z. B. `49.35, 8.10`) und führt daraufhin alle Analyse- und Vorhersageprozesse aus.
+(z. B. `49.35, 8.10`) und führt daraufhin alle Analyse- und Vorhersageprozesse aus.
+
+🆕 **LLM-Unterstützung:**
+Falls die Eingabe keine gültigen Koordinaten enthält, liefert der Bot mithilfe eines Sprachmodells automatisch kurze Hinweise und Beispiel-Eingaben (z. B. korrektes Format `49.35, 8.10`).
+Sobald eine gültige Eingabe erkannt wird, läuft der normale Analyseprozess.
 
 ---
 
@@ -229,14 +235,12 @@ TELEGRAM_BOT_TOKEN=
 
 ## Externe Kartendaten (Sturzflutgefahrenkarten)
 
-- Visualisierung erfolgt über WMS-Dienst der Wasserwirtschaft Rheinland-Pfalz (Sturzflutgefahrenkarten).
-- Lizenz: **Creative Commons Namensnennung 4.0 (CC BY 4.0)** – siehe Kartendienste der Wasserwirtschaftsverwaltung Rheinland-Pfalz :contentReference[oaicite:12]{index=12}.
-- Attribution: Kartenmaterial © Wasserportal Rheinland-Pfalz, Lizenz CC BY 4.0.
+* Visualisierung erfolgt über WMS-Dienst der Wasserwirtschaft Rheinland-Pfalz (Sturzflutgefahrenkarten).
+* Lizenz: **Creative Commons Namensnennung 4.0 (CC BY 4.0)** – siehe Kartendienste der Wasserwirtschaftsverwaltung Rheinland-Pfalz.
+* Attribution: Kartenmaterial © Wasserportal Rheinland-Pfalz, Lizenz CC BY 4.0.
 
 ---
 
 ## 👨‍💻 Autor
 
-dacdi
-
-```
+David Mühlfeld
