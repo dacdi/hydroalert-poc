@@ -8,6 +8,8 @@ HYDROALERT_CONTEXT_DE = """
 # Projekt: HydroAlert – Einsatznahe Niederschlags- & Gefahrenkarten
 - Zweck: Verknüpft WMS-Gefahren-/Gefährdungslayer (Hochwasser etc.) mit aktuellen Niederschlagsvorhersagen.
 - Zielgruppe: Einsatzkräfte/Kommunen – schnelle Lageeinschätzung: Wann? Wo? Wie stark?
+- **Hinweis:** HydroAlert ist aktuell nur für Rheinland-Pfalz ausgelegt. 
+  Bitte nutze GPS-Koordinaten, die innerhalb von Rheinland-Pfalz liegen.
 - Architektur (Clean Architecture):
   - config/: zentrale Defaults (Pfade, URLs, Layerlisten, API-Keys)
   - domain/: reine Datenmodelle, keine I/O
@@ -28,7 +30,7 @@ HYDROALERT_CONTEXT_DE = """
 
 # Dummy-Test auslösen (Telegram/CLI)
 - Zweck: Ohne echte Vorhersage/WMS prüfen, ob Pipeline & UI funktionieren.
-- Telegram (Beispiel): Befehl /hilfe erklärt es; oder Nachricht "dummy 49.123, 8.456".
+- Telegram (Beispiel): Befehl /hilfe erklärt es; oder Nachricht " 49.123, 8.456 dummy SRI7".
 - Intern: use_case ruft services.dummy_data_service.generate_dummy_for_location(lat, lon)
 - Ergebnis: Generiertes Raster + Kacheln + Evaluation werden wie “echte” Daten weiterverarbeitet/gespeichert.
 - Hinweistext: "Dummy-Daten aktiv – Werte sind simuliert."

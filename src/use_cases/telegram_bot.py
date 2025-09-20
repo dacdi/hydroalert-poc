@@ -15,7 +15,7 @@ from src.services.evaluation_service import evaluate_and_store_for_location
 from src.services.dummy_data_service import generate_dummy_for_location
 from src.utils.naming import cache_path_for_latlon
 from src.config.config import GRID_SIZE_M, FORECAST_STEP_M, OSM_RADIUS_M, SAMPLE_DISTANCE_M
-from src.io.llm_client import suggest_user_hint
+from src.io.llm_client import suggest_user_hint, explain_hydroalert
 from src.utils.utils_logger import get_logger
 
 logger = get_logger()
@@ -24,6 +24,11 @@ logger = get_logger()
 # chat_id -> variant (nur: SRI7, SRI10, SRI10_4h)
 _DUMMY_PENDING: Dict[int, str] = {}
 _VALID_VARIANTS = {"sri7", "sri10", "sri10_4h"}
+_CANONICAL_VARIANT = {
+    "sri7": "SRI7",
+    "sri10": "SRI10",
+    "sri10_4h": "SRI10_4h",
+}
 
 
 def _parse_coords_with_dummy(text: str) -> Optional[Tuple[float, float, Optional[str]]]:
@@ -43,10 +48,12 @@ def _parse_coords_with_dummy(text: str) -> Optional[Tuple[float, float, Optional
         try:
             idx = parts.index("dummy")
             variant = parts[idx + 1] if idx + 1 < len(parts) else None
-            if variant and variant.lower() in _VALID_VARIANTS:
-                # Normalisiere auf originalen Großbuchstaben
-                normalized = variant.upper()
-                return lat, lon, normalized
+            if variant:
+                v = variant.lower()
+                if v in _VALID_VARIANTS:
+                    # Auf kanonische Schreibweise mappen (keine .upper(), da 'SRI10_4h' ein kleines 'h' hat)
+                    normalized = _CANONICAL_VARIANT[v]
+                    return lat, lon, normalized
             # Ungültiger Variant-Token → behandle wie ohne Dummy
             return lat, lon, None
         except ValueError:
@@ -63,7 +70,8 @@ async def handle_start(chat_id: int) -> List[BotAction]:
     return [
         SendText(
             "Hi! Bitte sende Koordinaten als 'lat, lon' (z. B. 49.123, 8.456) und bestätige danach mit 'ja'.\n"
-            "Tipp: Dummy testen mit: '49.123, 8.456 dummy SRI7' (auch SRI10, SRI10_4h)."
+            "Tipp: Dummy testen mit: '49.123, 8.456 dummy SRI7' (auch SRI10, SRI10_4h). "
+            "Hilfe: /hilfe"
         )
     ]
 
@@ -71,8 +79,23 @@ async def handle_start(chat_id: int) -> List[BotAction]:
 async def handle_text(chat_id: int, text: str) -> List[BotAction]:
     logger.debug("handle_text chat_id=%s text=%r", chat_id, text)
 
+    stripped = text.strip()
+
+    # 0) Help/FAQ (LLM-gestützt, kuratierter Kontext)
+    if stripped.lower().startswith("/hilfe"):
+        try:
+            overview = await asyncio.to_thread(explain_hydroalert, "Kurzer Überblick zu HydroAlert")
+        except Exception:
+            logger.exception("explain_hydroalert failed")
+            overview = (
+                "HydroAlert verknüpft WMS-Gefahrenlayer mit Regenvorhersagen, um schnell zu zeigen: Wann? Wo? Wie stark?\n"
+                "Koordinatenformat: 49.123, 8.456\n"
+                "Dummy-Test: 'lat, lon dummy SRI7' (auch SRI10, SRI10_4h)."
+            )
+        return [SendText(overview)]
+
     # 1) Bestätigungszweig – EIN gemeinsamer Ablauf
-    if text.lower() in {"ja", "yes", "y"}:
+    if stripped.lower() in {"ja", "yes", "y"}:
         pending = get_pending(chat_id)
         if not pending:
             return [SendText("Ich habe aktuell nichts zum Bestätigen. Sende bitte Koordinaten.")]
@@ -144,19 +167,19 @@ async def handle_text(chat_id: int, text: str) -> List[BotAction]:
         ]
 
     # 2) Parsing-Zweig – Koordinaten + optionaler Dummy-Hinweis (ohne Hours)
-    parsed = _parse_coords_with_dummy(text)
+    parsed = _parse_coords_with_dummy(stripped)
     if parsed:
         lat, lon, variant = parsed
         set_pending(chat_id, lat, lon)
         if variant:
             _DUMMY_PENDING[chat_id] = variant
-            return [SendText(
-                f"Habe: {lat:.5f}, {lon:.5f} (Dummy: {variant}). Richtig? Antworte 'ja'."
-            )]
-        return [SendText(
-            f"Habe: {lat:.5f}, {lon:.5f}. Richtig? Antworte 'ja', sonst sende neue Werte. "
-            f"Optional: 'dummy SRI7' (auch SRI10, SRI10_4h)."
-        )]
+            return [SendText(f"Habe: {lat:.5f}, {lon:.5f} (Dummy: {variant}). Richtig? Antworte 'ja'.")]
+        return [
+            SendText(
+                f"Habe: {lat:.5f}, {lon:.5f}. Richtig? Antworte 'ja', sonst sende neue Werte. "
+                f"Optional: 'dummy SRI7' (auch SRI10, SRI10_4h)."
+            )
+        ]
 
     # 3) LLM-Fallback
     hint = await asyncio.to_thread(suggest_user_hint, text)
@@ -166,4 +189,5 @@ async def handle_text(chat_id: int, text: str) -> List[BotAction]:
 def run_bot(app_token: str) -> None:
     """Entry für main.py: synchron starten, PTB managt den Loop."""
     from src.io.telegram_adapter import run
+
     run(app_token, on_text=handle_text)
