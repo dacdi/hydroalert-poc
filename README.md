@@ -1,53 +1,61 @@
+
 # 🌧️ HydroAlert – Niederschlagsbasierte Wassertiefenvorhersage
 
-**HydroAlert** ist ein modulares Python-Tool zur Flächenvorhersage von Überschwemmungsrisiken auf Basis von Niederschlagsdaten.  
+**HydroAlert** ist ein modulares Python-Tool zur Flächenvorhersage von Überschwemmungsrisiken auf Basis von Niederschlagsdaten.
 Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenwertlogik zur Auswahl geeigneter Sturzflutkarten (z. B. SRI7/SRI10).
 
 ---
 
 ## 🔧 Aktuelle Features (Stand: September 2025)
 
-- 📍 Steuerung **aller Use Cases über Koordinaten** (`--lat`, `--lon`) – darunter:
-  - 📡 Abruf stündlicher Niederschlagsprognosen (24h) aus Open-Meteo API
-  - 🗺️ Flächenanalyse über Raster um gegebene Orte
-  - 🌐 Download aller benötigten WMS-Layer
-  - 🧾 Erstellung von Sturzflutkarten (CSV + KML)
-  - 🧠 Klassifikation nach Schwellenwerten (SRI7/SRI10)
-  - 🧪 Erzeugung synthetischer Dummy-Forecasts für Tests
-- 🤖 Telegram-Bot:
-  - Nutzer können einfach Koordinaten senden – Bot führt obige Schritte automatisiert aus
-  - 🆕 **LLM-gestützter Eingabedialog:** Falls Koordinaten fehlerhaft eingegeben werden, gibt das LLM automatisch kurze Hilfetexte und Beispiel-Eingaben zurück, bis eine gültige Eingabe erkannt wird
-- 💾 Caching: CSV-Cache überfluteter Straßen (inkl. Tiefe)
-- 🛟 Dummy-Forecast als Fallback bei API-Ausfällen
-- 🧵 Logging aller Schritte für Nachvollziehbarkeit
-- ✅ Unit-Tests für Kernfunktionen
+* 📍 Steuerung **aller Use Cases über Koordinaten** (`--lat`, `--lon`) – darunter:
+
+  * 📡 Abruf stündlicher Niederschlagsprognosen (24h) aus Open-Meteo API
+  * 🗺️ Flächenanalyse über Raster um gegebene Orte
+  * 🌐 Download aller benötigten WMS-Layer
+  * 🧾 Erstellung von Sturzflutkarten (CSV + KML)
+  * 🧠 Klassifikation nach Schwellenwerten (SRI7/SRI10)
+  * 🧪 Erzeugung synthetischer Dummy-Forecasts für Tests (CLI & Telegram)
+* 🤖 Telegram-Bot:
+
+  * Nutzer können einfach Koordinaten senden – Bot führt obige Schritte automatisiert aus
+  * 🆕 **LLM-gestützter Eingabedialog:** Falls Koordinaten fehlerhaft eingegeben werden, gibt das LLM automatisch kurze Hilfetexte und Beispiel-Eingaben zurück, bis eine gültige Eingabe erkannt wird
+  * 🆕 **Dummy-Daten via Telegram:** Nutzer können gezielt Dummy-Forecasts (z. B. SRI7, SRI10) anfordern, ohne CLI-Aufruf
+* 💾 Caching: CSV-Cache überfluteter Straßen (inkl. Tiefe)
+* 🛟 Dummy-Forecast als Fallback bei API-Ausfällen
+* 🧵 Logging aller Schritte für Nachvollziehbarkeit
+* ✅ Unit-Tests für Kernfunktionen
 
 ---
 
 ## 🐞 Bekannte Bugs
 
 ### BUG-001 – Ungültige GPS-Punkte erzeugen keine Fehlermeldung
-Es können beliebige GPS-Koordinaten eingegeben werden, auch außerhalb des Abdeckungsgebiets.  
-Für nicht abgedeckte Bereiche (derzeit nur **Rheinland-Pfalz** verfügbar) wird keine Fehlermeldung angezeigt.  
+
+Es können beliebige GPS-Koordinaten eingegeben werden, auch außerhalb des Abdeckungsgebiets.
+Für nicht abgedeckte Bereiche (derzeit nur **Rheinland-Pfalz** verfügbar) wird keine Fehlermeldung angezeigt.
 Dies führt zu leeren oder irreführenden Ergebnissen.
 
 ---
 
 ### BUG-002 – Straßen mit variabler Überflutungstiefe werden pauschalisiert
-Bei Straßenabschnitten mit unterschiedlichen Überflutungstiefen wird nur der **erste** erfasste Wert auf die **gesamte Straße** übertragen.  
+
+Bei Straßenabschnitten mit unterschiedlichen Überflutungstiefen wird nur der **erste** erfasste Wert auf die **gesamte Straße** übertragen.
 Dadurch gehen lokale Unterschiede verloren und Karten werden ungenau.
 
 ---
 
 ### BUG-003 – Rasterauflösung der Vorhersage passt nicht zu den Eingangsdaten
-Das System bildet aktuell ein **2 × 2 km** Vorhersageraster und prüft darin Niederschlags-Schwellenwerte.  
-Die zugrundeliegenden meteorologischen Daten haben jedoch nur eine Auflösung von **10 × 10 km**.  
+
+Das System bildet aktuell ein **2 × 2 km** Vorhersageraster und prüft darin Niederschlags-Schwellenwerte.
+Die zugrundeliegenden meteorologischen Daten haben jedoch nur eine Auflösung von **10 × 10 km**.
 Dies erzeugt eine Scheingenauigkeit und inkonsistente Ergebnisse.
 
 ---
 
 ### BUG-004 – Zeitreihe wird nur für den ersten GPS-Punkt berechnet
-Bei mehreren ausgewählten GPS-Punkten wird die vollständige **Zeitreihe** zwar korrekt ausgewertet, jedoch nur für den **ersten GPS-Punkt**.  
+
+Bei mehreren ausgewählten GPS-Punkten wird die vollständige **Zeitreihe** zwar korrekt ausgewertet, jedoch nur für den **ersten GPS-Punkt**.
 Alle weiteren Punkte bleiben unberücksichtigt, was zu unvollständigen Analysen führt.
 
 ---
@@ -56,13 +64,13 @@ Alle weiteren Punkte bleiben unberücksichtigt, was zu unvollständigen Analysen
 
 HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-Projekte:
 
-| Prinzip                      | Bedeutung                                                                 |
-|------------------------------|---------------------------------------------------------------------------|
-| Separation of Concerns       | Datenmodelle, Analyse, Orchestrierung, I/O und CLI klar getrennt          |
-| Funktionale Projektstruktur  | Gliederung nach Aufgaben, nicht nach Objekten (z. B. `io/`, `analysis/`)  |
-| Reproduzierbarkeit           | Datenpfade über `.env` konfiguriert, keine Hardcoded-Logik                |
-| Keine Logik in `main.py`     | `main.py` dient nur zur CLI-Steuerung via `argparse`                      |
-| Testbarkeit                  | Zentrale Funktionen modular und über `pytest` testbar                     |
+| Prinzip                     | Bedeutung                                                                |
+| --------------------------- | ------------------------------------------------------------------------ |
+| Separation of Concerns      | Datenmodelle, Analyse, Orchestrierung, I/O und CLI klar getrennt         |
+| Funktionale Projektstruktur | Gliederung nach Aufgaben, nicht nach Objekten (z. B. `io/`, `analysis/`) |
+| Reproduzierbarkeit          | Datenpfade über `.env` konfiguriert, keine Hardcoded-Logik               |
+| Keine Logik in `main.py`    | `main.py` dient nur zur CLI-Steuerung via `argparse`                     |
+| Testbarkeit                 | Zentrale Funktionen modular und über `pytest` testbar                    |
 
 ---
 
@@ -78,7 +86,7 @@ analysis/     # Reine Datenverarbeitung/Algorithmen ohne Seiteneffekte
 use_cases/    # Einstiegspunkte für CLI/API – wandeln Eingaben in Service-Aufrufe um
 utils/        # Generische Helfer (Logging, Naming, Zeit-Utilities)
 main.py       # CLI-Parser und Routing zu use_cases/
-````
+```
 
 ### Erlaubte Abhängigkeiten zwischen Schichten
 
@@ -195,7 +203,7 @@ PYTHONPATH=. python3 main.py generate-dummy SRI7 --lat 49.35 --lon 8.10
 PYTHONPATH=. python3 main.py generate-cache --lat 49.35 --lon 8.10 --radius 200 --sample-distance 5
 ```
 
-### 🤖 Telegram-Bot (automatische Steuerung via Koordinaten)
+### 🤖 Telegram-Bot (automatische Steuerung via Koordinaten & Dummy)
 
 ```bash
 # 📲 Telegram-Bot starten
@@ -208,6 +216,16 @@ Der Bot erkennt Koordinaten in Nutzeranfragen automatisch
 🆕 **LLM-Unterstützung:**
 Falls die Eingabe keine gültigen Koordinaten enthält, liefert der Bot mithilfe eines Sprachmodells automatisch kurze Hinweise und Beispiel-Eingaben (z. B. korrektes Format `49.35, 8.10`).
 Sobald eine gültige Eingabe erkannt wird, läuft der normale Analyseprozess.
+
+🆕 **Dummy-Daten über Telegram:**
+Nutzer können zusätzlich Dummy-Analysen anfordern, z. B. durch Eingaben wie:
+
+```
+dummy SRI7 49.35, 8.10
+dummy SRI10 49.40, 8.12
+```
+
+Der Bot generiert dann die gewünschten **synthetischen Forecasts** und liefert Karten + CSV zurück – praktisch zum Testen ohne echte API-Abfragen.
 
 ---
 
@@ -244,3 +262,4 @@ TELEGRAM_BOT_TOKEN=
 ## 👨‍💻 Autor
 
 David Mühlfeld
+
