@@ -32,15 +32,15 @@ _WELCOME_SENT: Dict[int, bool] = {}
 
 def _welcome_message() -> str:
     return (
-        "👋 **Willkommen! Ich bin HydroAlert** – das Vorhersagemodul für **Flut-/Gefahrenkarten** "
-        "in **Rheinland-Pfalz**.\n\n"
-        "• **So nutzt du mich:** Sende **Koordinaten** im Format `lat, lon` (z. B. `49.123, 8.456`).\n"
+        "👋 Willkommen! Ich bin HydroAlert – das Vorhersagemodul für Flut-/Gefahrenkarten "
+        "in Rheinland-Pfalz.\n\n"
+        "• So nutzt du mich: Sende Koordinaten im Format `lat, lon` (z. B. `49.123, 8.456`).\n"
         "• Ich liefere dir dazu die **aktuellen Regen-/Überflutungs-Hinweise** und passende KML.\n"
-        "• **Dummy-Test:** Schreibe z. B. `49.123, 8.456 dummy SRI7`, um einen simulierten SRI7-Fall zu prüfen "
+        "• Dummy-Test: Schreibe z. B. `49.12, 8.45 dummy SRI7`, um einen simulierten SRI7-Fall zu prüfen "
         "(auch `SRI10`, `SRI10_4h`).\n"
-        "• **Architektur:** Schreibe **`architektur`**, und ich erkläre dir meinen Software-Aufbau.\n\n"
-        "ℹ️ Hinweis: HydroAlert deckt aktuell **nur Rheinland-Pfalz** ab – bitte nutze GPS-Koordinaten **innerhalb** von RLP.\n"
-        "Hilfe jederzeit: **/hilfe**"
+        "• Architektur: Schreibe `architektur`, und ich erkläre dir meinen Software-Aufbau.\n\n"
+        "ℹ️ Hinweis: HydroAlert deckt aktuell nur Rheinland-Pfalz ab – bitte nutze GPS-Koordinaten innerhalb von RLP.\n"
+        "Hilfe jederzeit: /hilfe"
     )
 
 
