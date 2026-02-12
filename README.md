@@ -1,109 +1,114 @@
 
-# 🌧️ HydroAlert – Niederschlagsbasierte Wassertiefenvorhersage
+# 🌧️ HydroAlert – Rainfall-Based Water Depth Forecasting
 
-**HydroAlert** ist ein modulares Python-Tool zur Flächenvorhersage von Überschwemmungsrisiken auf Basis von Niederschlagsdaten.
-Es kombiniert öffentlich verfügbare Wetter-APIs, Rasteranalysen und Schwellenwertlogik zur Auswahl geeigneter Sturzflutkarten (z. B. SRI7/SRI10).
-
----
-
-## 🔧 Aktuelle Features (Stand: September 2025)
-
-* 📍 Steuerung **aller Use Cases über Koordinaten** (`--lat`, `--lon`) – darunter:
-
-  * 📡 Abruf stündlicher Niederschlagsprognosen (24h) aus Open-Meteo API
-  * 🗺️ Flächenanalyse über Raster um gegebene Orte
-  * 🌐 Download aller benötigten WMS-Layer
-  * 🧾 Erstellung von Sturzflutkarten (CSV + KML)
-  * 🧠 Klassifikation nach Schwellenwerten (SRI7/SRI10)
-  * 🧪 Erzeugung synthetischer Dummy-Forecasts für Tests (CLI & Telegram)
-* 🤖 Telegram-Bot:
-
-  * Nutzer können einfach Koordinaten senden – Bot führt obige Schritte automatisiert aus
-  * 🆕 **LLM-gestützter Eingabedialog:** Falls Koordinaten fehlerhaft eingegeben werden, gibt das LLM automatisch kurze Hilfetexte und Beispiel-Eingaben zurück, bis eine gültige Eingabe erkannt wird
-  * 🆕 **Dummy-Daten via Telegram:** Nutzer können gezielt Dummy-Forecasts (z. B. SRI7, SRI10) anfordern, ohne CLI-Aufruf
-* 💾 Caching: CSV-Cache überfluteter Straßen (inkl. Tiefe)
-* 🛟 Dummy-Forecast als Fallback bei API-Ausfällen
-* 🧵 Logging aller Schritte für Nachvollziehbarkeit
-* ✅ Unit-Tests für Kernfunktionen
+**HydroAlert** is a modular Python tool for spatial flood risk forecasting based on precipitation data.
+It combines publicly available weather APIs, raster analysis, and threshold logic to select suitable flash flood maps (e.g., SRI7/SRI10).
 
 ---
 
-## 🐞 Bekannte Bugs
+## 🔧 Current Features (Status: September 2025)
 
-### BUG-001 – Ungültige GPS-Punkte erzeugen keine Fehlermeldung
+* 📍 Control of **all use cases via coordinates** (`--lat`, `--lon`), including:
 
-Es können beliebige GPS-Koordinaten eingegeben werden, auch außerhalb des Abdeckungsgebiets.
-Für nicht abgedeckte Bereiche (derzeit nur **Rheinland-Pfalz** verfügbar) wird keine Fehlermeldung angezeigt.
-Dies führt zu leeren oder irreführenden Ergebnissen.
+  * 📡 Retrieval of hourly precipitation forecasts (24h) from the Open-Meteo API
+  * 🗺️ Spatial raster analysis around given locations
+  * 🌐 Download of all required WMS layers
+  * 🧾 Generation of flash flood maps (CSV + KML)
+  * 🧠 Threshold-based classification (SRI7/SRI10)
+  * 🧪 Generation of synthetic dummy forecasts for testing (CLI & Telegram)
 
----
+* 🤖 Telegram bot:
 
-### BUG-002 – Straßen mit variabler Überflutungstiefe werden pauschalisiert
+  * Users simply send coordinates, the bot automatically executes all processing steps
+  * 🆕 **LLM-supported input dialogue:** If coordinates are entered incorrectly, the LLM automatically provides short help texts and example inputs until a valid entry is detected
+  * 🆕 **Dummy data via Telegram:** Users can explicitly request dummy forecasts (e.g., SRI7, SRI10) without using the CLI
 
-Bei Straßenabschnitten mit unterschiedlichen Überflutungstiefen wird nur der **erste** erfasste Wert auf die **gesamte Straße** übertragen.
-Dadurch gehen lokale Unterschiede verloren und Karten werden ungenau.
+* 💾 Caching: CSV cache of flooded streets (including depth)
 
----
+* 🛟 Dummy forecast as fallback in case of API outages
 
-### BUG-003 – Rasterauflösung der Vorhersage passt nicht zu den Eingangsdaten
+* 🧵 Full logging of all processing steps for traceability
 
-Das System bildet aktuell ein **2 × 2 km** Vorhersageraster und prüft darin Niederschlags-Schwellenwerte.
-Die zugrundeliegenden meteorologischen Daten haben jedoch nur eine Auflösung von **10 × 10 km**.
-Dies erzeugt eine Scheingenauigkeit und inkonsistente Ergebnisse.
-
----
-
-### BUG-004 – Zeitreihe wird nur für den ersten GPS-Punkt berechnet
-
-Bei mehreren ausgewählten GPS-Punkten wird die vollständige **Zeitreihe** zwar korrekt ausgewertet, jedoch nur für den **ersten GPS-Punkt**.
-Alle weiteren Punkte bleiben unberücksichtigt, was zu unvollständigen Analysen führt.
+* ✅ Unit tests for core functions
 
 ---
 
-## 🧱 Architekturüberblick
+## 🐞 Known Bugs
 
-HydroAlert folgt den Prinzipien sauberer Softwareentwicklung für Data-Science-Projekte:
+### BUG-001 – Invalid GPS points do not trigger an error message
 
-| Prinzip                     | Bedeutung                                                                |
-| --------------------------- | ------------------------------------------------------------------------ |
-| Separation of Concerns      | Datenmodelle, Analyse, Orchestrierung, I/O und CLI klar getrennt         |
-| Funktionale Projektstruktur | Gliederung nach Aufgaben, nicht nach Objekten (z. B. `io/`, `analysis/`) |
-| Reproduzierbarkeit          | Datenpfade über `.env` konfiguriert, keine Hardcoded-Logik               |
-| Keine Logik in `main.py`    | `main.py` dient nur zur CLI-Steuerung via `argparse`                     |
-| Testbarkeit                 | Zentrale Funktionen modular und über `pytest` testbar                    |
+Any GPS coordinates can currently be entered, even outside the coverage area.
+For unsupported regions (currently only **Rhineland-Palatinate** is available), no error message is displayed.
+This can lead to empty or misleading results.
 
 ---
 
-## 🗂️ Projektstruktur und Schichten
+### BUG-002 – Streets with variable flood depth are oversimplified
+
+For street segments with varying flood depths, only the **first recorded value** is applied to the **entire street segment**.
+Local variations are therefore lost and maps become inaccurate.
+
+---
+
+### BUG-003 – Forecast grid resolution does not match input data
+
+The system currently creates a **2 × 2 km forecast grid** and evaluates precipitation thresholds within it.
+However, the underlying meteorological data has a resolution of **10 × 10 km**.
+This introduces pseudo-precision and inconsistent results.
+
+---
+
+### BUG-004 – Time series calculated only for the first GPS point
+
+When multiple GPS points are selected, the full **time series** is correctly evaluated, but only for the **first GPS point**.
+All additional points are ignored, leading to incomplete analyses.
+
+---
+
+## 🧱 Architecture Overview
+
+HydroAlert follows clean software engineering principles for data science projects:
+
+| Principle                    | Meaning                                                                |
+| ---------------------------- | ---------------------------------------------------------------------- |
+| Separation of Concerns       | Clear separation of data models, analysis, orchestration, I/O, and CLI |
+| Functional Project Structure | Organized by responsibilities (e.g., `io/`, `analysis/`)               |
+| Reproducibility              | Data paths configured via `.env`, no hardcoded logic                   |
+| No Logic in `main.py`        | `main.py` only handles CLI parsing via `argparse`                      |
+| Testability                  | Core functions are modular and testable with `pytest`                  |
+
+---
+
+## 🗂️ Project Structure and Layers
 
 ```bash
 src/
-config/       # Zentrale Konfiguration und Defaults (Pfade, URLs, Layer-Listen)
-domain/       # Reine Datenmodelle (z. B. BBox, LayerSpec) – keine I/O oder Fachlogik
-io/           # Low-Level I/O: HTTP-Requests, Dateisystemzugriffe, DB-Adapter
-services/     # Orchestrierung: kombiniert io/ und analysis/ zu anwendungsfertigen Services
-analysis/     # Reine Datenverarbeitung/Algorithmen ohne Seiteneffekte
-use_cases/    # Einstiegspunkte für CLI/API – wandeln Eingaben in Service-Aufrufe um
-utils/        # Generische Helfer (Logging, Naming, Zeit-Utilities)
-main.py       # CLI-Parser und Routing zu use_cases/
+config/       # Central configuration and defaults (paths, URLs, layer lists)
+domain/       # Pure data models (e.g., BBox, LayerSpec) – no I/O or business logic
+io/           # Low-level I/O: HTTP requests, filesystem access, DB adapters
+services/     # Orchestration: combines io/ and analysis/ into usable services
+analysis/     # Pure data processing/algorithms without side effects
+use_cases/    # Entry points for CLI/API – translate inputs into service calls
+utils/        # Generic helpers (logging, naming, time utilities)
+main.py       # CLI parser and routing to use_cases/
 ```
 
-### Erlaubte Abhängigkeiten zwischen Schichten
+### Allowed Layer Dependencies
 
-* **use\_cases** → darf `services`, `analysis`, `io`, `domain`, `config`, `utils` nutzen
-* **services** → darf `io`, `analysis`, `domain`, `config`, `utils` nutzen
-* **analysis** → darf `domain`, `utils` nutzen (**kein** direkter Zugriff auf `io`)
-* **io** → darf `domain`, `config`, `utils` nutzen (**kein** Zugriff auf `analysis` oder `services`)
-* **domain** → nutzt nur Standardbibliothek
-* **config**, **utils** → von allen nutzbar, enthalten keine Projektlogik
+* **use_cases** → may use `services`, `analysis`, `io`, `domain`, `config`, `utils`
+* **services** → may use `io`, `analysis`, `domain`, `config`, `utils`
+* **analysis** → may use `domain`, `utils` (**no direct access to `io`**)
+* **io** → may use `domain`, `config`, `utils` (**no access to `analysis` or `services`**)
+* **domain** → standard library only
+* **config**, **utils** → usable by all, contain no business logic
 
 ---
 
-## 🧪 Teststrategie und Struktur
+## 🧪 Testing Strategy and Structure
 
-Die Teststruktur spiegelt die Architektur und trennt klar nach Testarten:
+The test structure mirrors the architecture and clearly separates test types.
 
-### Grundprinzip: Spiegelung der Projektstruktur
+### Core Principle: Mirror the Project Structure
 
 ```bash
 src/
@@ -121,37 +126,37 @@ tests/
 ...
 ```
 
-### Trennung nach Testarten
+### Separation by Test Type
 
 ```bash
 tests/
-├── unit/            # isolierte Funktionalität (keine I/O, kein Netzwerk)
+├── unit/            # isolated functionality (no I/O, no network)
 │   └── analysis/
 │       └── test_flood_overlay.py
-├── integration/     # Zusammenspiel mehrerer Module, ggf. Fake-IO
+├── integration/     # interaction of multiple modules, possibly fake I/O
 │   └── services/
 │       └── test_cache_generation_service.py
-└── e2e/             # kompletter Ablauf mit echten Daten
+└── e2e/             # full workflow with real data
     └── test_full_pipeline.py
 ```
 
-* **Unit**: Einzelne Funktion mit kontrollierten Eingaben (`utm_to_pixel`, `depth_from_color`)
-* **Integration**: Module + Testdaten (z. B. PNG+Straßen im Cache-Service)
-* **E2E**: Kompletter Ablauf (API, WMS, Klassifikation)
+* **Unit**: Individual function with controlled input (`utm_to_pixel`, `depth_from_color`)
+* **Integration**: Modules + test data (e.g., PNG + streets in cache service)
+* **E2E**: Full workflow (API, WMS, classification)
 
-### Weitere Testordner
+### Additional Test Folders
 
-* `fixtures/`: Gemeinsame Testhelfer (`make_mini_tile`, `conftest.py`)
-* `golden/`: Erwartete Ausgabedateien für Golden-File-Vergleiche
-* `data/`: Statische Testdaten (Mini-PNGs, GeoJSONs)
+* `fixtures/`: Shared test helpers (`make_mini_tile`, `conftest.py`)
+* `golden/`: Expected output files for golden file comparisons
+* `data/`: Static test data (mini PNGs, GeoJSONs)
 
-### Namenskonventionen
+### Naming Conventions
 
-* Dateien: `test_<modulname>.py`
-* Funktionen: `test_<was_getestet_wird>()`
-* Fixtures: sprechend benennen, z. B. `mini_tile_path`
+* Files: `test_<module_name>.py`
+* Functions: `test_<what_is_tested>()`
+* Fixtures: descriptive names, e.g., `mini_tile_path`
 
-### Pytest-Marks für gezielte Ausführung
+### Pytest Marks for Selective Execution
 
 ```python
 @pytest.mark.unit
@@ -164,7 +169,7 @@ def test_overlay_synthetic(): ...
 def test_full_workflow(): ...
 ```
 
-Beispiel:
+Example:
 
 ```bash
 pytest -m unit
@@ -174,62 +179,63 @@ pytest -m "unit or integration"
 
 ---
 
-## ▶️ CLI-Nutzung
+## ▶️ CLI Usage
 
-> **Hinweis:** Alle Befehle (außer `telegram`) erfordern explizite Koordinatenangabe:
+> **Note:** All commands (except `telegram`) require explicit coordinates:
 
 ```bash
---lat <Breitengrad> --lon <Längengrad>
-# z. B.
+--lat <latitude> --lon <longitude>
+# e.g.
 --lat 49.35 --lon 8.10
 ```
 
-### 🌍 Standortbasierte Befehle
+### 🌍 Location-Based Commands
 
 ```bash
-# 🌐 WMS-Karten (Sturzflutlayer) herunterladen
+# 🌐 Download WMS maps (flash flood layers)
 PYTHONPATH=. python3 main.py download-layers --lat 49.35 --lon 8.10
 
-# 📡 Regen für 24h-Fläche mit realen Wetterdaten abrufen
+# 📡 Retrieve 24h precipitation data using real weather data
 PYTHONPATH=. python3 main.py forecast --lat 49.35 --lon 8.10
 
-# 🧠 Analyse: Welche Starkregenkarten sind relevant?
+# 🧠 Evaluate: Which heavy rainfall maps are relevant?
 PYTHONPATH=. python3 main.py evaluate --lat 49.35 --lon 8.10
 
-# 🧪 Dummy-Regenfelder erzeugen (z. B. SRI7)
+# 🧪 Generate dummy rainfall fields (e.g., SRI7)
 PYTHONPATH=. python3 main.py generate-dummy SRI7 --lat 49.35 --lon 8.10
 
-# 🗄 CSV-Cache der überfluteten Straßen erzeugen
+# 🗄 Generate CSV cache of flooded streets
 PYTHONPATH=. python3 main.py generate-cache --lat 49.35 --lon 8.10 --radius 200 --sample-distance 5
 ```
 
-### 🤖 Telegram-Bot (automatische Steuerung via Koordinaten & Dummy)
+### 🤖 Telegram Bot (Automated via Coordinates & Dummy Data)
 
 ```bash
-# 📲 Telegram-Bot starten
+# 📲 Start Telegram bot
 PYTHONPATH=. python3 main.py telegram
 ```
 
-Der Bot erkennt Koordinaten in Nutzeranfragen automatisch
-(z. B. `49.35, 8.10`) und führt daraufhin alle Analyse- und Vorhersageprozesse aus.
+The bot automatically detects coordinates in user messages
+(e.g., `49.35, 8.10`) and executes all forecast and analysis steps.
 
-🆕 **LLM-Unterstützung:**
-Falls die Eingabe keine gültigen Koordinaten enthält, liefert der Bot mithilfe eines Sprachmodells automatisch kurze Hinweise und Beispiel-Eingaben (z. B. korrektes Format `49.35, 8.10`).
-Sobald eine gültige Eingabe erkannt wird, läuft der normale Analyseprozess.
+🆕 **LLM Support:**
+If the input does not contain valid coordinates, the bot uses a language model to provide short hints and example inputs (e.g., correct format `49.35, 8.10`).
+Once valid input is detected, the normal analysis workflow starts.
 
-🆕 **Dummy-Daten über Telegram:**
-Nutzer können zusätzlich Dummy-Analysen anfordern, z. B. durch Eingaben wie:
+🆕 **Dummy Data via Telegram:**
+Users can explicitly request dummy analyses, for example:
 
 ```
 dummy SRI7 49.35, 8.10
 dummy SRI10 49.40, 8.12
 ```
 
-Der Bot generiert dann die gewünschten **synthetischen Forecasts** und liefert Karten + CSV zurück – praktisch zum Testen ohne echte API-Abfragen.
+The bot generates the requested **synthetic forecasts** and returns maps + CSV files.
+Useful for testing without real API calls.
 
 ---
 
-## 📄 Beispielausgabe (`rain_grid_24h.csv`)
+## 📄 Example Output (`rain_grid_24h.csv`)
 
 ```csv
 lat,lon,2025-08-01T12:00,2025-08-01T13:00,...,2025-08-02T11:00
@@ -239,7 +245,7 @@ lat,lon,2025-08-01T12:00,2025-08-01T13:00,...,2025-08-02T11:00
 
 ---
 
-## 📌 Konfiguration (.env)
+## 📌 Configuration (.env)
 
 ```env
 TESTORTE_CSV=data/testorte.csv
@@ -251,15 +257,14 @@ TELEGRAM_BOT_TOKEN=
 
 ---
 
-## Externe Kartendaten (Sturzflutgefahrenkarten)
+## External Map Data (Flash Flood Hazard Maps)
 
-* Visualisierung erfolgt über WMS-Dienst der Wasserwirtschaft Rheinland-Pfalz (Sturzflutgefahrenkarten).
-* Lizenz: **Creative Commons Namensnennung 4.0 (CC BY 4.0)** – siehe Kartendienste der Wasserwirtschaftsverwaltung Rheinland-Pfalz.
-* Attribution: Kartenmaterial © Wasserportal Rheinland-Pfalz, Lizenz CC BY 4.0.
+* Visualization via WMS service of the Rhineland-Palatinate Water Management Authority (flash flood hazard maps).
+* License: **Creative Commons Attribution 4.0 (CC BY 4.0)** – see mapping services of the Water Management Administration Rhineland-Palatinate.
+* Attribution: Map material © Water Portal Rhineland-Palatinate, licensed under CC BY 4.0.
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 David Mühlfeld
-
